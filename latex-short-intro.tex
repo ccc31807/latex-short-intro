@@ -2,6 +2,8 @@
 
 \usepackage{framed}
 \usepackage{lipsum}
+\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1in]{geometry}
+\usepackage{hyperref}
 
 \title{Short Introduction to \LaTeXe}
 \author{Charles Carter}
@@ -46,7 +48,7 @@
     %this is the preamble
 \begin{document}
     %this is the contents section
-    hello
+    It works!
 \end{document}    
         \end{verbatim}
 
@@ -62,7 +64,7 @@
                 \item{title}
                 \item{author}
                 \item{date}
-                \item{makecontents}
+                \item{maketitle}
             \end{itemize}
         \end{framed}
 
@@ -70,13 +72,13 @@
         \begin{verbatim}
 \documentclass{article}
     %this is the preamble
-    \title{This is My Title}
+    \title{Title, Author, and Date}
     \author{This is my name}
     \date{July 4, 1776}
 \begin{document} 
     %this is the contents section
     \maketitle{}
-    hello
+    This document has a title, author, and date.
 \end{document}    
         \end{verbatim}
 
@@ -100,7 +102,7 @@
 
         \begin{verbatim}
 \documentclass{article}
-    \title{This is My Title}
+    \title{Basic Sections}
     \author{This is my name}
     \date{\today{}}
 \begin{document} 
@@ -118,7 +120,7 @@
 
         \paragraph{Question:}What do the commands \texttt{subsection\{\}} and \texttt{subsubsection\{\}} do?
 
-        \paragraph{Question:}What does \texttt{section*\{\}} do? Note the asterisk {*} after \texttt{section}. You can also use this for \texttt{subsections} and \texttt{subsubsections}.
+        \paragraph{Question:}What does \texttt{section*\{\}} do? Note the asterisk (*) after \texttt{section}. You can also use this for \texttt{subsections} and \texttt{subsubsections}.
 
         \subsection{Basic paragraphs}
         \label{Basic-paragraphs}
@@ -135,7 +137,7 @@
 
         \begin{verbatim}
 \documentclass{article}
-    \title{This is My Title}
+    \title{Basic Paragraphs}
     \author{This is my name}
     \date{\today{}}
 \begin{document} 
