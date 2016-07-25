@@ -272,10 +272,17 @@ Notice the paragraph indentation. First paragraphs are \textit{not} indented. Fo
 
 In this section, you will fiddle with the appearance of text. To \textit{create text in italics}, use \texttt{textit}. To \textsf{create text in sans serif}, use \texttt{textsf}. To \texttt{create text in monospace font},use \texttt{texttt}. To \textbf{create text in boldface}, use \texttt{textbf}. To \textsc{create text using Small Caps}, use \texttt{textsc}. \underline{You should almost never underline text}! If you choose to do so, use \texttt{underline}.
 
+        \paragraph{}To \textit{create text in italics}, use \texttt{textit}. 
+        \paragraph{}To \textsf{create text in sans serif}, use \texttt{textsf}. 
+        \paragraph{}To \texttt{create text in monospace font},use \texttt{texttt}. 
+        \paragraph{}To \textbf{create text in boldface}, use \texttt{textbf}. 
+        \paragraph{}To \textsc{create text using Small Caps}, use \texttt{textsc}. 
+        \paragraph{}\underline{You should almost never underline text}! If you choose to do so, use \texttt{underline}.
+
         \begin{verbatim}
 \documentclass{article}
     \title{Font Appearance}
-    \author{This is my name}
+    \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
@@ -320,10 +327,23 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
 
 \LaTeXe{} has several different ways to alter the size of the font. Perhaps the simplest way is to create a \textit{size environment}. You do this by using one of the commands listed above, and this controls the size of all text until it is changed by another command. You would typically use this for sections of text that need to be made smaller, such as tables, block quotes, technical sections not germane to the main discussion, and similar.
 
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \tiny{}\paragraph{}This paragraph has a tiny font size.
+    \scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
+    \footnotesize{}\paragraph{}This paragraph has a footnotesize font size.
+    \small{}\paragraph{}This paragraph has a small font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \large{}\paragraph{}This paragraph has a large font size.
+    \Large{}\paragraph{}This paragraph has a Large font size.
+    \LARGE{}\paragraph{}This paragraph has a LARGE font size.
+    \huge{}\paragraph{}This paragraph has a huge font size.
+    \Huge{}\paragraph{}This paragraph has a Huge font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+
         \begin{verbatim}
 \documentclass{article}
     \title{Font Sizes}
-    \author{This is my name}
+    \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
@@ -373,8 +393,49 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
 
 		Sometimes you will find characters that wish they were special, but are not. These include the cedilla (\c{c}), the degree (\textdegree), and diphthongs (\ae). All these are represented by \LaTeXe{} commands, you will use the command for the character.
 
+		\paragraph{Exercise:}Scott Pakin has published the booklet \textit{The Comprehensiv \LaTeX{} Symbol List}. You can find this onine in PDF format. Search for it and just look at it. It contains over 300 pages of symbols. You'll be amazed! 
+
         \subsection{Inline math}
         \label{Inline-math}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{\$}
+                \item{plus or +}
+                \item{-}
+                \item{times or ast}
+                \item{frac or div}
+                \item{sqrt}
+				\item{\^{}}
+            \end{itemize}
+        \end{framed}
+
+	This is an example of inline math. Use the dollar symbol (\$) to set the math. Here is how it works.  Addition: $4 + 5 = 9$.  Subtraction: $4 - 5 = -1$.  Multiplication: $4 \times 5 = 20$.  Multiplication: $4 \ast 5 = 20$.  Division: $\frac{4}{5} = 0.8$.  Division: $4 \div 5 = 0.8$.  Square root: $\sqrt{2} = 1.41421$.  Exponents: $2^8 = 256$.
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Online Math}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+	This is an example of inline math. Use the dollar symbol (\$) to set the math. Here is how it works. 
+    Addition: $4 + 5 = 9$. 
+    Subtraction: $4 - 5 = -1$. 
+    Multiplication: $4 \times 5 = 20$. 
+    Multiplication: $4 \ast 5 = 20$.
+    Division: $\frac{4}{5} = 0.8$. 
+    Division: $4 \div 5 = 0.8$. 
+    Square root: $\sqrt{2} = 1.41421$. 
+    Exponents: $2^8 = 256$.
+	\end{document}    
+
+        \end{verbatim}
+
+		\paragraph{Exercise:}You can find the \textit{User's Guide for the }\texttt{amsmath} \textit{Package} in PDF format online. Search for it and start readong through it.
+
+        \subsection{Equations}
+        \label{Equations}
         
         \begin{framed}
             \begin{itemize}
@@ -382,26 +443,33 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
             \end{itemize}
         \end{framed}
 
+        \subsection{Multiline Equations}
+        \label{Multiline Equations}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{}
+            \end{itemize}
+        \end{framed}
 
-        \begin{verbatim}
-\documentclass{article}
-    \title{This is My Title}
-    \author{This is my name}
-    \date{\today{}}
-\begin{document} 
-    \maketitle{}
-    \section{Introduction}
-    \label{Introduction}
-    \section{Body}
-    \label{Body}
-    \section{Conclusion}
-    \label{Conclusion}
-\end{document}    
-        \end{verbatim}
+        \subsection{Higher Math}
+        \label{Higher Math}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{}
+            \end{itemize}
+        \end{framed}
 
-        \paragraph{Exercise:}
+        \subsection{Matrices and Vectors}
+        \label{Matrices and Vectors}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{}
+            \end{itemize}
+        \end{framed}
 
-        \paragraph{Exercise:}
 
 %        \subsection{}
 %        \label{}
@@ -432,6 +500,10 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
 %        \paragraph{Exercise:}
 %
 %        \paragraph{Exercise:}
+
+
+    \section{References}
+    \label{References}
 
 
     \section{Lists}
