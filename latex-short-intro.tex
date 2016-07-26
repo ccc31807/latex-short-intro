@@ -2,12 +2,13 @@
 
 \usepackage{framed}
 \usepackage{amsmath}
+\usepackage{mathtools}
 \usepackage{textcomp}
 \usepackage{lipsum}
 \usepackage[top=1in, bottom=1.25in, left=1.25in, right=1in]{geometry}
 \usepackage{hyperref}
 
-\title{Short Introduction to \LaTeXe}
+\title{Another Short Tutorial for \LaTeXe}
 \author{Charles Carter}
 \date{\today{}}
 
@@ -20,11 +21,11 @@
     \section{Introduction}
     \label{Introduction}
 
-    This is a short, easy, nontechnical introduction to \LaTeX2{}. After you have worked through it, you will be able to create a professional document, and have the ability to teach yourself how to extend your \LaTeXe{} skills.
+	This is a short, easy, nontechnical introduction to \LaTeX2{}. It's a tutorial desogned for students who do not have a lot of time, who do not need to become overnight experts in \LaTeXe{}, and prefer a shallow learning curve to a boot camp approach.  After you have worked through it, you will be able to create a professional document, and have the ability to teach yourself how to extend your \LaTeXe{} skills --- to become a \LaTeXe guru if you want to or need to.
 
     \paragraph{What about \LaTeXe{}?}First, it's \textit{free} in the sense that you do not have to pay for it. Second, it's \textit{easy}, given that you know how to use it. As always, there are trade-offs, and ``easy'' to an expert tends to be hard for a beginner, and \textit{vice versa}. Third, it's \textit{stable}, the first version released in 1985. Fourth, it's \textit{well documented}, not surprising since its purpose is document preparation. Fifth, it's \textit{professioal}, as you will soon come to see. I will touch on these points from time to time in this introduction.
 
-    \paragraph{How does this introduction work?}Each ``lesson'' consists of the introduction of a few commands and a couple of questions, which should not take more than fifteen minutes to complete. If you complete one lesson a day, within several weeks you will have a good foundation with \LaTeXe{}, and begin to see how the things I just wrote are true.
+    \paragraph{How does this introduction work?}Each ``lesson'' consists of the introduction of a few commands and a couple of questions, which should not take more than fifteen minutes to complete. It uses the ``baby talk'' principle --- you imitate what you see and explore it by making slight changes. If you complete one lesson a day, within several weeks you will have a good foundation with \LaTeXe{}, and begin to see how the things I just wrote are true.
 
     \section{Document Basics}
     \label{Document-Basics}
@@ -105,7 +106,7 @@
         \begin{verbatim}
 \documentclass{article}
     \title{Basic Sections}
-    \author{This is my name}
+    \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
@@ -140,7 +141,7 @@
         \begin{verbatim}
 \documentclass{article}
     \title{Basic Paragraphs}
-    \author{This is my name}
+    \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
@@ -201,7 +202,7 @@ Notice the paragraph indentation. First paragraphs are \textit{not} indented. Fo
 \documentclass{article}
     \usepackage{lipsum}
     \title{Using Packages}
-    \author{This is my name}
+    \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
@@ -402,19 +403,20 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
             \begin{itemize}
                 \item{\$}
                 \item{plus or +}
-                \item{-}
+				\item{- (dash or subtraction)}
                 \item{times or ast}
                 \item{frac or div}
                 \item{sqrt}
-				\item{\^{}}
+				\item{\^{} (caret or circumflex)}
+				\item{\_ (underscore)} 
             \end{itemize}
         \end{framed}
 
-	This is an example of inline math. Use the dollar symbol (\$) to set the math. Here is how it works.  Addition: $4 + 5 = 9$.  Subtraction: $4 - 5 = -1$.  Multiplication: $4 \times 5 = 20$.  Multiplication: $4 \ast 5 = 20$.  Division: $\frac{4}{5} = 0.8$.  Division: $4 \div 5 = 0.8$.  Square root: $\sqrt{2} = 1.41421$.  Exponents: $2^8 = 256$.
+	This is an example of inline math. Use the dollar symbol (\$) to set the math. Here is how it works.  Addition: $4 + 5 = 9$.  Subtraction: $4 - 5 = -1$.  Multiplication: $4 \times 5 = 20$.  Multiplication: $4 \ast 5 = 20$.  Division: $\frac{4}{5} = 0.8$.  Division: $4 \div 5 = 0.8$.  Square root: $\sqrt{2} = 1.41421$.  Exponents: $2^8 = 256$.  Subscripts: $x_0, x_1, x_2$.
 
         \begin{verbatim}
 \documentclass{article}
-    \title{Online Math}
+    \title{Inline Math}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
@@ -428,20 +430,61 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
     Division: $4 \div 5 = 0.8$. 
     Square root: $\sqrt{2} = 1.41421$. 
     Exponents: $2^8 = 256$.
+	Subscripts: $x_0, x_1, x_2$
 	\end{document}    
+		\end{verbatim}
 
-        \end{verbatim}
-
-		\paragraph{Exercise:}You can find the \textit{User's Guide for the }\texttt{amsmath} \textit{Package} in PDF format online. Search for it and start readong through it.
+		\paragraph{Exercise:}You can find the \textit{User's Guide for the }\texttt{amsmath} \textit{Package} in PDF format online. Search for it and start reading through it.
 
         \subsection{Equations}
         \label{Equations}
         
         \begin{framed}
             \begin{itemize}
-                \item{}
+                \item{amsmath}
+                \item{equation}
+                \item{equation*}
             \end{itemize}
         \end{framed}
+	
+		\LaTeXe{} provides the \textit{equation} environment for writing block equations with the \textit{amsmath} package. First, import the package with \texttt{usepackage\{amsmath\}}.  Equations are numbered and can be referenced by means of their labels. The starred version omits the equation from the numbered equations. Here are some examples. Equation \ref{line} is the formula for a straight line. Equation \ref{slope} is the formula for the slope of a straight line.  The third, unnumbered equation is the formula for a straight line with multiple parameters.
+
+		\begin{equation}
+			\label{line}
+			y = \beta_0 + \beta_1 x_1
+		\end{equation}
+		\begin{equation}
+			\label{slope}
+			m = \frac{y_1 - y_0}{x_1 - x_0}
+		\end{equation}
+		\begin{equation*}
+			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{equation*}
+
+        \begin{verbatim}
+\documentclass{article}
+	\usepackage{amsmath}
+    \title{Equations}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+	This is an example of equations.
+		\begin{equation}
+			\label{line}
+			y = \beta_0 + \beta_1 x_1
+		\end{equation}
+		\begin{equation}
+			\label{slope}
+			m = \frac{y_1 - y_0}{x_1 - x_0}
+		\end{equation}
+		\begin{equation*}
+			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{equation*}
+	\end{document}    
+        \end{verbatim}
+
+		\paragraph{Exercise:}Continue reading through the \textit{User's Guide for the }\texttt{amsmath} \textit{Package}.
 
         \subsection{Multiline Equations}
         \label{Multiline Equations}
