@@ -1,0 +1,168 @@
+    \section{Math and Symbols}
+    \label{Math}
+
+	Both \TeX{} and \LaTeXe{} shine when it comes to math. In fact, Donald Knuth originally wrote \TeX{} just so he could typeset math. In this section, we will dip our toes into math and symbols. This will not be difficult. If you have need for more advanced mathematics, you will know how to find what you need to render your equations.
+
+        \subsection{Special characters}
+        \label{Special-characters}
+        
+		Most characters are not special. An \textit{a} is just an a, a \textit{Z} is just a Z, and a \textit{7} is just a 7. Sometimes, this isn't the case --- an \&  is not just an ampersand. \LaTeXe{} has ten special characters. They are listed below.
+
+        \begin{framed}
+			\textbackslash, \%, \{, \}, \$, \^{} , \_, \~{} , \#, \&
+        \end{framed}
+
+		You already lnow four of them. ``\textbackslash'' indicates the beginning of a command, ``\%'' indicates a comment, and the ``\{ - \}'' pair (usually) indicates the argument to a command. You will learn about three more in this section, ``\$'', ``\_'', and ``\^{}''. It's worthwhile to stare at these charcters long enough to become familiar with them. When you document misbehaves, often these characters are the culprit.
+
+		Sometimes you will find characters that wish they were special, but are not. These include the cedilla (\c{c}), the degree (\textdegree), and diphthongs (\ae). All these are represented by \LaTeXe{} commands, you will use the command for the character.
+
+		\paragraph{Exercise:}Scott Pakin has published the booklet \textit{The Comprehensiv \LaTeX{} Symbol List}. You can find this online in PDF format. Search for it and just look at it. It contains over 300 pages of symbols. You'll be amazed! 
+
+        \subsection{Inline math}
+        \label{Inline-math}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{\$}
+                \item{plus or +}
+				\item{- (dash or subtraction)}
+                \item{times or ast}
+                \item{frac or div}
+                \item{sqrt}
+				\item{\^{} (caret or circumflex)}
+				\item{\_ (underscore)} 
+            \end{itemize}
+        \end{framed}
+
+	This is an example of inline math. Use the dollar symbol (\$) to set the math. Here is how it works.  Addition: $4 + 5 = 9$.  Subtraction: $4 - 5 = -1$.  Multiplication: $4 \times 5 = 20$.  Multiplication: $4 \ast 5 = 20$.  Division: $\frac{4}{5} = 0.8$.  Division: $4 \div 5 = 0.8$.  Square root: $\sqrt{2} = 1.41421$.  Exponents: $2^8 = 256$.  Subscripts: $x_0, x_1, x_2$.
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Inline Math}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+	This is an example of inline math. Use the dollar symbol (\$) to set the math. Here is how it works. 
+    Addition: $4 + 5 = 9$. 
+    Subtraction: $4 - 5 = -1$. 
+    Multiplication: $4 \times 5 = 20$. 
+    Multiplication: $4 \ast 5 = 20$.
+    Division: $\frac{4}{5} = 0.8$. 
+    Division: $4 \div 5 = 0.8$. 
+    Square root: $\sqrt{2} = 1.41421$. 
+    Exponents: $2^8 = 256$.
+	Subscripts: $x_0, x_1, x_2$
+	\end{document}    
+		\end{verbatim}
+
+		\paragraph{Exercise:}You can find the \textit{User's Guide for the }\texttt{amsmath} \textit{Package} in PDF format online. Search for it and start reading through it.
+
+        \subsection{Equations}
+        \label{Equations}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{amsmath}
+                \item{equation}
+                \item{equation*}
+            \end{itemize}
+        \end{framed}
+	
+		\LaTeXe{} provides the \textit{equation} environment for writing block equations with the \textit{amsmath} package. First, import the package with \texttt{usepackage\{amsmath\}}.  Equations are numbered and can be referenced by means of their labels. The starred version omits the equation from the numbered equations. Here are some examples. Equation \ref{line} is the formula for a straight line. Equation \ref{slope} is the formula for the slope of a straight line.  The third, unnumbered equation is the formula for a straight line with multiple parameters.
+
+		\begin{equation}
+			\label{line}
+			y = \beta_0 + \beta_1 x_1
+		\end{equation}
+		\begin{equation}
+			\label{slope}
+			m = \frac{y_1 - y_0}{x_1 - x_0}
+		\end{equation}
+		\begin{equation*}
+			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{equation*}
+
+        \begin{verbatim}
+\documentclass{article}
+	\usepackage{amsmath}
+    \title{Equations}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+	This is an example of equations.
+		\begin{equation}
+			\label{line}
+			y = \beta_0 + \beta_1 x_1
+		\end{equation}
+		\begin{equation}
+			\label{slope}
+			m = \frac{y_1 - y_0}{x_1 - x_0}
+		\end{equation}
+		\begin{equation*}
+			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{equation*}
+	\end{document}    
+        \end{verbatim}
+
+		\paragraph{Exercise:}Continue reading through the \textit{User's Guide for the }\texttt{amsmath} \textit{Package}.
+
+        \subsection{Multiline Equations}
+        \label{Multiline Equations}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{}
+            \end{itemize}
+        \end{framed}
+
+        \subsection{Higher Math}
+        \label{Higher Math}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{}
+            \end{itemize}
+        \end{framed}
+
+        \subsection{Matrices and Vectors}
+        \label{Matrices and Vectors}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{}
+            \end{itemize}
+        \end{framed}
+
+
+%        \subsection{}
+%        \label{}
+%        
+%        \begin{framed}
+%            \begin{itemize}
+%                \item{}
+%            \end{itemize}
+%        \end{framed}
+%
+%
+%        \begin{verbatim}
+%\documentclass{article}
+%    \title{This is My Title}
+%    \author{Charles Carter}
+%    \date{\today{}}
+%\begin{document} 
+%    \maketitle{}
+%    \section{Introduction}
+%    \label{Introduction}
+%    \section{Body}
+%    \label{Body}
+%    \section{Conclusion}
+%    \label{Conclusion}
+%\end{document}    
+%        \end{verbatim}
+%
+%        \paragraph{Exercise:}
+%
+%        \paragraph{Exercise:}
+
