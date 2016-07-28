@@ -113,9 +113,64 @@
         
         \begin{framed}
             \begin{itemize}
-                \item{}
+                \item{align}
+                \item{gather}
+                \item{multline}
             \end{itemize}
         \end{framed}
+
+		How do I place several equations together in one equation environment, alighed on a particular character, such as an equal sign (=)? Use the \textit{align} environment, with the ampersand (\&) as the tab character, and end each line with two backslashs (\textbackslash{}\textbackslash{}).
+
+		\begin{align}
+			y& = \beta_0 + \beta_1 x_1\\
+			slope& = \frac{y_1 - y_0}{x_1 - x_0}\\
+			predicted_value& = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{align}
+
+		How to I center the equations? Use the \textit{gather} environment, with no tab character but ending each line with two backslashes (\textbackslash{}\textbackslash{}).
+
+		\begin{gather}
+			y = \beta_0 + \beta_1 x_1\\
+			slope = \frac{y_1 - y_0}{x_1 - x_0}\\
+			predicted_value = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{gather}
+
+		What if I have a very long equation that won't fit on one line? Use the \textit{multiine} environment, breaking with two backslashes (\textbackslash{}\textbackslash{})
+
+		\begin{multline}
+			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 +\\
+			\beta_4 x_4 + \beta_5 x_5 + \beta_6 x_6 +\\
+			\beta_7 x_7 + \beta_8 x_8 + \beta_9 x_9
+		\end{multline}
+		
+		\begin{verbatim}
+\documentclass{article}
+	\usepackage{amsmath}
+    \title{Multiline Equations}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+	This is an example of align.
+		\begin{align}
+			y& = \beta_0 + \beta_1 x_1\\
+			slope& = \frac{y_1 - y_0}{x_1 - x_0}\\
+			predicted_value& = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{align}
+	This is an example of gather.
+		\begin{gather}
+			y = \beta_0 + \beta_1 x_1\\
+			slope = \frac{y_1 - y_0}{x_1 - x_0}\\
+			predicted_value = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{gather}
+	This is an example of multline.
+		\begin{multline}
+			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 +\\
+			\beta_4 x_4 + \beta_5 x_5 + \beta_6 x_6 +\\
+			\beta_7 x_7 + \beta_8 x_8 + \beta_9 x_9
+		\end{multline}
+	\end{document}    
+        \end{verbatim}
 
         \subsection{Higher Math}
         \label{Higher Math}
@@ -131,7 +186,11 @@
         
         \begin{framed}
             \begin{itemize}
-                \item{}
+                \item{sums}
+                \item{products}
+                \item{limits}
+                \item{derivatives}
+                \item{integrals}
             \end{itemize}
         \end{framed}
 
