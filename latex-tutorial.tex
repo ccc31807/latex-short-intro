@@ -7,6 +7,7 @@
 \usepackage{lipsum}
 \usepackage[top=1in, bottom=1.25in, left=1.25in, right=1in]{geometry}
 \usepackage{hyperref}
+\usepackage{endnotes}
 
 %\includeonly{math-symbols}
 
@@ -35,14 +36,16 @@
 
     \section*{\LaTeXe{} is \textit{Professional}}
 
-    \LaTeXe{} is flexible to an extreme. You can customize every part of your document. However, its authors have spent much time and effort to ensure that it gives a professional appearance ``out of the box.'' This short tutorial does not cover customization. After you have created and compiled several dozen \texttt{.tex} files, you will begin to see the need for customization.\footnote{The first thing you may want to do is to change the page margins. An easy way to change page margins is to use the \texttt{geometry} package.} Unless you have special requirements, such as page margins, paragraph spacing, and page page numbers, and you are happy with the appearance of your document, you do not need to think about customization.
+	\LaTeXe{} is flexible to an extreme. You can customize every part of your document. However, its authors have spent much time and effort to ensure that it gives a professional appearance ``out of the box.'' This short tutorial does not cover customization. After you have created and compiled several dozen \texttt{.tex} files, you will begin to see the need for customization.\footnote{The first thing you may want to do is to change the page margins. An easy way to change page margins is to use the \texttt{geometry} package.} Unless you have special requirements, such as page margins, paragraph spacing, and page page numbers, and you are happy with the appearance of your document, you do not need to think about customization.
 
 	\include{math-symbols}
 
     \section*{\LaTeXe{} is \textit{Well Documented}}
 
-
 	\include{references}
+
+    \section*{\LaTeXe{} is \textit{Well Documented}}
+
 
 %        \subsection{}
 %        \label{}
@@ -103,5 +106,8 @@
 
 	\section{Command Line Execution}
 	\label{Command Line}
+
+	\theendnotes{}
+	\addcontentsline{toc}{section}{Endnotes}
 
 \end{document}

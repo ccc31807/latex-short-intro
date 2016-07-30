@@ -3,28 +3,182 @@
 	\section{References}
 	\label{References}
 
+	In scientific and research writing, one of the most critical aspects is references. Think about it: can you imagine a research paper without a single reference? These include footnotes, endnotes, marginal notes, and especially citations to sources. References have two components, a target and a source, or a label and a reference to that label. We have used labels before, but now we will expicitly consider them.
+
 	\subsection{Footnotes}
 	\label{Footnotes}
 
+        \begin{framed}
+            \begin{itemize}
+                \item{footnote}
+                \item{label}
+                \item{ref}
+                \item{pageref}
+            \end{itemize}
+        \end{framed}
+
+	To insert a footnote, just use the command \text{footnote}.\footnote{\label{references:fn}Don't forget to put the \textbackslash{} before the \texttt{footnote} command.} If you label the footnote, you can refer to the footnote by number and page in the text of the doucumemt. Please be sure to read footnote \ref{references:fn} on page \pageref{references:fn}.
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Footnotes and References}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+	To insert a footnote, just use the command \text{footnote}.\footnote{\label{references:fn}
+	Don't forget to put the \textbackslash{} before the \texttt{footnote} command.} If you 
+	label the footnote, you can refer to the footnote by number and page in the text of the
+	doucumemt. Please be sure to read footnote \ref{references:fn} on page 
+	\pageref{references:fn}.
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Read the \LaTeXe{} documentation on footnotes.
 
 	\subsection{Endnotes}
 	\label{Endnotes}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{package endnotes}
+                \item{endnote}
+                \item{theendnotes}
+                \item{addcontentsline}
+            \end{itemize}
+        \end{framed}
 
+	Endnotes are a little more complicated than footnotes, but not much.\endnote{The difference between footnotes and endnotes is that footnotes go at the foot of the page where they appear, whilc endnotes appear at the end of the document.} Here is an endnote.\endnote{This is an endnote.} In order to actually print the endnotes, use the \texttt{theendnotes} command. In order to create an entry for the endnotes in the table of contents, you must use the \texttt{addcontentsline}.\endnote{\label{references:en}The addcontentsline takes three parameters, where the line should be written, usually \textit{toc}, the formatting to be used, usually \textit{section}, and the name to be given to the entry, perhaps \textit{Endnotes}.} Please see endnote \ref{references:en} on page \pageref{references:en} for the details.
+
+        \begin{verbatim}
+\documentclass{article}
+	\usepackage{endnotes}
+    \title{Endnotes}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+	\tableofcontents{}
+	\section{Text}
+	Endnotes are a little more complicated than footnotes, but not much.\endnote{The 
+	difference between footnotes and endnotes is that footnotes go at the foot of 
+	the page where they appear, whilc endnotes appear at the end of the document.} 
+	Here is an endnote.\endnote{This is an endnote.} In order to actually print 
+	the endnotes, use the \texttt{theendnotes} command. In order to create an 
+	entry for the endnotes in the table of contents, you must use the \texttt{addcontentsline}.
+	\endnote{\label{references:en}The addcontentsline takes three parameters, 
+	where the line should be written, usually \textit{toc}, the formatting to be 
+	used, usually \textit{section}, and the name to be given to the entry, perhaps 
+	\textit{Endnotes}.} Please see endnote \ref{references:en} on page 
+	\pageref{references:en} for the details.
+	\theendnotes{}
+	\addcontentsline{toc}{section}{Endnotes}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Find and read through the documentation of the Endnotes package.
 
 	\subsection{Margin Notes}
 	\label{Margin Notes}
 
+%        \subsection{}
+%        \label{}
+%        
+%        \begin{framed}
+%            \begin{itemize}
+%                \item{}
+%            \end{itemize}
+%        \end{framed}
+%
+%
+%        \begin{verbatim}
+%\documentclass{article}
+%    \title{This is My Title}
+%    \author{Charles Carter}
+%    \date{\today{}}
+%\begin{document} 
+%    \maketitle{}
+%    \section{Introduction}
+%    \label{Introduction}
+%    \section{Body}
+%    \label{Body}
+%    \section{Conclusion}
+%    \label{Conclusion}
+%\end{document}    
+%        \end{verbatim}
+%
+%        \paragraph{Exercise:}
+%
+%        \paragraph{Exercise:}
 
 	\subsection{Bibliography}
 	\label{Bibliography}
 
+%        \subsection{}
+%        \label{}
+%        
+%        \begin{framed}
+%            \begin{itemize}
+%                \item{}
+%            \end{itemize}
+%        \end{framed}
+%
+%
+%        \begin{verbatim}
+%\documentclass{article}
+%    \title{This is My Title}
+%    \author{Charles Carter}
+%    \date{\today{}}
+%\begin{document} 
+%    \maketitle{}
+%    \section{Introduction}
+%    \label{Introduction}
+%    \section{Body}
+%    \label{Body}
+%    \section{Conclusion}
+%    \label{Conclusion}
+%\end{document}    
+%        \end{verbatim}
+%
+%        \paragraph{Exercise:}
+%
+%        \paragraph{Exercise:}
 
 	\subsection{Citations}
 	\label{Citations}
 
+%        \subsection{}
+%        \label{}
+%        
+%        \begin{framed}
+%            \begin{itemize}
+%                \item{}
+%            \end{itemize}
+%        \end{framed}
+%
+%
+%        \begin{verbatim}
+%\documentclass{article}
+%    \title{This is My Title}
+%    \author{Charles Carter}
+%    \date{\today{}}
+%\begin{document} 
+%    \maketitle{}
+%    \section{Introduction}
+%    \label{Introduction}
+%    \section{Body}
+%    \label{Body}
+%    \section{Conclusion}
+%    \label{Conclusion}
+%\end{document}    
+%        \end{verbatim}
+%
+%        \paragraph{Exercise:}
+%
+%        \paragraph{Exercise:}
 
-	\subsection{y}
-	\label{y}
+	\subsection{Indices}
+	\label{Indices}
 
 %        \subsection{}
 %        \label{}
