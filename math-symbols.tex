@@ -216,16 +216,72 @@
 
 		\paragraph{Exercise:}Continue reading through the \textit{User's Guide for the }\texttt{amsmath} \textit{Package}.
 
-
-        \subsection{Matrices and vectors}
-        \label{Matrices and vectors}
+        \subsection{Matrices}
+        \label{Matrices}
         
         \begin{framed}
             \begin{itemize}
-                \item{}
+                \item{vmatrix}
+                \item{pmatrix}
+                \item{bmatrix}
+                \item{Bmatrix}
+                \item{Vmatrix}
             \end{itemize}
         \end{framed}
 
+        Matrices are contained within a math environment, either an equation block or inline math pairs (\$\ldots\$). They are entered by row. Each row ends with two backslash symbols (\textbackslash\textbackslash). Each element on a row is separaated by an ampersand (\&). The different variations create different surrounding brackets.
+        \texttt{vmatrix} uses vertical bars ($|\ldots|$).
+        \texttt{pmatrix} uses parentheses [(\ldots)].
+        \texttt{bmatrix} uses square brackets ([\ldots]).
+        \texttt{Bmatrix} uses curly braces (\{\ldots\}).
+        \texttt{Vmatrix} uses double vertical bars ($||\ldots||$).
+
+        $ \begin{vmatrix}
+            1 & 3 & 3 \\
+            1 & 4 & 3 \\
+            1 & 3 & 4 
+        \end{vmatrix}
+         \times 
+         \begin{vmatrix}
+             7 & -3 & -3 \\
+             -1 & 1 & 0 \\
+             -1 & 0 & 1
+         \end{vmatrix}
+         =
+         \begin{vmatrix}
+             1 & 0 & 0 \\
+             0 & 1 & 0 \\
+             0 & 0 & 1
+         \end{vmatrix} $
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Matrices}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+        $ \begin{vmatrix}
+            1 & 3 & 3 \\
+            1 & 4 & 3 \\
+            1 & 3 & 4 
+        \end{vmatrix}
+         \times 
+         \begin{vmatrix}
+             7 & -3 & -3 \\
+             -1 & 1 & 0 \\
+             -1 & 0 & 1
+         \end{vmatrix}
+         =
+         \begin{vmatrix}
+             1 & 0 & 0 \\
+             0 & 1 & 0 \\
+             0 & 0 & 1
+         \end{vmatrix} $
+\end{document}    
+        \end{verbatim}
+
+		\paragraph{Exercise:}Continue reading through the \textit{User's Guide for the }\texttt{amsmath} \textit{Package}.
 
         \subsection{Greek letters}
         \label{Greek letters}
@@ -256,7 +312,7 @@
             \hline
             Theta & Theta & $\Theta$    & theta & $\theta$ \\
             \hline
-            Iota & I & $I$     & iota & $k\iota$ \\
+            Iota & I & $I$     & iota & $\iota$ \\
             \hline
             Kappa & K & $K$     &  kappa & $\kappa$ \\
             \hline
