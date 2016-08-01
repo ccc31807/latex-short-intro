@@ -73,7 +73,9 @@
             \end{itemize}
         \end{framed}
 
-        \LaTeXe{} provides a number of useful section levels, including part and chapter. Two of the most useful are \texttt{section} and \texttt{subsection}. Create and compile the following document.
+        \LaTeXe{} provides a number of useful section levels, including part and chapter. Two of the most useful are \texttt{section} and \texttt{subsection}. Create and compile the following document. 
+
+        The \texttt{label\{\}} is used to create cross-references in documents. It's also very helpful in organizing your thoughts. The argument to \texttt{label\{argument\}} does not appear in the document. I cover the \texttt{ref} and \texttt{pageref} commands below in subsection \ref{Footnotes} on page \pageref{Footnotes}. These are used to create references back to the label.
 
         \begin{verbatim}
 \documentclass{article}
@@ -91,8 +93,6 @@
 \end{document}    
         \end{verbatim}
 
-        The \texttt{label\{\}} is used to create cross-references in documents. It's also very helpful in organizing your thoughts. The argument to \texttt{label\{argument\}} does not appear in the document.
-
         \paragraph{Exercise:}What do the commands \texttt{subsection\{\}} and \texttt{subsubsection\{\}} do?
 
         \paragraph{Exercise:}What does \texttt{section*\{\}} do? Note the asterisk (*) after \texttt{section}. You can also use this starred version for \texttt{subsections} and \texttt{subsubsections}.
@@ -108,7 +108,7 @@
         \end{framed}
 
 
-        We have reached the point where you need some real content. I will use the text of Abraham Lincoln's Gettysburg Address to illustrate paragraphs. Notice that ordinary paragraphs do not need a special commend -- the ``paragraph command'' is simply two new lines to create a blank line. Create and compile the following document.
+        We have reached the point where you need some real content. I will use the text of Abraham Lincoln's Gettysburg Address to illustrate paragraphs. Notice that ordinary paragraphs do not need a special commend -- the ``paragraph command'' is simply two blank lines to create an empty new line between the paragraphs, as if they were double spaced. Create and compile the following document.
 
         \begin{verbatim}
 \documentclass{article}

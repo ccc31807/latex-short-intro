@@ -1,11 +1,12 @@
-\documentclass{article}
+\documentclass[letterpaper]{article}
 
 \usepackage{framed}
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{mathtools}
 \usepackage{textcomp}
 \usepackage{lipsum}
-\usepackage[top=1in, bottom=1.25in, left=1.25in, right=1in]{geometry}
+\usepackage[top=1in, bottom=1.5in, left=1.75in, right=1.75in]{geometry}
 \usepackage{hyperref}
 \usepackage{endnotes}
 
@@ -21,28 +22,28 @@
     
     \tableofcontents{}
 
-	\newpage{}
+    \newpage{}
 
     \section{Introduction}
     \label{Introduction}
 
-	This is a short, easy, nontechnical introduction to \LaTeXe{}. It's a tutorial designed for students who do not have a lot of time, who do not need to become overnight experts in \LaTeXe{}, and prefer a shallow learning curve to a boot camp approach.  After you have worked through it, you will be able to create professional documents, and have the ability to teach yourself how to extend your \LaTeXe{} skills --- to become a \LaTeXe guru if you want to or need to.
+    This is a short, easy, nontechnical introduction to \LaTeXe{}. It's a tutorial designed for students who do not have a lot of time, who do not need to become overnight experts in \LaTeXe{}, and prefer a shallow learning curve to a boot camp approach.  After you have worked through it, you will be able to create professional documents, and have the ability to teach yourself how to extend your \LaTeXe{} skills --- to become a \LaTeXe{} guru if you want to or need to.
 
     \paragraph{What about \LaTeXe{}?}First, it's \textit{free} in the sense that you do not have to pay for it. Second, it's \textit{easy}, given that you know how to use it. As always, there are trade-offs, and ``easy'' to an expert tends to be hard for a beginner, and \textit{vice versa}. Third, it's \textit{stable}, the first version released in 1985. Fourth, it's \textit{well documented}, not surprising since its purpose is document preparation. Fifth, it's \textit{professioal}, as you will soon come to see. I will touch on these points from time to time in this tutorial.
 
-    \paragraph{How does this introduction work?}Each ``lesson'' consists of the introduction of a few commands and a couple of questions, which should not take more than fifteen minutes to complete. It uses the ``baby talk'' principle --- you imitate what you see and explore it by making slight changes. If you complete one lesson a day, within several weeks you will have a good foundation with \LaTeXe{}, and begin to see how the things I just wrote are true.
+    \paragraph{How does this introduction work?}Each ``lesson'' consists of the introduction of a few commands, some text to copy, paste, and compile, and a couple of questions. Ech lesson should not take more than fifteen minutes to complete. It uses the ``baby talk'' principle --- you imitate what you see and explore it by making slight changes. If you complete one lesson a day, within several weeks you will have a good foundation with \LaTeXe{}, and begin to create professional quality documents. You will also see how the things I wrote in the preceding paragraph are true.
 
-	\include{document-basics}
+    \include{document-basics}
 
     \section*{\LaTeXe{} is \textit{Professional}}
 
-	\LaTeXe{} is flexible to an extreme. You can customize every part of your document. However, its authors have spent much time and effort to ensure that it gives a professional appearance ``out of the box.'' This short tutorial does not cover customization. After you have created and compiled several dozen \texttt{.tex} files, you will begin to see the need for customization.\footnote{The first thing you may want to do is to change the page margins. An easy way to change page margins is to use the \texttt{geometry} package.} Unless you have special requirements, such as page margins, paragraph spacing, and page page numbers, and you are happy with the appearance of your document, you do not need to think about customization.
+    \LaTeXe{} is flexible to an extreme. You can customize every part of your document. However, its authors have spent much time and effort to ensure that it gives a professional appearance ``out of the box.'' This short tutorial does not cover customization. After you have created and compiled several dozen \texttt{.tex} files, you will begin to see the need for customization.\footnote{The first thing you may want to do is to change the page margins. An easy way to change page margins is to use the \texttt{geometry} package.} Unless you have special requirements, such as page margins, paragraph spacing, and page page numbers, and you are happy with the appearance of your document, you do not need to think about customization.
 
-	\include{math-symbols}
+    \include{math-symbols}
 
     \section*{\LaTeXe{} is \textit{Well Documented}}
 
-	\include{references}
+    \include{references}
 
     \section*{\LaTeXe{} is \textit{Well Documented}}
 
@@ -78,8 +79,8 @@
 %        \paragraph{Exercise:}
 
 
-    \section{Lists}
-    \label{Lists}
+
+    \include{lists}
 
 
     \section{Tables}
@@ -92,22 +93,22 @@
     \section{Conclusion}
     \label{Conclusion}
 
-	\newpage{}
+    \newpage{}
 
-	\appendix{}
+    \appendix{}
 
-	\section{Installing \LaTeXe}
-	\label{Installing}
-
-
-	\section{Development Environments}
-	\label{Development Environments}
+    \section{Installing \LaTeXe}
+    \label{Installing}
 
 
-	\section{Command Line Execution}
-	\label{Command Line}
+    \section{Development Environments}
+    \label{Development Environments}
 
-	\theendnotes{}
-	\addcontentsline{toc}{section}{Endnotes}
+
+    \section{Command Line Execution}
+    \label{Command Line}
+
+    \theendnotes{}
+    \addcontentsline{toc}{section}{Endnotes}
 
 \end{document}

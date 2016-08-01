@@ -1,12 +1,12 @@
 %references.tex
-	
-	\section{References}
-	\label{References}
+    
+    \section{References}
+    \label{References}
 
-	In scientific and research writing, one of the most critical aspects is references. Think about it: can you imagine a research paper without a single reference? These include footnotes, endnotes, marginal notes, and especially citations to sources. References have two components, a target and a source, or a label and a reference to that label. We have used labels before, but now we will expicitly consider them.
+    In scientific and research writing, one of the most critical aspects is references. Think about it: can you imagine a research paper without a single reference? These include footnotes, endnotes, marginal notes, and especially citations to sources. References have two components, a target and a source, or a label and a reference to that label. We have used labels before, but now we will expicitly consider them.
 
-	\subsection{Footnotes}
-	\label{Footnotes}
+    \subsection{Footnotes}
+    \label{Footnotes}
 
         \begin{framed}
             \begin{itemize}
@@ -17,7 +17,7 @@
             \end{itemize}
         \end{framed}
 
-	To insert a footnote, just use the command \text{footnote}.\footnote{\label{references:fn}Don't forget to put the \textbackslash{} before the \texttt{footnote} command.} If you label the footnote, you can refer to the footnote by number and page in the text of the doucumemt. Please be sure to read footnote \ref{references:fn} on page \pageref{references:fn}.
+    To insert a footnote, just use the command \text{footnote}.\footnote{\label{references:fn}Don't forget to put the \textbackslash{} before the \texttt{footnote} command.} If you label the footnote, you can refer to the footnote by number and page in the text of the doucumemt. Please be sure to read footnote \ref{references:fn} on page \pageref{references:fn}.
 
         \begin{verbatim}
 \documentclass{article}
@@ -26,18 +26,18 @@
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-	To insert a footnote, just use the command \text{footnote}.\footnote{\label{references:fn}
-	Don't forget to put the \textbackslash{} before the \texttt{footnote} command.} If you 
-	label the footnote, you can refer to the footnote by number and page in the text of the
-	doucumemt. Please be sure to read footnote \ref{references:fn} on page 
-	\pageref{references:fn}.
+    To insert a footnote, just use the command \text{footnote}.\footnote{\label{references:fn}
+    Don't forget to put the \textbackslash{} before the \texttt{footnote} command.} If you 
+    label the footnote, you can refer to the footnote by number and page in the text of the
+    doucumemt. Please be sure to read footnote \ref{references:fn} on page 
+    \pageref{references:fn}.
 \end{document}    
         \end{verbatim}
 
         \paragraph{Exercise:} Read the \LaTeXe{} documentation on footnotes.
 
-	\subsection{Endnotes}
-	\label{Endnotes}
+    \subsection{Endnotes}
+    \label{Endnotes}
         
         \begin{framed}
             \begin{itemize}
@@ -48,38 +48,83 @@
             \end{itemize}
         \end{framed}
 
-	Endnotes are a little more complicated than footnotes, but not much.\endnote{The difference between footnotes and endnotes is that footnotes go at the foot of the page where they appear, whilc endnotes appear at the end of the document.} Here is an endnote.\endnote{This is an endnote.} In order to actually print the endnotes, use the \texttt{theendnotes} command. In order to create an entry for the endnotes in the table of contents, you must use the \texttt{addcontentsline}.\endnote{\label{references:en}The addcontentsline takes three parameters, where the line should be written, usually \textit{toc}, the formatting to be used, usually \textit{section}, and the name to be given to the entry, perhaps \textit{Endnotes}.} Please see endnote \ref{references:en} on page \pageref{references:en} for the details.
+    Endnotes are a little more complicated than footnotes, but not much.\endnote{The difference between footnotes and endnotes is that footnotes go at the foot of the page where they appear, whilc endnotes appear at the end of the document.} Here is an endnote.\endnote{This is an endnote.} In order to actually print the endnotes, use the \texttt{theendnotes} command. In order to create an entry for the endnotes in the table of contents, you must use the \texttt{addcontentsline}.\endnote{\label{references:en}The addcontentsline takes three parameters, where the line should be written, usually \textit{toc}, the formatting to be used, usually \textit{section}, and the name to be given to the entry, perhaps \textit{Endnotes}.} Please see endnote \ref{references:en} on page \pageref{references:en} for the details.
 
         \begin{verbatim}
 \documentclass{article}
-	\usepackage{endnotes}
+    \usepackage{endnotes}
     \title{Endnotes}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-	\tableofcontents{}
-	\section{Text}
-	Endnotes are a little more complicated than footnotes, but not much.\endnote{The 
-	difference between footnotes and endnotes is that footnotes go at the foot of 
-	the page where they appear, whilc endnotes appear at the end of the document.} 
-	Here is an endnote.\endnote{This is an endnote.} In order to actually print 
-	the endnotes, use the \texttt{theendnotes} command. In order to create an 
-	entry for the endnotes in the table of contents, you must use the \texttt{addcontentsline}.
-	\endnote{\label{references:en}The addcontentsline takes three parameters, 
-	where the line should be written, usually \textit{toc}, the formatting to be 
-	used, usually \textit{section}, and the name to be given to the entry, perhaps 
-	\textit{Endnotes}.} Please see endnote \ref{references:en} on page 
-	\pageref{references:en} for the details.
-	\theendnotes{}
-	\addcontentsline{toc}{section}{Endnotes}
+    \tableofcontents{}
+    \section{Text}
+    Endnotes are a little more complicated than footnotes, but not much.\endnote{The 
+    difference between footnotes and endnotes is that footnotes go at the foot of 
+    the page where they appear, whilc endnotes appear at the end of the document.} 
+    Here is an endnote.\endnote{This is an endnote.} In order to actually print 
+    the endnotes, use the \texttt{theendnotes} command. In order to create an 
+    entry for the endnotes in the table of contents, you must use the \texttt{addcontentsline}.
+    \endnote{\label{references:en}The addcontentsline takes three parameters, 
+    where the line should be written, usually \textit{toc}, the formatting to be 
+    used, usually \textit{section}, and the name to be given to the entry, perhaps 
+    \textit{Endnotes}.} Please see endnote \ref{references:en} on page 
+    \pageref{references:en} for the details.
+    \theendnotes{}
+    \addcontentsline{toc}{section}{Endnotes}
 \end{document}    
         \end{verbatim}
 
         \paragraph{Exercise:} Find and read through the documentation of the Endnotes package.
 
-	\subsection{Margin Notes}
-	\label{Margin Notes}
+    \subsection{Margin notes}
+    \label{Margin notes}
+
+        \begin{framed}
+            \begin{itemize}
+                \item{marginpar}
+                \item{reversemarginpar}
+                \item{normalmarginpar}
+                \item{raggedright}
+            \end{itemize}
+        \end{framed}
+
+        \marginpar{Important point!}
+
+        Marginal notes are really useful to call attention to very important points.  They can also be useful in drafting documents to note future edits, insertions, or deletions. Use \texttt{marginpar} to create a marginal note. To delete marginal notes during the drafting process, just comment them out. The text remains as a reminder of the modifications in the document.
+
+        {\raggedright\reversemarginpar{\marginpar{This is reversed text}}}
+
+        To permanantly reverse the page sides. use \texttt{reversemarginpar}. To reverse the reverse page margins, use \texttt{normalmarginpar}. To change the paragraph alignment from the default justified text, use the command \texttt{raggedright} in a block.
+
+        {\raggedright\normalmarginpar\marginpar{This is in the correct margim}}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Margin Notes}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+        \marginpar{Important point!}
+        Marginal notes are really useful to call attention to very important 
+        points.  They can also be useful in drafting documents to note 
+        future edits, insertions, or deletions. Use \texttt{marginpar} 
+        to create a marginal note. To delete marginal notes during the 
+        drafting process, just comment them out. The text remains as a 
+        reminder of the modifications in the document.
+        {\raggedright\reversemarginpar{\marginpar{This is reversed text}}}
+        To permanantly reverse the page sides. use \texttt{reversemarginpar}.
+        To reverse the reverse page margins, use \texttt{normalmarginpar}.
+        {\raggedright\normalmarginpar\marginpar{This is in the correct margim}}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} If you really need to create sophisticated marginal notes, you will need both the \texttt{geometry} and \texttt{marginnote} packages. The former is very useful, and you may need to use it in every paper. The latter is useful for marginal notes when you need something more than the default \LaTeXe{} commands.
+
+    \subsection{Bibliography}
+    \label{Bibliography}
 
 %        \subsection{}
 %        \label{}
@@ -111,8 +156,8 @@
 %
 %        \paragraph{Exercise:}
 
-	\subsection{Bibliography}
-	\label{Bibliography}
+    \subsection{Citations}
+    \label{Citations}
 
 %        \subsection{}
 %        \label{}
@@ -144,41 +189,8 @@
 %
 %        \paragraph{Exercise:}
 
-	\subsection{Citations}
-	\label{Citations}
-
-%        \subsection{}
-%        \label{}
-%        
-%        \begin{framed}
-%            \begin{itemize}
-%                \item{}
-%            \end{itemize}
-%        \end{framed}
-%
-%
-%        \begin{verbatim}
-%\documentclass{article}
-%    \title{This is My Title}
-%    \author{Charles Carter}
-%    \date{\today{}}
-%\begin{document} 
-%    \maketitle{}
-%    \section{Introduction}
-%    \label{Introduction}
-%    \section{Body}
-%    \label{Body}
-%    \section{Conclusion}
-%    \label{Conclusion}
-%\end{document}    
-%        \end{verbatim}
-%
-%        \paragraph{Exercise:}
-%
-%        \paragraph{Exercise:}
-
-	\subsection{Indices}
-	\label{Indices}
+    \subsection{Indices}
+    \label{Indices}
 
 %        \subsection{}
 %        \label{}
