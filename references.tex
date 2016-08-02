@@ -126,35 +126,87 @@
     \subsection{Bibliography}
     \label{Bibliography}
 
-%        \subsection{}
-%        \label{}
-%        
-%        \begin{framed}
-%            \begin{itemize}
-%                \item{}
-%            \end{itemize}
-%        \end{framed}
-%
-%
-%        \begin{verbatim}
-%\documentclass{article}
-%    \title{This is My Title}
-%    \author{Charles Carter}
-%    \date{\today{}}
-%\begin{document} 
-%    \maketitle{}
-%    \section{Introduction}
-%    \label{Introduction}
-%    \section{Body}
-%    \label{Body}
-%    \section{Conclusion}
-%    \label{Conclusion}
-%\end{document}    
-%        \end{verbatim}
-%
-%        \paragraph{Exercise:}
-%
-%        \paragraph{Exercise:}
+        \begin{framed}
+            \begin{itemize}
+                \item{creating an external \bib{} database}
+            \end{itemize}
+        \end{framed}
+
+    Needless to say, every research paper requires a bibliography. \LaTeXe{} has multiple ways to include bibliographies. I have chosen to use a method called \bib{}. There are three reasons for this choice. First. it's simple enough to include in a simple tutorial. Second, it gives good results using its default settings. Third, it's complex enough to be configured for almost any application (given an author's time and patience).
+
+    \bib{} uses an external file as a bibliographical database. This means that management of the sources is separate from writing and editing the original document. The data from the external database is meerged into the original document with a series of commands. We will cover the basics of the external database in this lesson. In the following lesson, we will see how to merge the two files.
+
+    The external \bib{} database is merely a plain text file with entries in a prescribed format. It \textit{must} have the \texttt{.bib} extension for the filename. The following file includes four books and three online sources. The \bib format file contains specifications for a large number of types of sources, and you should become familiar with the various types of documents and the format for each.    
+
+    Create a document with the following content. Name it \texttt{tut.bib} and place it in the same directory with your original source document, where you compile your PDF output. Each entry has a type identifier followed by a curly brace pair (\{\ldots{}\}), within which are contained various fields separated by commas. The first field is the identifier you will use to access the entry. The subsequent fields are ``key''=``value'' pairs, giving the title, author, date etc.
+    
+        \begin{verbatim}
+\\tut.bib
+@book{
+    goossens04,
+    author    =  {Frank Mittelbach and 
+        Michel Goossens and 
+        Johannes Braams and 
+        David Carlisle and 
+        Chris Rowley},
+    title     = {The \LaTeX{} Companion (Tools and Techniques for Computer Typesetting)},
+    year      = {2004},
+    edition =2nd},
+    publisher = {Addison-Wesley},
+    address   = {Reading, MA}
+    ISBN      = {978-0201362992}
+}
+@book{
+    kottwitz11,
+    author    = {Stefan Kottwitz },
+    title     = {\LaTeX{} Beginner's Guide},
+    year      = {2011},
+    publisher = {Packt Publishing},
+    address   = {Birmingham, UK},
+    ISBN      = {978-1847199867}
+}
+@book{
+    kottwitz15,
+    author    = {Stefan Kottwitz },
+    title     = {\LaTeX{} Cookbook},
+    year      = {2015},
+    publisher = {Packt Publishing},
+    address   = {Birmingham, UK},
+    ISBN      = { 978-1784395148}
+}
+@book{
+    gratzer14,
+    author    = {George Gr{\''a}tzer},
+    title     = {Practical \LaTeX{}},
+    year      = {2014},
+    publisher = {Springer},
+    address   = {New York, NY},
+    ISBN      = {978-1847199867}
+}
+@misc{oetiker15,
+  author = {Tobias Oetiker and Hubert Partl and Irene Hyna and Elisabeth Schlegl},
+  title = {The Not So Short Introduction to \LaTeXe{}},
+  howpublished = "\url{http://tug.ctan.org/info/lshort/english/lshort.pdf}",
+  year = {2015}, 
+  note = "[Online; accessed August 2, 2016]"
+}
+@misc{pakin15,
+  author = {Scott Pakin},
+  title = {PThe Comprehensive LATEX Symbol List},
+  howpublished = "\url{http://tug.ctan.org/info/symbols/comprehensive/symbols-letter.pdf}",
+  year = {2015}, 
+  note = "[Online; accessed August 2, 2016]"
+}
+@misc{carter16,
+  author = {Charles Carter},
+  title = {Another Short Tutorial to \LaTeXe{}},
+  howpublished = "\url{https://github.com/ccc31807/latex-short-intro}",
+  year = {2016}, 
+  note = "[Online; accessed August 2, 2016]"
+}
+        \end{verbatim}
+
+        \paragraph{Exercise:} Search for the \bib{} format specification. Name four different kinds of source documents and identifies the required elements for each.
 
     \subsection{Citations}
     \label{Citations}

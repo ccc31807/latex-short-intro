@@ -44,7 +44,7 @@
             \end{itemize}
         \end{framed}
 
-        A basic document usually has a title and author information in the preamble. Create and compile a second document like this:        
+        A basic document usually title and author information in the preamble. You specify the title with the \texttt{title} command. You specify the author(s) with the \texttt{author} command. You may optionally specify a date with the \texttt{date} command. In the body of the document, you create the title with the \texttt{maketitle} command. Create and compile a second document like this:        
 
         \begin{verbatim}
 \documentclass{article}
@@ -166,7 +166,7 @@ by the people, for the people, shall not perish from the earth.
             \end{itemize}
         \end{framed}
 
-Much of \LaTeXe{} functionality is contained in external packages. To use this functionality, you include the command \texttt{usepackage\{\}} in the preamble. Of course, you first have to install the package on your computer, but the MiKTeX distribution does that automatically. The \texttt{lipsum} package generates generic text (in Latin, of course). The \texttt{lipsum\{\}} command generates text. Notice that you can control the number of paragraphs to include. Below, I hgave included paragraph $1$ in the introduction, paragraphs $2$ through $4$ in the body, and paragraph $5$ in the conclusion.
+Much of \LaTeXe{} functionality is contained in external packages. To use this functionality, you include the command \texttt{usepackage\{\}} in the preamble. Of course, you first have to install the package on your computer, but the MiKTeX distribution does that automatically. The \texttt{lipsum} package generates generic text (in Latin, of course). The \texttt{lipsum\{\}} command generates text. Notice that you can control the number of paragraphs to include. Below, I have included paragraph $1$ in the introduction, paragraphs $2$ through $4$ in the body, and paragraph $5$ in the conclusion.
 
 Notice the paragraph indentation. First paragraphs are \textit{not} indented. Following paragraphs \textit{are} indented. This is normal typographic practice.
 

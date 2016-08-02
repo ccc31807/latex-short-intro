@@ -3,6 +3,37 @@
 	\section{Lists}
 	\label{Lists}
 
+        \subsection{Verbatim}
+        \label{Verbatim}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{verbatim environment}
+            \end{itemize}
+        \end{framed}
+
+    Perhaps the simplest and easiest way to make a list is by using the \texttt{verbatim} environment. Everything in the environment is printed as is, that is, \LaTeXe{} commands are not evaluated.
+
+        \begin{realverbatim}
+\documentclass{article}
+    \title{Verbtim Environment}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Verbatim Environment}
+    \begin{verbatim}
+        \texttt{one}
+        \textit{two}
+        \textsf{three}
+        \huge{aye}
+        \tiny{bee}
+        \section{see}
+    \end{verbatim}
+\end{document}    
+        \end{realverbatim}
+
+        \paragraph{Exercise:} The only command not permitted in the \texttt{verbatim} environment is the \texttt{\textbackslash{}end\{verbatim\}} command. The reason is that this command ends the verbatim environment. If you examine the source of this tutorial, you will see that I resorted to a trick to include this command. As an exercise, can you figure out the trick?
 
         \subsection{Unordered Lists}
         \label{Unordered Lists}

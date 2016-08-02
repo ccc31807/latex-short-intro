@@ -10,6 +10,13 @@
 \usepackage{hyperref}
 \usepackage{endnotes}
 
+%this is a trick to prent "\end{verbatim}" in a verbatim environment
+\usepackage{verbatim}
+\newenvironment{realverbatim}{\verbatim}{\endverbatim}
+
+%new commands
+\newcommand{\bib}{Bib\TeX}
+
 %\includeonly{math-symbols}
 
 \title{Another Short Tutorial for \LaTeXe}
@@ -33,7 +40,7 @@
 
     \paragraph{How does this introduction work?}Each ``lesson'' consists of the introduction of a few commands, some text to copy, paste, and compile, and a couple of questions. Ech lesson should not take more than fifteen minutes to complete. It uses the ``baby talk'' principle --- you imitate what you see and explore it by making slight changes. If you complete one lesson a day, within several weeks you will have a good foundation with \LaTeXe{}, and begin to create professional quality documents. You will also see how the things I wrote in the preceding paragraph are true.
 
-    \paragraph{}Please note that this tutorial \textit{is not} a \LaTeXe{} reference; you will need to find a good reference that details the options and arguments for each command. It's also not a user guide. Nor is it a full introduction to \LaTeXe{}, although it will introduce it to students not previously familier with it. It gives an ideosyncratic view of \LaTeX3{} (my own). It promises only to be short, easy, and useful, not long-winded or difficult, even if it does omit some necessary details. 
+    \paragraph{}Please note that this tutorial \textit{is not} a \LaTeXe{} reference; you will need to find a good reference that details the options and arguments for each command. It's also not a user guide. Nor is it a full introduction to \LaTeXe{}, although it will introduce it to students not previously familier with it. It gives an ideosyncratic view of \LaTeXe{} (my own). It promises only to be short, easy, and useful, not long-winded or difficult, even if it does omit some necessary details. 
 
     \include{document-basics}
 
@@ -47,7 +54,7 @@
 
     \include{references}
 
-    \section*{\LaTeXe{} is \textit{Well Documented}}
+    \section*{\LaTeXe{} is \textit{Stable}}
 
 
 %        \subsection{}
@@ -84,12 +91,13 @@
 
     \include{lists}
 
+    \section*{\LaTeXe{} is \textit{Easy}}
 
     \include{tables}
 
+    \section*{\LaTeXe{} is \textit{Free}}
 
-    \section{Images}
-    \label{Images}
+    \include{images}
 
     \section{Conclusion}
     \label{Conclusion}
