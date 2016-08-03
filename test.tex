@@ -1,17 +1,23 @@
 \documentclass{article}
-    \title{Verbtim Environment}
+    \title{Bibliography}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-    \begin{verbatim}
-        \texttt{one}
-        \textit{two }
-        \textsf{three }
-        \huge{aye}
-        \tiny{bee}
-        \section{see}
-    \end{verbatim}
+    \tableofcontents{}
+    \section{Introduction}
+    \label{inTroduction}
+    This section cites \cite{goossens04} and \cite{oetiker15}.
+    \section{Body}
+    \label{Body}
+    This section cites \cite{kottwitz15} and \cite{pakin15}.
+    \section{Conclusion}
+    This section contains no citations.
+    \label{Conclusion}
+    \bibliographystyle{IEEEtranS}    
+    \bibliography{tut}
+    \addcontentsline{toc}{section}{References}
+    \nocite{*}
 \end{document}    
 
 

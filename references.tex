@@ -134,75 +134,74 @@
 
     Needless to say, every research paper requires a bibliography. \LaTeXe{} has multiple ways to include bibliographies. I have chosen to use a method called \bib{}. There are three reasons for this choice. First. it's simple enough to include in a simple tutorial. Second, it gives good results using its default settings. Third, it's complex enough to be configured for almost any application (given an author's time and patience).
 
-    \bib{} uses an external file as a bibliographical database. This means that management of the sources is separate from writing and editing the original document. The data from the external database is meerged into the original document with a series of commands. We will cover the basics of the external database in this lesson. In the following lesson, we will see how to merge the two files.
+    \bib{} uses an external file as a bibliographical database. This means that management of the sources is separate from writing and editing the original document. The data from the external database is merged into the original document with a series of commands. We will cover the basics of the external database in this lesson. In the following lesson, we will see how to merge the two files.
 
-    The external \bib{} database is merely a plain text file with entries in a prescribed format. It \textit{must} have the \texttt{.bib} extension for the filename. The following file includes four books and three online sources. The \bib format file contains specifications for a large number of types of sources, and you should become familiar with the various types of documents and the format for each.    
+    The external \bib{} database is merely a plain text file with entries in a prescribed format. It \textit{must} have the \texttt{.bib} extension for the filename. The following file includes four books and three online sources. The \bib{} format file contains specifications for a large number of types of sources, and you should become familiar with the various types of documents and the format for each.    
 
-    Create a document with the following content. Name it \texttt{tut.bib} and place it in the same directory with your original source document, where you compile your PDF output. Each entry has a type identifier followed by a curly brace pair (\{\ldots{}\}), within which are contained various fields separated by commas. The first field is the identifier you will use to access the entry. The subsequent fields are ``key''=``value'' pairs, giving the title, author, date etc.
+    Create a document with the following content. Name it \texttt{tut.bib} and place it in the same directory with your original source document, where you compile your PDF output. Each entry has a type identifier preceded by the at symbol (@) and followed by a curly brace pair (\{\ldots{}\}), within which are contained various fields separated by commas. The first field is the identifier you will use to access the entry. The subsequent fields are ``key''=``value'' pairs, giving the title, author, date etc.
     
         \begin{verbatim}
 \\tut.bib
 @book{
     goossens04,
-    author    =  {Frank Mittelbach and 
-        Michel Goossens and 
-        Johannes Braams and 
-        David Carlisle and 
-        Chris Rowley},
-    title     = {The \LaTeX{} Companion (Tools and Techniques for Computer Typesetting)},
-    year      = {2004},
-    edition =2nd},
-    publisher = {Addison-Wesley},
-    address   = {Reading, MA}
-    ISBN      = {978-0201362992}
+    author    =  "Frank Mittelbach and Michel Goossens and Johannes Braams and David Carlisle and Chris Rowley",
+    title     = "The \LaTeX{} Companion (Tools and Techniques for Computer Typesetting)",
+    year      = "2004",
+    edition   = "2nd",
+    publisher = "Addison-Wesley",
+    address   = "Reading, MA",
+    ISBN      = "978-0201362992"
 }
 @book{
     kottwitz11,
-    author    = {Stefan Kottwitz },
-    title     = {\LaTeX{} Beginner's Guide},
-    year      = {2011},
-    publisher = {Packt Publishing},
-    address   = {Birmingham, UK},
-    ISBN      = {978-1847199867}
+    author    = "Stefan Kottwitz ",
+    title     = "\LaTeX{} Beginner's Guide",
+    year      = "2011",
+    publisher = "Packt Publishing",
+    address   = "Birmingham, UK",
+    ISBN      = "978-1847199867"
 }
 @book{
     kottwitz15,
-    author    = {Stefan Kottwitz },
-    title     = {\LaTeX{} Cookbook},
-    year      = {2015},
-    publisher = {Packt Publishing},
-    address   = {Birmingham, UK},
-    ISBN      = { 978-1784395148}
+    author    = "Stefan Kottwitz ",
+    title     = "\LaTeX{} Cookbook",
+    year      = "2015",
+    publisher = "Packt Publishing",
+    address   = "Birmingham, UK",
+    ISBN      = " 978-1784395148"
 }
 @book{
     gratzer14,
-    author    = {George Gr{\''a}tzer},
-    title     = {Practical \LaTeX{}},
-    year      = {2014},
-    publisher = {Springer},
-    address   = {New York, NY},
-    ISBN      = {978-1847199867}
+    author    = "George Gratzer",
+    title     = "Practical \LaTeX{}",
+    year      = "2014",
+    publisher = "Springer",
+    address   = "New York, NY",
+    ISBN      = "978-1847199867"
 }
-@misc{oetiker15,
-  author = {Tobias Oetiker and Hubert Partl and Irene Hyna and Elisabeth Schlegl},
-  title = {The Not So Short Introduction to \LaTeXe{}},
-  howpublished = "\url{http://tug.ctan.org/info/lshort/english/lshort.pdf}",
-  year = {2015}, 
-  note = "[Online; accessed August 2, 2016]"
+@electronic{
+  oetiker15,
+  author = "Tobias Oetiker and Hubert Partl and Irene Hyna and Elisabeth Schlegl",
+  title = "The Not So Short Introduction to {LaTeX2e}",
+  url   = "http://tug.ctan.org/info/lshort/english/lshort.pdf",
+  year = "2015", 
+  note = "accessed August 2, 2016"
 }
-@misc{pakin15,
-  author = {Scott Pakin},
-  title = {PThe Comprehensive LATEX Symbol List},
-  howpublished = "\url{http://tug.ctan.org/info/symbols/comprehensive/symbols-letter.pdf}",
-  year = {2015}, 
-  note = "[Online; accessed August 2, 2016]"
+@electronic{
+  pakin15,
+  author = "Scott Pakin",
+  title = "The Comprehensive {LATEX} Symbol List",
+  url =   "http://tug.ctan.org/info/symbols/comprehensive/symbols-letter.pdf",
+  year = "2015", 
+  note = "accessed August 2, 2016"
 }
-@misc{carter16,
-  author = {Charles Carter},
-  title = {Another Short Tutorial to \LaTeXe{}},
-  howpublished = "\url{https://github.com/ccc31807/latex-short-intro}",
-  year = {2016}, 
-  note = "[Online; accessed August 2, 2016]"
+@electronic{
+  carter16,
+  author = "Charles Carter",
+  title = "Another Short Tutorial to {LaTeX2e}",
+  url = "https://github.com/ccc31807/latex-short-intro",
+  year = "2016", 
+  note = "accessed August 2, 2016"
 }
         \end{verbatim}
 
@@ -210,36 +209,50 @@
 
     \subsection{Citations}
     \label{Citations}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{cite}
+                \item{nocite}
+                \item{bibliographystyle}
+                \item{bibliography}
+                \item{addcontentsline}
+            \end{itemize}
+        \end{framed}
 
-%        \subsection{}
-%        \label{}
-%        
-%        \begin{framed}
-%            \begin{itemize}
-%                \item{}
-%            \end{itemize}
-%        \end{framed}
-%
-%
-%        \begin{verbatim}
-%\documentclass{article}
-%    \title{This is My Title}
-%    \author{Charles Carter}
-%    \date{\today{}}
-%\begin{document} 
-%    \maketitle{}
-%    \section{Introduction}
-%    \label{Introduction}
-%    \section{Body}
-%    \label{Body}
-%    \section{Conclusion}
-%    \label{Conclusion}
-%\end{document}    
-%        \end{verbatim}
-%
-%        \paragraph{Exercise:}
-%
-%        \paragraph{Exercise:}
+        Preparing the bibliographic database is fairly straightforward and easy. Unfortunately, the details of including the citations in your document is not as straightforward.\footnote{Again, you must pay attention to the reference types and required fields. This is probably the most onerous part of including a bibliograpy.} To cite to a reference, use the \texttt{cite} command, passing the citation reference as an argument. By default, the printed bibliography includes only cited references --- to include a particular uncited reference, use the \texttt{mnocite} command, passing the citation reference as an argument. To include all uncited references, use the command \texttt{nocite\{*\}}. (The asterisk is a typeglob that means ``everything'').
+
+        To specify a citation style, use the command \texttt{bibliographystyle}. As you will see when you study the different styles, there are many of them. Adding to the amount of effort of work potentially involved, you can write your own style specification if you don't want to use any that are available. In the example below, I have used the \textit{IEEEtranS} style. This will probably not meet your needs. You will have to find an appropriate style for your requirements.
+
+        To include the bibliography itself, use the command \texttt{bibliography}. To add your references to the table of contents, use the command \texttt{addcontentsline}. To compile your bibliography using the command line interface, see appendix \ref{Command Line} on page \pageref{Command Line}.
+        
+        \begin{verbatim}
+\documentclass{article}
+    \title{Bibliography}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \tableofcontents{}
+    \section{Introduction}
+    \label{inTroduction}
+    This section cites \cite{goossens04} and \cite{oetiker15}.
+    \section{Body}
+    \label{Body}
+    This section cites \cite{kottwitz15} and \cite{pakin15}.
+    \section{Conclusion}
+    This section contains no citations.
+    \label{Conclusion}
+    \bibliographystyle{IEEEtranS}    
+    \bibliography{tut}
+    \addcontentsline{toc}{section}{References}
+    \nocite{*}
+\end{document}le
+        \end{verbatim}
+
+        \paragraph{Exercise:} \bib provides many different kinds of styles. Research three of them.
+
+        \paragraph{Exercise:} Every style has required fields and optional fields. For the three styles you researched, list the required fields and the optional fields.
 
     \subsection{Indices}
     \label{Indices}
