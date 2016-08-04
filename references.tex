@@ -14,6 +14,10 @@
                 \item{label}
                 \item{ref}
                 \item{pageref}
+                \index{footnote}
+                \index{label}
+                \index{ref}
+                \index{pageref}
             \end{itemize}
         \end{framed}
 
@@ -26,10 +30,12 @@
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-    To insert a footnote, just use the command \text{footnote}.\footnote{\label{references:fn}
-    Don't forget to put the \textbackslash{} before the \texttt{footnote} command.} If you 
-    label the footnote, you can refer to the footnote by number and page in the text of the
-    doucumemt. Please be sure to read footnote \ref{references:fn} on page 
+    To insert a footnote, just use the command \text{footnote}.
+    \footnote{\label{references:fn} Don't forget to put the 
+    \textbackslash{} before the \texttt{footnote} command.} 
+    If you label the footnote, you can refer to the footnote 
+    by number and page in the text of the doucumemt. Please 
+    be sure to read footnote \ref{references:fn} on page 
     \pageref{references:fn}.
 \end{document}    
         \end{verbatim}
@@ -41,6 +47,10 @@
         
         \begin{framed}
             \begin{itemize}
+                \index{package endnotes}
+                \index{endnote}
+                \index{theendnotes}
+                \index{addcontentsline}
                 \item{package endnotes}
                 \item{endnote}
                 \item{theendnotes}
@@ -60,17 +70,19 @@
     \maketitle{}
     \tableofcontents{}
     \section{Text}
-    Endnotes are a little more complicated than footnotes, but not much.\endnote{The 
-    difference between footnotes and endnotes is that footnotes go at the foot of 
-    the page where they appear, whilc endnotes appear at the end of the document.} 
-    Here is an endnote.\endnote{This is an endnote.} In order to actually print 
-    the endnotes, use the \texttt{theendnotes} command. In order to create an 
-    entry for the endnotes in the table of contents, you must use the \texttt{addcontentsline}.
-    \endnote{\label{references:en}The addcontentsline takes three parameters, 
-    where the line should be written, usually \textit{toc}, the formatting to be 
-    used, usually \textit{section}, and the name to be given to the entry, perhaps 
-    \textit{Endnotes}.} Please see endnote \ref{references:en} on page 
-    \pageref{references:en} for the details.
+    Endnotes are a little more complicated than footnotes, but not much.
+    \endnote{The difference between footnotes and endnotes is that 
+    footnotes go at the foot of the page where they appear, whilc 
+    endnotes appear at the end of the document.} Here is an 
+    endnote.\endnote{This is an endnote.} In order to actually print 
+    the endnotes, use the \texttt{theendnotes} command. In order to 
+    create an entry for the endnotes in the table of contents, you 
+    must use the \texttt{addcontentsline}.  \endnote{\label{references:en}
+    The addcontentsline takes three parameters, where the line should be 
+    written, usually \textit{toc}, the formatting to be used, usually 
+    \textit{section}, and the name to be given to the entry, perhaps 
+    \textit{Endnotes}.} Please see endnote \ref{references:en} on 
+    page \pageref{references:en} for the details.
     \theendnotes{}
     \addcontentsline{toc}{section}{Endnotes}
 \end{document}    
@@ -83,6 +95,10 @@
 
         \begin{framed}
             \begin{itemize}
+                \index{marginpar}
+                \index{reversemarginpar}
+                \index{normalmarginpar}
+                \index{raggedright}
                 \item{marginpar}
                 \item{reversemarginpar}
                 \item{normalmarginpar}
@@ -129,6 +145,7 @@
         \begin{framed}
             \begin{itemize}
                 \item{creating an external \bib{} database}
+                \index{creating an external \bib{} database}
             \end{itemize}
         \end{framed}
 
@@ -144,8 +161,11 @@
 \\tut.bib
 @book{
     goossens04,
-    author    =  "Frank Mittelbach and Michel Goossens and Johannes Braams and David Carlisle and Chris Rowley",
-    title     = "The \LaTeX{} Companion (Tools and Techniques for Computer Typesetting)",
+    author    =  "Frank Mittelbach and Michel Goossens and 
+        Johannes Braams and David Carlisle and 
+        Chris Rowley",
+    title     = "The \LaTeX{} Companion (Tools and 
+    `Techniques for Computer Typesetting)",
     year      = "2004",
     edition   = "2nd",
     publisher = "Addison-Wesley",
@@ -217,6 +237,13 @@
                 \item{bibliographystyle}
                 \item{bibliography}
                 \item{addcontentsline}
+                \item{bibtex}
+                \index{cite}
+                \index{nocite}
+                \index{bibliographystyle}
+                \index{bibliography}
+                \index{addcontentsline}
+                \index{bibtex}
             \end{itemize}
         \end{framed}
 
@@ -224,7 +251,7 @@
 
         To specify a citation style, use the command \texttt{bibliographystyle}. As you will see when you study the different styles, there are many of them. Adding to the amount of effort of work potentially involved, you can write your own style specification if you don't want to use any that are available. In the example below, I have used the \textit{IEEEtranS} style. This will probably not meet your needs. You will have to find an appropriate style for your requirements.
 
-        To include the bibliography itself, use the command \texttt{bibliography}. To add your references to the table of contents, use the command \texttt{addcontentsline}. To compile your bibliography using the command line interface, see appendix \ref{Command Line} on page \pageref{Command Line}.
+        To include the bibliography itself, use the command \texttt{bibliography}. To add your references to the table of contents, use the command \texttt{addcontentsline}. To compile your bibliography using the command line interface, see appendix \ref{Command Line} on page \pageref{Command Line}.\footnote{If you compile your document using the command line, you must use the \texttt{bibtex <document name>} command in order to produce the bibliobaphy itself.}
         
         \begin{verbatim}
 \documentclass{article}
@@ -256,35 +283,55 @@
 
     \subsection{Indices}
     \label{Indices}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{package imakeidx}
+                \item{makeindex}
+                \item{index}
+                \item{printindex}
+                \item{addcontentsline}
+                \index{package imakeidx}
+                \index{makeindex}
+                \index{index}
+                \index{printindex}
+                \index{addcontentsline}
+            \end{itemize}
+        \end{framed}
 
-%        \subsection{}
-%        \label{}
-%        
-%        \begin{framed}
-%            \begin{itemize}
-%                \item{}
-%            \end{itemize}
-%        \end{framed}
-%
-%
-%        \begin{verbatim}
-%\documentclass{article}
-%    \title{This is My Title}
-%    \author{Charles Carter}
-%    \date{\today{}}
-%\begin{document} 
-%    \maketitle{}
-%    \section{Introduction}
-%    \label{Introduction}
-%    \section{Body}
-%    \label{Body}
-%    \section{Conclusion}
-%    \label{Conclusion}
-%\end{document}    
-%        \end{verbatim}
-%
-%        \paragraph{Exercise:}
-%
-%        \paragraph{Exercise:}
+    Any paper of a reasonable size should have an index. Fortunately, indices in \LaTeXe{} are easy if a bit tedious. The tedious part comes from marking all the words to be indexed. The rest is pretty easy.
 
+    First, in the preamble, you ust use an indexing package, the current version of which is \texttt{imakeidx} (perhaps for \textit{improved} makeidx) followed by the \texttt{makeindex} command. At the end of your paper, include the \texttt{printindex} command, optionally followed by the \texttt{addcontentsline} if you wish to have an entry in our table of contents for the index. 
 
+    Then, for every term you wish to index, you must make a reference using the \texttt{index} command. \LaTeXe produces the index automatically.\footnote{If you compile your document using the command line, you must use the \texttt{makeindex <document name>} command in order to produce the index itself.}
+
+        \begin{verbatim}
+\documentclass{article}
+    \usepackage{imakeidx}
+    \makeindex{}
+    \title{Indices}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \tableofcontents{}
+    \section{Introduction}
+    \label{inTroduction}
+    This section contains the indexed word introduction.\index{introduction}
+    \section{Body}
+    \label{Body}
+    \paragraph{}This paper concerns the structure\index{structure} of a paper.
+    \paragraph{}Papers generally consist of an introduction\index{introduction}, 
+        body\index{body|}, and conclusion\index{conclusion}.
+    \paragraph{}This is the body\index{body} of a paper.
+    \section{Conclusion}
+    This section contains the conclusion\index{conclusion}.
+    \label{Conclusion}
+    \printindex{}
+    \addcontentsline{toc}{section}{Index}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Find the documentation to the \texttt{imakeidx} package and read through it.
+
+        \paragraph{Exercise:} How can you generate multiple indices, perhaps one for people and one for commands?

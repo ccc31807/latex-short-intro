@@ -1,27 +1,30 @@
 \documentclass[letterpaper]{article}
 
-\usepackage{framed}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{mathtools}
-\usepackage{textcomp}
-\usepackage{lipsum}
-\usepackage[top=1in, bottom=1.5in, left=1.75in, right=1.75in]{geometry}
-\usepackage{hyperref}
-\usepackage{endnotes}
+    \usepackage{framed}
+    \usepackage{amsmath}
+    \usepackage{amsfonts}
+    \usepackage{mathtools}
+    \usepackage{textcomp}
+    \usepackage{lipsum}
+    \usepackage[top=1in, bottom=1.5in, left=1.75in, right=1.75in]{geometry}
+    \usepackage{hyperref}
+    \usepackage{endnotes}
 
-%this is a trick to print "\end{verbatim}" in a verbatim environment
-\usepackage{verbatim}
-\newenvironment{realverbatim}{\verbatim}{\endverbatim}
+    \usepackage{imakeidx}
+    \makeindex{}
 
-%new commands
-\newcommand{\bib}{Bib\TeX}
+    %this is a trick to print "\end{verbatim}" in a verbatim environment
+    \usepackage{verbatim}
+    \newenvironment{realverbatim}{\verbatim}{\endverbatim}
 
-%\includeonly{math-symbols}
+    %new commands
+    \newcommand{\bib}{Bib\TeX}
 
-\title{Another Short Tutorial for \LaTeXe}
-\author{Charles Carter}
-\date{\today{}}
+    %\includeonly{math-symbols}
+
+    \title{Another Short Tutorial for \LaTeXe}
+    \author{Charles Carter}
+    \date{\today{}}
 
 \begin{document}
 
@@ -114,5 +117,8 @@
     \bibliography{tut}
     \addcontentsline{toc}{section}{References}
     \nocite{*}
+
+    \addcontentsline{toc}{section}{Index}
+    \printindex{}
 
 \end{document}

@@ -1,5 +1,7 @@
 \documentclass{article}
-    \title{Bibliography}
+    \usepackage{imakeidx}
+    \makeindex{}
+    \title{Indices}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
@@ -7,17 +9,17 @@
     \tableofcontents{}
     \section{Introduction}
     \label{inTroduction}
-    This section cites \cite{goossens04} and \cite{oetiker15}.
+    This section contains the indexed word introduction.\index{introduction}
     \section{Body}
     \label{Body}
-    This section cites \cite{kottwitz15} and \cite{pakin15}.
+    \paragraph{}This paper concerns the structure\index{structure} of a paper.
+    \paragraph{}Papers generally consist of an introduction\index{introduction}, body\index{body|}, and conclusion\index{conclusion}.
+    \paragraph{}This is the body\index{body} of a paper.
     \section{Conclusion}
-    This section contains no citations.
+    This section contains the conclusion\index{conclusion}.
     \label{Conclusion}
-    \bibliographystyle{IEEEtranS}    
-    \bibliography{tut}
-    \addcontentsline{toc}{section}{References}
-    \nocite{*}
+    \addcontentsline{toc}{section}{Index}
+    \printindex{}
 \end{document}    
 
 
