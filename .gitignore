@@ -1,0 +1,8 @@
+*.aux
+*.log
+*~
+*.toc
+*.swp
+*.ent
+*.bbl
+*.blg
