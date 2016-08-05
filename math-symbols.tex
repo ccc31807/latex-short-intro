@@ -1,20 +1,28 @@
     \section{Math and Symbols}
     \label{Math}
 
-	Both \TeX{} and \LaTeXe{} shine when it comes to math. In fact, Donald Knuth originally wrote \TeX{} just so he could typeset math. In this section, we will dip our toes into math and symbols. This will not be difficult. If you have need for more advanced mathematics, you will know how to find what you need to render your equations.
+	Both \TeX{} and \Lx{} shine when it comes to math. In fact, Donald Knuth originally wrote \TeX{} just so he could typeset math. In this section, we will dip our toes into math and symbols. This will not be difficult. If you have need for more advanced mathematics, you will know how to find what you need to render your equations.
 
         \subsection{Special characters}
         \label{Special-characters}
         
-		Most characters are not special. An \textit{a} is just an a, a \textit{Z} is just a Z, and a \textit{7} is just a 7. Sometimes, this isn't the case --- an \&  is not just an ampersand. \LaTeXe{} has ten special characters. They are listed below.
+		Most characters are not special. An \textit{a} is just an a, a \textit{Z} is just a Z, and a \textit{7} is just a 7. Sometimes, this isn't the case --- an \&  is not just an ampersand. \Lx{} has ten special characters. They are listed below.
 
         \begin{framed}
 			\textbackslash, \%, \{, \}, \$, \^{} , \_, \~{} , \#, \&
+            \index{\textbackslash}
+            \index{\%}
+            \index{\{\}}
+            \index{\$}
+            \index{\^{}}
+            \index{\_}
+            \index{\#}
+            \index{\&}
         \end{framed}
 
 		You already lnow four of them. ``\textbackslash'' indicates the beginning of a command, ``\%'' indicates a comment, and the ``\{ - \}'' pair (usually) indicates the argument to a command. You will learn about three more in this section, ``\$'', ``\_'', and ``\^{}''. It's worthwhile to stare at these charcters long enough to become familiar with them. When you document misbehaves, often these characters are the culprit.
 
-		Sometimes you will find characters that wish they were special, but are not. These include the cedilla (\c{c}), the degree (\textdegree), and diphthongs (\ae). All these are represented by \LaTeXe{} commands, you will use the command for the character.
+		Sometimes you will find characters that wish they were special, but are not. These include the cedilla (\c{c}), the degree (\textdegree), and diphthongs (\ae). All these are represented by \Lx{} commands, you will use the command for the character.
 
 		\paragraph{Exercise:}Scott Pakin has published the booklet \textit{The Comprehensiv \LaTeX{} Symbol List}. You can find this online in PDF format. Search for it and just look at it. It contains over 300 pages of symbols. You'll be amazed! 
 
@@ -23,6 +31,14 @@
         
         \begin{framed}
             \begin{itemize}
+                \index{\$}
+                \index{plus or +}
+				\index{- (dash or subtraction)}
+                \index{times or ast}
+                \index{frac or div}
+                \index{sqrt}
+				\index{\^{} (caret or circumflex)}
+				\index{\_ (underscore)} 
                 \item{\$}
                 \item{plus or +}
 				\item{- (dash or subtraction)}
@@ -64,13 +80,16 @@
         
         \begin{framed}
             \begin{itemize}
+                \index{amsmath}
+                \index{equation}
+                \index{equation*}
                 \item{amsmath}
                 \item{equation}
                 \item{equation*}
             \end{itemize}
         \end{framed}
 	
-		\LaTeXe{} provides the \textit{equation} environment for writing block equations with the \textit{amsmath} package. First, import the package with \texttt{usepackage\{amsmath\}}.  Equations are numbered and can be referenced by means of their labels. The starred version omits the equation from the numbered equations. Here are some examples. Equation \ref{line} is the formula for a straight line. Equation \ref{slope} is the formula for the slope of a straight line.  The third, unnumbered equation is the formula for a straight line with multiple parameters.
+		\Lx{} provides the \textit{equation} environment for writing block equations with the \textit{amsmath} package. First, import the package with \texttt{usepackage\{amsmath\}}.  Equations are numbered and can be referenced by means of their labels. The starred version omits the equation from the numbered equations. Here are some examples. Equation \ref{line} is the formula for a straight line. Equation \ref{slope} is the formula for the slope of a straight line.  The third, unnumbered equation is the formula for a straight line with multiple parameters.
 
 		\begin{equation}
 			\label{line}
@@ -114,6 +133,9 @@
         
         \begin{framed}
             \begin{itemize}
+                \index{align}
+                \index{gather}
+                \index{multline}
                 \item{align}
                 \item{gather}
                 \item{multline}
@@ -178,6 +200,11 @@
         
         \begin{framed}
             \begin{itemize}
+                \index{sums}
+                \index{products}
+                \index{limits}
+                \index{derivatives}
+                \index{integrals}
                 \item{sums}
                 \item{products}
                 \item{limits}
@@ -221,6 +248,11 @@
         
         \begin{framed}
             \begin{itemize}
+                \index{vmatrix}
+                \index{pmatrix}
+                \index{bmatrix}
+                \index{Bmatrix}
+                \index{Vmatrix}
                 \item{vmatrix}
                 \item{pmatrix}
                 \item{bmatrix}
@@ -286,13 +318,8 @@
         \subsection{Greek letters}
         \label{Greek letters}
         
-%        \begin{framed}
-%            \begin{itemize}%            \begin{itemize}
-%                \item{}
-%            \end{itemize}
-%        \end{framed}
 
-        Here are the Greek letters commonly used in mathematical and scientific applications. The \LaTeXe{} commands for the Greek letters are in inline math mode, so you \textit{must} surround the command by a pair of dollar signs (\$\ldots\$). You must also use the \texttt{amsmath} package.
+        Here are the Greek letters commonly used in mathematical and scientific applications. The \Lx{} commands for the Greek letters are in inline math mode, so you \textit{must} surround the command by a pair of dollar signs (\$\ldots\$). You must also use the \texttt{amsmath} package.
 
         \begin{tabular}{|| l || l | l || l | l ||}
             \hline

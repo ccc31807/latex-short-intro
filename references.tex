@@ -40,7 +40,7 @@
 \end{document}    
         \end{verbatim}
 
-        \paragraph{Exercise:} Read the \LaTeXe{} documentation on footnotes.
+        \paragraph{Exercise:} Read the \Lx{} documentation on footnotes.
 
     \subsection{Endnotes}
     \label{Endnotes}
@@ -137,7 +137,7 @@
 \end{document}    
         \end{verbatim}
 
-        \paragraph{Exercise:} If you really need to create sophisticated marginal notes, you will need both the \texttt{geometry} and \texttt{marginnote} packages. The former is very useful, and you may need to use it in every paper. The latter is useful for marginal notes when you need something more than the default \LaTeXe{} commands.
+        \paragraph{Exercise:} If you really need to create sophisticated marginal notes, you will need both the \texttt{geometry} and \texttt{marginnote} packages. The former is very useful, and you may need to use it in every paper. The latter is useful for marginal notes when you need something more than the default \Lx{} commands.
 
     \subsection{Bibliography}
     \label{Bibliography}
@@ -149,7 +149,7 @@
             \end{itemize}
         \end{framed}
 
-    Needless to say, every research paper requires a bibliography. \LaTeXe{} has multiple ways to include bibliographies. I have chosen to use a method called \bib{}. There are three reasons for this choice. First. it's simple enough to include in a simple tutorial. Second, it gives good results using its default settings. Third, it's complex enough to be configured for almost any application (given an author's time and patience).
+    Needless to say, every research paper requires a bibliography. \Lx{} has multiple ways to include bibliographies. I have chosen to use a method called \bib{}. There are three reasons for this choice. First. it's simple enough to include in a simple tutorial. Second, it gives good results using its default settings. Third, it's complex enough to be configured for almost any application (given an author's time and patience).
 
     \bib{} uses an external file as a bibliographical database. This means that management of the sources is separate from writing and editing the original document. The data from the external database is merged into the original document with a series of commands. We will cover the basics of the external database in this lesson. In the following lesson, we will see how to merge the two files.
 
@@ -299,11 +299,11 @@
             \end{itemize}
         \end{framed}
 
-    Any paper of a reasonable size should have an index. Fortunately, indices in \LaTeXe{} are easy if a bit tedious. The tedious part comes from marking all the words to be indexed. The rest is pretty easy.
+    Any paper of a reasonable size should have an index. Fortunately, indices in \Lx{} are easy if a bit tedious. The tedious part comes from marking all the words to be indexed. The rest is pretty easy.
 
     First, in the preamble, you ust use an indexing package, the current version of which is \texttt{imakeidx} (perhaps for \textit{improved} makeidx) followed by the \texttt{makeindex} command. At the end of your paper, include the \texttt{printindex} command, optionally followed by the \texttt{addcontentsline} if you wish to have an entry in our table of contents for the index. 
 
-    Then, for every term you wish to index, you must make a reference using the \texttt{index} command. \LaTeXe produces the index automatically.\footnote{If you compile your document using the command line, you must use the \texttt{makeindex <document name>} command in order to produce the index itself.}
+    Then, for every term you wish to index, you must make a reference using the \texttt{index} command. \Lx produces the index automatically.\footnote{If you compile your document using the command line, you must use the \texttt{makeindex <document name>} command in order to produce the index itself.}
 
         \begin{verbatim}
 \documentclass{article}

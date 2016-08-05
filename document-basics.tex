@@ -3,7 +3,7 @@
 
     A \texttt{tex} document consists of plain text, and special characters, commands, and environments. I will generally refer to special characters, commands, and enviormments with the word \textit{commands}; you don't need to know the difference between them now, but you shortly will without being told. You \textit{must} precede commands with a backslash (\textbackslash{}) for the compiler to know that they are commands. This is easy to forget, so I will remind you the first couple of times.
 
-    \paragraph{What should I have?}You should have a working \LaTeXe{} program. If you do not have one, see Appendix \ref{Installing} below on page \pageref{Installing}. You will also need a text editor, and you will probably want to get an integrated editor, compiler, and printer. See Appendix \ref{Development Environments} on page \pageref{Development Environments}. You can also use the old fashioned command line, I cover this in Appendix \ref{Command Line} on page \pageref{Command Line}.
+    \paragraph{What should I have?}You should have a working \Lx{} program. If you do not have one, see Appendix \ref{Installing} below on page \pageref{Installing}. You will also need a text editor, and you will probably want to get an integrated editor, compiler, and printer. See Appendix \ref{Development Environments} on page \pageref{Development Environments}. You can also use the old fashioned command line, I cover this in Appendix \ref{Command Line} on page \pageref{Command Line}.
 
         \subsection{Basic document}
         \label{Basic-document}
@@ -32,7 +32,7 @@
 \end{document}    
         \end{verbatim}
 
-        \paragraph{Exercise:}\LaTeXe{} has a number of different document classes. Name four of them.
+        \paragraph{Exercise:}\Lx{} has a number of different document classes. Name four of them.
 
         \paragraph{Exercise:}A \texttt{documentclass} command can take optional arguments, like this: \texttt{documentclass[optional arguments]\{document class\}}.\footnote{Don't forget to type a backslash before the command, like this: \texttt{\textbackslash{}documentclass}} Name two optional arguments.
 
@@ -85,7 +85,7 @@
             \end{itemize}
         \end{framed}
 
-        \LaTeXe{} provides a number of useful section levels, including part and chapter. Two of the most useful are \texttt{section} and \texttt{subsection}. Create and compile the following document. 
+        \Lx{} provides a number of useful section levels, including part and chapter. Two of the most useful are \texttt{section} and \texttt{subsection}. Create and compile the following document. 
 
         The \texttt{label\{\}} is used to create cross-references in documents. It's also very helpful in organizing your thoughts. The argument to \texttt{label\{argument\}} does not appear in the document. I cover the \texttt{ref} and \texttt{pageref} commands below in subsection \ref{Footnotes} on page \pageref{Footnotes}. These are used to create references back to the label.
 
@@ -182,7 +182,7 @@ by the people, for the people, shall not perish from the earth.
             \end{itemize}
         \end{framed}
 
-Much of \LaTeXe{} functionality is contained in external packages. To use this functionality, you include the command \texttt{usepackage\{\}} in the preamble. Of course, you first have to install the package on your computer, but the MiKTeX distribution does that automatically. The \texttt{lipsum} package generates generic text (in Latin, of course). The \texttt{lipsum\{\}} command generates text. Notice that you can control the number of paragraphs to include. Below, I have included paragraph $1$ in the introduction, paragraphs $2$ through $4$ in the body, and paragraph $5$ in the conclusion.
+Much of \Lx{} functionality is contained in external packages. To use this functionality, you include the command \texttt{usepackage\{\}} in the preamble. Of course, you first have to install the package on your computer, but the MiKTeX distribution does that automatically. The \texttt{lipsum} package generates generic text (in Latin, of course). The \texttt{lipsum\{\}} command generates text. Notice that you can control the number of paragraphs to include. Below, I have included paragraph $1$ in the introduction, paragraphs $2$ through $4$ in the body, and paragraph $5$ in the conclusion.
 
 Notice the paragraph indentation. First paragraphs are \textit{not} indented. Following paragraphs \textit{are} indented. This is normal typographic practice.
 
@@ -208,7 +208,7 @@ Notice the paragraph indentation. First paragraphs are \textit{not} indented. Fo
 
         \paragraph{Exercise:}What is CTAN, the Comprehensive \TeX{} Archive Network? How many packages are currently on CTAN?
 
-        \paragraph{Exercise:}What are the most popular \LaTeXe{} packages?
+        \paragraph{Exercise:}What are the most popular \Lx{} packages?
 
         \subsection{Basic contents}
         \label{Basic contents}
@@ -244,7 +244,7 @@ Notice the paragraph indentation. First paragraphs are \textit{not} indented. Fo
 
         \paragraph{Exercise:}The \texttt{section[argument]\{Section Title\}} command takes an optional argument. How does this argument affect the table of contents?
 
-        \paragraph{Exercise:}What other kinds of content tables can \LaTeXe{} generate? To start with, look at figures and tables.
+        \paragraph{Exercise:}What other kinds of content tables can \Lx{} generate? To start with, look at figures and tables.
 
         \subsection{Basic decorations}
         \label{Basic decorations}
@@ -299,7 +299,7 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
 \end{document}    
         \end{verbatim}
 
-        \paragraph{Exercise:}As with much else in \LaTeXe,there are multiple ways to italisize or bold-face text. Can you find other ways?
+        \paragraph{Exercise:}As with much else in \Lx,there are multiple ways to italisize or bold-face text. Can you find other ways?
 
 
 
@@ -331,7 +331,7 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
             \end{itemize}
         \end{framed}
 
-\LaTeXe{} has several different ways to alter the size of the font. Perhaps the simplest way is to create a \textit{size environment}. You do this by using one of the commands listed above, and this controls the size of all text until it is changed by another command. You would typically use this for sections of text that need to be made smaller, such as tables, block quotes, technical sections not germane to the main discussion, and similar.
+\Lx{} has several different ways to alter the size of the font. Perhaps the simplest way is to create a \textit{size environment}. You do this by using one of the commands listed above, and this controls the size of all text until it is changed by another command. You would typically use this for sections of text that need to be made smaller, such as tables, block quotes, technical sections not germane to the main discussion, and similar.
 
     \normalsize{}\paragraph{}This paragraph has a normalsize font size.
     \tiny{}\paragraph{}This paragraph has a tiny font size.
