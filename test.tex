@@ -1,25 +1,26 @@
 \documentclass{article}
-    \usepackage{imakeidx}
-    \makeindex{}
-    \title{Indices}
+    \title{Font Sizes}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-    \tableofcontents{}
     \section{Introduction}
-    \label{inTroduction}
-    This section contains the indexed word introduction.\index{introduction}
+    \label{Introduction}
     \section{Body}
     \label{Body}
-    \paragraph{}This paper concerns the structure\index{structure} of a paper.
-    \paragraph{}Papers generally consist of an introduction\index{introduction}, body\index{body|}, and conclusion\index{conclusion}.
-    \paragraph{}This is the body\index{body} of a paper.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \tiny{}\paragraph{}This paragraph has a tiny font size.
+    \scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
+    \footnotesize{}\paragraph{}This paragraph has a footnotesize font size.
+    \small{}\paragraph{}This paragraph has a small font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \large{}\paragraph{}This paragraph has a large font size.
+    \Large{}\paragraph{}This paragraph has a Large font size.
+    \LARGE{}\paragraph{}This paragraph has a LARGE font size.
+    \huge{}\paragraph{}This paragraph has a huge font size.
+    \Huge{}\paragraph{}This paragraph has a Huge font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
     \section{Conclusion}
-    This section contains the conclusion\index{conclusion}.
     \label{Conclusion}
-    \addcontentsline{toc}{section}{Index}
-    \printindex{}
 \end{document}    
-
 

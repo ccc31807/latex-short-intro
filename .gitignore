@@ -6,3 +6,8 @@
 *.ent
 *.bbl
 *.blg
+*.idx
+*.idl
+*.ind
+*.out
+*.ilg

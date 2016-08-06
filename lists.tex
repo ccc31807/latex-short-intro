@@ -50,9 +50,10 @@
             \end{itemize}
         \end{framed}
 
-        \Lx{} unnumbered lists are very easy. Simply enclose the list in th \texttt{itemize} environment, and place each list item as an argument to the \texttt{item} command.
+        \Lx{} unnumbered lists are very easy. Simply enclose the list in the \texttt{itemize} environment, and place each list item as an argument to the \texttt{item} command.
 
     \begin{itemize}
+    \label{lists:itemize}
         \item{Green}
         \item{Eggs}
         \item{and}
@@ -92,6 +93,7 @@
         \Lx{} numbered lists are very easy. Simply enclose the list in th \texttt{enumerate} environment, and place each list item as an argument to the \texttt{item} command.
 
     \begin{enumerate}
+    \label{lists:enumerate}
         \item{Washington}
         \item{Adams}
         \item{Jefferson}
@@ -131,6 +133,7 @@
         \Lx{} dictionary lists are very easy. Simply enclose the list in th \texttt{description} environment, place the term in square brackets ([]), and place each list item as an argument to the \texttt{item} command.
 
     \begin{description}
+    \label{lists:dictionary}
         \item[C]{a procedural language}
         \item[Java]{an object oriented language}
         \item[Lisp]{a functional language}
@@ -161,6 +164,7 @@
         And of course, \Lx{} lists can be nested. Notice how ``smart'' the numbered lists are --- the number style depends on the heading level.
 
     \begin{enumerate}
+    \label{lists:nested}
         \item{17th century}
         \begin{enumerate}
             \item{Thirty Years War}
@@ -197,7 +201,7 @@
         \begin{enumerate}
             \item{War of the Sixth Coalition}
             \begin{description}
-                \item[Napoleon I]{}
+                \item[Napoleon I]{France}
                 \item[Blucher]{Prussia}
                 \item[Bennigsen]{Russia}
                 \item[Schwarenberg]{Austria}
@@ -308,89 +312,198 @@
         \subsection{Listings Package}
         \label{Listings Package}
         
-%        \begin{framed}
-%            \begin{itemize}
-%                \item{}
-%            \end{itemize}
-%        \end{framed}
-%
-%
-%        \begin{verbatim}
-%\documentclass{article}
-%    \title{This is My Title}
-%    \author{Charles Carter}
-%    \date{\today{}}
-%\begin{document} 
-%    \maketitle{}
-%    \section{Introduction}
-%    \label{Introduction}
-%    \section{Body}
-%    \label{Body}
-%    \section{Conclusion}
-%    \label{Conclusion}
-%\end{document}    
-%        \end{verbatim}
-%
-%        \paragraph{Exercise:}
-%
-%        \paragraph{Exercise:}
+        \begin{framed}
+            \begin{itemize}
+                \index{listings package}
+                \index{lstset}
+                \index{lstlisting}
+                \item{listings package}
+                \item{lstset}
+                \item{lstlisting}
+            \end{itemize}
+        \end{framed}
+
+        If you really want to customize your listing, use the \texttt{listings} package. Import the package as usual in the preamble with \texttt{usepackage\{listings\}}. Use \texttt{lstset} to specify your list settings. This can be either in the preamble or (if you have various lists with different settings) in the body of the document just prior to the list. Use \texttt{lstlisting} to set the list. See section \ref{Listings Version 1} on page \pageref{Listings Version 1} and section \ref{Listings Version 2} on page \pageref{Listings Version 2} for examples.
+
+        Here are some of the parameters allowed for \texttt{lstset}.
+
+        \scriptsize{}
+        \begin{verbatim}
+        \lstset{ %
+backgroundcolor=\color{white},   % choose the background color; 
+    you must add \usepackage{color} or \usepackage{xcolor}
+basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+breaklines=true,                 % sets automatic line breaking
+captionpos=b,                    % sets the caption-position to bottom
+frame=single,	                 % adds a frame around the code
+keepspaces=true,                 % keeps spaces in text, useful for keeping indentation 
+    of code (possibly needs columns=flexible)
+keywordstyle=\color{blue},       % keyword style
+language=Octave,                 % the language of the code
+numbers=left,                    % where to put the line-numbers; 
+    possible values are (none, left, right)
+numbersep=5pt,                   % how far the line-numbers are from the code
+numberstyle=\tiny\color{gray},   % the style that is used for the line-numbers
+rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks 
+    within not-black text (e.g. comments (green here))
+showspaces=false,                % show spaces everywhere adding particular underscores; 
+    it overrides 'showstringspaces'
+showstringspaces=false,          % underline spaces within strings only
+showtabs=false,                  % show tabs within strings adding particular underscores
+tabsize=2,	                     % sets default tabsize to 2 spaces
+}
+        \end{verbatim}
+
+    \normalsize{}
+
+        \paragraph{Exercise:} Find the documentation for the listings package and look through it.
 
         \subsection{Listings Version 1}
         \label{Listings Version 1}
+
+    The programming language Lisp was created in the late 1950s as a LISt Processing language --- it might not be inappropriate to use Lisp to illustrate lists. Here is the listing.
         
-%        \begin{framed}
-%            \begin{itemize}
-%                \item{}
-%            \end{itemize}
-%        \end{framed}
-%
-%
-%        \begin{verbatim}
-%\documentclass{article}
-%    \title{This is My Title}
-%    \author{Charles Carter}
-%    \date{\today{}}
-%\begin{document} 
-%    \maketitle{}
-%    \section{Introduction}
-%    \label{Introduction}
-%    \section{Body}
-%    \label{Body}
-%    \section{Conclusion}
-%    \label{Conclusion}
-%\end{document}    
-%        \end{verbatim}
-%
-%        \paragraph{Exercise:}
-%
-%        \paragraph{Exercise:}
+\lstset{language=Lisp,numbers=left,keepspaces=true,basicstyle=\small,numberstyle=\tiny,showstringspaces=false,breaklines=true}
+\begin{lstlisting}
+;;;add-test.lisp
+(print "This is add-lisp. Evaluate (start-test) to start the test.")
+
+(defun start-test ()
+  (defparameter number-of-questions 10)
+  (defparameter number-correct 0)
+  (defparameter question-counter 1)
+  (format t "Starting the addition test, you have ~a questions.~%" number-of-questions)
+  (run-test))
+
+(defun addition-problem ()
+  (let* ((a (random 11))
+         (b (random 11))
+         (c (+ a b))
+         (d (read (format t "What is ~a + ~a? " a b))))
+    (cond ((= c d)
+           (format t "Correct~%")
+            1)
+          (t (format t "The answer is ~a~%" c)
+              0))))
+
+(defun run-test ()
+    (cond 
+      ((zerop number-of-questions)
+       (format t "You got ~a correct and made a ~a.~%" number-correct (* 100 (/ number-correct 10.0))))
+      (t (format t "Question ~a. " question-counter)
+         (decf number-of-questions)
+         (incf number-correct (addition-problem))
+		 (incf question-counter)
+         (run-test))))
+\end{lstlisting}
+
+    Here is the code.
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Lists, Version 1}
+    \author{Charles Carter}
+    \date{\today{}}
+    \usepackage{listings}
+    \usepackage{xcolor}
+\begin{document} 
+    \maketitle{}
+\lstset{language=Lisp,numbers=left,keepspaces=true,
+    basicstyle=\small,numberstyle=\tiny,
+    showstringspaces=false,breaklines=true}
+\begin{lstlisting}
+;;;add-test.lisp
+(print "This is add-lisp. Evaluate (start-test) to start the test.")
+
+(defun start-test ()
+  (defparameter number-of-questions 10)
+  (defparameter number-correct 0)
+  (defparameter question-counter 1)
+  (format t "Starting the addition test, you have ~a questions.~%" 
+    number-of-questions)
+  (run-test))
+
+(defun addition-problem ()
+  (let* ((a (random 11))
+         (b (random 11))
+         (c (+ a b))
+         (d (read (format t "What is ~a + ~a? " a b))))
+    (cond ((= c d)
+           (format t "Correct~%")
+            1)
+          (t (format t "The answer is ~a~%" c)
+              0))))
+
+(defun run-test ()
+    (cond 
+      ((zerop number-of-questions)
+       (format t "You got ~a correct and made a ~a.~%" 
+       number-correct (* 100 (/ number-correct 10.0))))
+      (t (format t "Question ~a. " question-counter)
+         (decf number-of-questions)
+         (incf number-correct (addition-problem))
+		 (incf question-counter)
+         (run-test))))
+\end{lstlisting}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} What programming languages does the listings package know about?
 
         \subsection{Listings Version 2}
         \label{Listings Version 2}
         
-%        \begin{framed}
-%            \begin{itemize}
-%                \item{}
-%            \end{itemize}
-%        \end{framed}
-%
-%
-%        \begin{verbatim}
-%\documentclass{article}
-%    \title{This is My Title}
-%    \author{Charles Carter}
-%    \date{\today{}}
-%\begin{document} 
-%    \maketitle{}
-%    \section{Introduction}
-%    \label{Introduction}
-%    \section{Body}
-%    \label{Body}
-%    \section{Conclusion}
-%    \label{Conclusion}
-%\end{document}    
-%        \end{verbatim}
-%
-%        \paragraph{Exercise:}
-%
-%        \paragraph{Exercise:}
+        Here is a listing you have see before. To create this, use this code. The language is set to ``TeX'', the dialect is ``LaTeX''. The line numbers are on the right. Keywards are blue bolded. Comments are colored green.
+
+        \begin{verbatim}
+        \lstset{
+            language=[LaTeX]TeX
+            numbers=right
+            keywordstyle=\color{blue}\textbf
+            keepspaces=true
+            basicstyle=\footnotesize
+            numberstyle=\scriptsize
+            showstringspaces=false
+            breaklines=true
+            commentstyle=\color{green}}
+        \begin{lstlisting}
+            %code goes here
+        \end{lstlisting}
+        \end{verbatim}
+
+        \lstset{language=[LaTeX]TeX,numbers=right,keywordstyle=\color{blue}\textbf,keepspaces=true,basicstyle=\footnotesize,numberstyle=\scriptsize,showstringspaces=false,breaklines=true,commentstyle=\color{green}}
+\begin{lstlisting}
+\documentclass{article}
+    %this is the preamble
+    %author and title information
+    \title{Font Sizes}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    %create the title
+    \maketitle{}
+    %create the table of contents
+    \tableofcontents{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \tiny{}\paragraph{}This paragraph has a tiny font size.
+    \scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
+    \footnotesize{}\paragraph{}This paragraph has a footnotesize font size.
+    \small{}\paragraph{}This paragraph has a small font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \large{}\paragraph{}This paragraph has a large font size.
+    \Large{}\paragraph{}This paragraph has a Large font size.
+    \LARGE{}\paragraph{}This paragraph has a LARGE font size.
+    \huge{}\paragraph{}This paragraph has a huge font size.
+    \Huge{}\paragraph{}This paragraph has a Huge font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+\end{lstlisting}
+        
+        \paragraph{Exercise:} Try listing your own favorite programming language.
