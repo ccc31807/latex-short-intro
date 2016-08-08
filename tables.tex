@@ -143,10 +143,26 @@ Claudia &  Frank &   Impatiens & Lynx \\
         
         \begin{framed}
             \begin{itemize}
-                \item{}
+                \index{p (column specifier)}
+                \item{p (column specifier)}
             \end{itemize}
         \end{framed}
 
+        The column specifiers \texttt{l} (left), \texttt{c} (center), and \texttt{}r (right) mostly do what you want, but their capacity is limited and frequently you need to use the column specifier \texttt{p} (paragraph) to make the content of the cells behave. \texttt{p} takes as a parameter a length recognized by \Lx{}, frequently a common English measure expressed in inches, for example, \texttt{p\{2in\}}.
+
+        \begin{table}[!ht]
+            \label{P columns}
+        \begin{tabular}{ p{1in} p{4in}}
+            \hline{}
+            C & C is a general-purpose, imperative computer programming language, supporting structured programming, lexical variable scope and recursion, while a static type system prevents many unintended operations. \\
+            Java & Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers ``write once, run anywhere'' meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. \\
+            Common Lisp & Common Lisp (historically, LISP) is a family of computer programming languages with a long history and a distinctive, fully parenthesized prefix notation. Originally specified in 1958, Lisp is the second-oldest high-level programming language in widespread use today. Only Fortran is older, by one year. \\
+            JavaScript & JavaScript is a high-level, dynamic, untyped, and interpreted programming language. It has been standardized in the ECMAScript language specification. \\
+            Erlang & Erlang is a programming language designed for developing robust systems of programs that can be distributed among different computers in a network. Named for the Danish mathematician Agner Krarup Erlang, the language was developed by the Ericsson Computer Sciences Lab to build software for its own telecommunication products.  \\
+            \hline{}
+        \end{tabular}
+            \caption{P columns}
+        \end{table}
 
         \begin{verbatim}
 \documentclass{article}
@@ -155,26 +171,55 @@ Claudia &  Frank &   Impatiens & Lynx \\
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-    \section{Introduction}
-    \label{Introduction}
-    \section{Body}
-    \label{Body}
-    \section{Conclusion}
-    \label{Conclusion}
+        \begin{tabular}{ p{1in} p{4in}}
+            \hline{}
+            C & C is a general-purpose, imperative computer programming 
+            language, supporting structured programming, lexical variable 
+            scope and recursion, while a static type system prevents many 
+            unintended operations. \\
+            Java & Java is a general-purpose computer programming language 
+            that is concurrent, class-based, object-oriented, and 
+            specifically designed to have as few implementation 
+            dependencies as possible. It is intended to let application 
+            developers "write once, run anywhere" meaning that compiled 
+            Java code can run on all platforms that support Java without 
+            the need for recompilation. \\
+            Common Lisp & Common Lisp (historically, LISP) is a family 
+            of computer programming languages with a long history and a 
+            distinctive, fully parenthesized prefix notation. Originally 
+            specified in 1958, Lisp is the second-oldest high-level 
+            programming language in widespread use today. Only Fortran 
+            is older, by one year. \\
+            JavaScript & JavaScript is a high-level, dynamic, untyped, 
+            and interpreted programming language. It has been 
+            standardized in the ECMAScript language specification. \\
+            Erlang & Erlang is a programming language designed for 
+            developing robust systems of programs that can be 
+            distributed among different computers in a network. 
+            Named for the Danish mathematician Agner Krarup Erlang, 
+            the language was developed by the Ericsson Computer 
+            Sciences Lab to build software for its own tele
+            communication products.  \\
+            \hline{}
+        \end{tabular}
 \end{document}    
         \end{verbatim}
 
-        \paragraph{Exercise:}
-
-        \paragraph{Exercise:}
-
+        \paragraph{Exercise:} Create your own table with paragraph spacing.
 
         \subsection{Captions and labels}
         \label{Captions and labels}
         
         \begin{framed}
             \begin{itemize}
-                \item{}
+                \index{table environment}
+                \index{caption}
+                \index{label}
+                \index{listoftables}
+                \item{table environment}
+                \item{caption}
+                \item{label}
+                \item{listoftables}
             \end{itemize}
         \end{framed}
 
@@ -195,9 +240,9 @@ Claudia &  Frank &   Impatiens & Lynx \\
 \end{document}    
         \end{verbatim}
 
-        \paragraph{Exercise:}
+        \paragraph{Exercise:} You can refer to a table, and the page number of the table, by using the \texttt{ref} and \texttt{pageref} commands. See section \ref{Text references} on page \pageref{Text references}.
 
-        \paragraph{Exercise:}
+        \paragraph{Exercise:} How would you center a table horizontally on the page?
 
 
         \subsection{Table placement}

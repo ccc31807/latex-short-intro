@@ -319,8 +319,10 @@
         \label{Greek letters}
         
 
-        Here are the Greek letters commonly used in mathematical and scientific applications. The \Lx{} commands for the Greek letters are in inline math mode, so you \textit{must} surround the command by a pair of dollar signs (\$\ldots\$). You must also use the \texttt{amsmath} package.
+        Here are the Greek letters commonly used in mathematical and scientific applications, table \ref{Greek letters} on page \pageref{Greek letters}. The \Lx{} commands for the Greek letters are in inline math mode, so you \textit{must} surround the command by a pair of dollar signs (\$\ldots\$). You must also use the \texttt{amsmath} package.
 
+        \begin{table}[!ht]
+            \label{Greek letters}
         \begin{tabular}{|| l || l | l || l | l ||}
             \hline
             Alpha & Alpha & $A$      & alpha & $\alpha$ \\
@@ -372,6 +374,8 @@
             Omega & Omega & $\Omega$    & omega & $\omega$ \\
             \hline
         \end{tabular}
+            \caption{Greek letters}
+        \end{table}
 
         \begin{verbatim}
 \documentclass{article}
