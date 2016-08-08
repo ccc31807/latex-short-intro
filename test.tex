@@ -1,14 +1,25 @@
 \documentclass{article}
+    %this is the preamble
+    %author and title information
+    \usepackage{xcolor}
+    \usepackage{listings}
+    \lstset{language=[LaTeX]TeX,numbers=right,keywordstyle=\color{blue}\textbf,keepspaces=true,basicstyle=\footnotesize,numberstyle=\scriptsize,showstringspaces=false,breaklines=true,commentstyle=\color{teal}}
     \title{Font Sizes}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
+    %create the title
     \maketitle{}
+    %create the table of contents
+    \tableofcontents{}
     \section{Introduction}
     \label{Introduction}
     \section{Body}
     \label{Body}
+    \begin{lstlisting}
+    %start with a normal sized font
     \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    %font sizes in forder from smallest to largest
     \tiny{}\paragraph{}This paragraph has a tiny font size.
     \scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
     \footnotesize{}\paragraph{}This paragraph has a footnotesize font size.
@@ -19,7 +30,9 @@
     \LARGE{}\paragraph{}This paragraph has a LARGE font size.
     \huge{}\paragraph{}This paragraph has a huge font size.
     \Huge{}\paragraph{}This paragraph has a Huge font size.
+    %end with a normal sized font
     \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \end{lstlisting}
     \section{Conclusion}
     \label{Conclusion}
 \end{document}    

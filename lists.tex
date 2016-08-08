@@ -454,7 +454,7 @@ tabsize=2,	                     % sets default tabsize to 2 spaces
         \subsection{Listings Version 2}
         \label{Listings Version 2}
         
-        Here is a listing you have see before. To create this, use this code. The language is set to ``TeX'', the dialect is ``LaTeX''. The line numbers are on the right. Keywards are blue bolded. Comments are colored green.
+        Here is a listing you have see before. To create this, use this code. The language is set to ``TeX'', the dialect is ``LaTeX''. The line numbers are on the right. Keywards are blue bolded. Comments are colored teal. Note the use of packate \textit{xcolor}, which I will cover in section \ref{Colors} on page \pageref{Colors}.
 
         \begin{verbatim}
         \lstset{
@@ -466,17 +466,64 @@ tabsize=2,	                     % sets default tabsize to 2 spaces
             numberstyle=\scriptsize
             showstringspaces=false
             breaklines=true
-            commentstyle=\color{green}}
+            commentstyle=\color{teal}}
         \begin{lstlisting}
             %code goes here
         \end{lstlisting}
         \end{verbatim}
 
-        \lstset{language=[LaTeX]TeX,numbers=right,keywordstyle=\color{blue}\textbf,keepspaces=true,basicstyle=\footnotesize,numberstyle=\scriptsize,showstringspaces=false,breaklines=true,commentstyle=\color{green}}
+        Here is what the listing looks like with these settings.
+
+    \lstset{language=[LaTeX]TeX,numbers=right,keywordstyle=\color{blue}\textbf,keepspaces=true,basicstyle=\footnotesize,numberstyle=\scriptsize,showstringspaces=false,breaklines=true,commentstyle=\color{teal}}
 \begin{lstlisting}
 \documentclass{article}
     %this is the preamble
     %author and title information
+    \usepackage{xcolor}
+    \usepackage{listings}
+    \title{Font Sizes}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    create the title
+    \maketitle{}
+    %create the table of contents
+    \tableofcontents{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+    %start with a normal sized font
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    %font sizes in forder from smallest to largest
+    \tiny{}\paragraph{}This paragraph has a tiny font size.
+    \scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
+    \footnotesize{}\paragraph{}This paragraph has a footnotesize font size.
+    \small{}\paragraph{}This paragraph has a small font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \large{}\paragraph{}This paragraph has a large font size.
+    \Large{}\paragraph{}This paragraph has a Large font size.
+    \LARGE{}\paragraph{}This paragraph has a LARGE font size.
+    \huge{}\paragraph{}This paragraph has a huge font size.
+    \Huge{}\paragraph{}This paragraph has a Huge font size.
+    %end with a normal sized font
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+\end{lstlisting}
+        
+Here is the code for the listing.
+
+\begin{verbatim}
+\documentclass{article}
+    %this is the preamble
+    %author and title information
+    \usepackage{xcolor}
+    \usepackage{listings}
+    \lstset{language=[LaTeX]TeX,numbers=right,keywordstyle=\color{blue}\textbf,
+        keepspaces=true,basicstyle=\footnotesize,numberstyle=\scriptsize,
+        kshowstringspaces=false,breaklines=true,commentstyle=\color{teal}}
     \title{Font Sizes}
     \author{Charles Carter}
     \date{\today{}}
@@ -489,7 +536,10 @@ tabsize=2,	                     % sets default tabsize to 2 spaces
     \label{Introduction}
     \section{Body}
     \label{Body}
+    \begin{lstlisting}
+    %start with a normal sized font
     \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    %font sizes in forder from smallest to largest
     \tiny{}\paragraph{}This paragraph has a tiny font size.
     \scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
     \footnotesize{}\paragraph{}This paragraph has a footnotesize font size.
@@ -500,10 +550,12 @@ tabsize=2,	                     % sets default tabsize to 2 spaces
     \LARGE{}\paragraph{}This paragraph has a LARGE font size.
     \huge{}\paragraph{}This paragraph has a huge font size.
     \Huge{}\paragraph{}This paragraph has a Huge font size.
+    %end with a normal sized font
     \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \end{lstlisting}
     \section{Conclusion}
     \label{Conclusion}
 \end{document}    
-\end{lstlisting}
-        
+\end{verbatim}
+
         \paragraph{Exercise:} Try listing your own favorite programming language.

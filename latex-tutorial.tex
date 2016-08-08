@@ -1,8 +1,8 @@
 \documentclass[letterpaper]{article}
 
     \usepackage{framed}
+    \usepackage{xcolor}
     \usepackage{listings}
-    \usepackage{color}
     \usepackage{amsmath}
     \usepackage{amsfonts}
     \usepackage{mathtools}
@@ -64,6 +64,37 @@
 
     \section*{\LaTeXe{} is \textit{Stable}}
 
+    \include{lists}
+
+    \section*{\LaTeXe{} is \textit{Easy}}
+
+    \include{tables}
+
+    \section*{\LaTeXe{} is \textit{Free}}
+
+    \include{images}
+
+    \include{advanced}
+
+    \section{Conclusion}
+    \label{Conclusion}
+
+    \appendix{}
+    \include{appendix}
+
+
+    \theendnotes{}
+    \addcontentsline{toc}{section}{Endnotes}
+
+    \bibliographystyle{IEEEtranS}    
+    \bibliography{tut}
+    \addcontentsline{toc}{section}{References}
+    \nocite{*}
+
+    \addcontentsline{toc}{section}{Index}
+    \printindex{}
+
+\end{document}
 
 %        \subsection{}
 %        \label{}
@@ -96,36 +127,3 @@
 %        \paragraph{Exercise:}
 
 
-
-    \include{lists}
-
-    \section*{\LaTeXe{} is \textit{Easy}}
-
-    \include{tables}
-
-    \section*{\LaTeXe{} is \textit{Free}}
-
-    \include{images}
-
-    \include{advanced}
-
-    \section{Conclusion}
-    \label{Conclusion}
-
-
-    \appendix{}
-    \include{appendix}
-
-
-    \theendnotes{}
-    \addcontentsline{toc}{section}{Endnotes}
-
-    \bibliographystyle{IEEEtranS}    
-    \bibliography{tut}
-    \addcontentsline{toc}{section}{References}
-    \nocite{*}
-
-    \addcontentsline{toc}{section}{Index}
-    \printindex{}
-
-\end{document}

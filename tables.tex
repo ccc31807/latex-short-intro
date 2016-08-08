@@ -3,71 +3,143 @@
 	\section{Tables}
 	\label{Tables}
 
-
+        Unfortunately, tables in \Lx{} tend to be a bit cumbersome. Tables are specified row by row, and require meticulous attention to detail. If sufficient care is taken, composing tables is not very difficult. Fortunately, simple tables are not too hard. 
+        
         \subsection{Verbatim table}
         \label{Verbatim table}
         
         \begin{framed}
             \begin{itemize}
-                \item{}
+                \index{verbatim}
+                \index{verbatim environment}
+                \item{verbatim}
+                \item{verbatim environment}
             \end{itemize}
         \end{framed}
 
+        As with lists, ths simplest, most brain-dead way to make a table is by using the \texttt{verbatim} environment.
 
         \begin{verbatim}
+Abigail     Derek       Gladiola
+Brenda      Edgar       Hibiscus
+Claudia     Frank       Impatiens
+        \end{verbatim}
+
+        \begin{realverbatim}
 \documentclass{article}
-    \title{This is My Title}
+    \title{Verbatim Tables}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-    \section{Introduction}
-    \label{Introduction}
-    \section{Body}
-    \label{Body}
-    \section{Conclusion}
-    \label{Conclusion}
-\end{document}    
+        \begin{verbatim}
+Abigail     Derek       Gladiola
+Brenda      Edgar       Hibiscus
+Claudia     Frank       Impatiens
         \end{verbatim}
+\end{document}    
+        \end{realverbatim}
 
-        \paragraph{Exercise:}
-
-        \paragraph{Exercise:}
-
+        \paragraph{Exercise:} Create your own verbatim table.
 
         \subsection{Simple table}
         \label{Simple table}
         
         \begin{framed}
             \begin{itemize}
-                \item{}
+                \index{tabular environment}
+                \index{l (column specifier)}
+                \index{c (column specifier)}
+                \index{r (column specifier)}
+                \index{\textbackslash\textbackslash (row terminator)}
+                \index{\& (cell separator)}
+                \item{tabular environment}
+                \item{l (column specifier)}
+                \item{c (column specifier)}
+                \item{r (column specifier)}
+                \item{\textbackslash\textbackslash{} (row terminator)}
+                \item{\& (cell separator)}
             \end{itemize}
         \end{framed}
+
+        A simple \Lx{} table is created within a \texttt{tabular} environment. The column specifications are passed as a parameter to te environment --- r (right), c (center), l (left). Table rows are terminated by two backslashes (\textbackslash\textbackslash). Cells are separated by an ampersand (\&).
+
+        \begin{tabular}{lcr}
+Abigail &  Derek &   Gladiola \\
+Brenda &  Edgar &   Hibiscus \\
+Claudia &  Frank &   Impatiens \\
+        \end{tabular}
 
 
         \begin{verbatim}
 \documentclass{article}
-    \title{This is My Title}
+    \title{Smple Tables}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-    \section{Introduction}
-    \label{Introduction}
-    \section{Body}
-    \label{Body}
-    \section{Conclusion}
-    \label{Conclusion}
+        \begin{tabular}{lcr}
+Abigail & Derek & Gladiola \\
+Brenda & Edgar & Hibiscus \\
+Claudia & Frank & Impatiens \\
+        \end{tabular}
 \end{document}    
         \end{verbatim}
 
-        \paragraph{Exercise:}
-
-        \paragraph{Exercise:}
-
+        \paragraph{Exercise:} Make your own simple table.
 
         \subsection{Row and column lines}
         \label{Row and column lines}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{\textbar}
+                \index{hline}
+                \item{\textbar}
+                \item{hline}
+            \end{itemize}
+        \end{framed}
+
+        Table rules are specified by the vertical bar (\textbar) and by \texttt{hline}. Column rules are set in the parameter of the column specifications based to the tabular environment. Row rules are created by the \texttt{hline} command. Both of these can be doubled to produce double rules.
+        
+
+    \begin{tabular}{| l | r || l | r |}
+        \hline
+        Girls & Boys & Flowers & Animals\\
+        \hline
+        \hline
+        Abigail &  Derek &   Gladiola & Jackel \\
+        \hline
+        Brenda &  Edgar &   Hibiscus & Koala \\
+        \hline
+        Claudia &  Frank &   Impatiens & Lynx \\
+        \hline
+        \end{tabular}
+
+
+         \begin{verbatim}
+\documentclass{article}
+    \title{Table Rules}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+        \hline
+Girls & Boys & Flowers & Animals\\
+        \hline
+        \hline
+Abigail &  Derek &   Gladiola & Jackel \\
+        \hline
+Brenda &  Edgar &   Hibiscus & Koala \\
+        \hline
+Claudia &  Frank &   Impatiens & Lynx \\
+        \hline
+        \end{verbatim}
+
+        \paragraph{Exercise:} Create your own simple table with vertical ane horizontal rules.
+
+        \subsection{Column spacing}
+        \label{Column spacing}
         
         \begin{framed}
             \begin{itemize}
@@ -97,8 +169,8 @@
         \paragraph{Exercise:}
 
 
-        \subsection{Column spacing}
-        \label{Column spacing}
+        \subsection{Captions and labels}
+        \label{Captions and labels}
         
         \begin{framed}
             \begin{itemize}
