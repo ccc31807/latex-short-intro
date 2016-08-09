@@ -3,7 +3,7 @@
     \section{References}
     \label{References}
 
-    In scientific and research writing, one of the most critical aspects is references. Think about it: can you imagine a research paper without a single reference? These include footnotes, endnotes, marginal notes, and especially citations to sources. References have two components, a target and a source, or a label and a reference to that label. We have used labels before, but now we will expicitly consider them.
+    In scientific and research writing, one of the most critical aspects is references. Think about it: can you imagine a research paper without a single reference? These include footnotes, endnotes, marginal notes, and especially citations to sources. References have two components, a target and a source, or a label and a reference to that label. We have used labels before, but now we will explicitly consider them.
 
     \subsection{Text references}
     \label{Text references}
@@ -19,7 +19,7 @@
             \end{itemize}
         \end{framed}
 
-        TEXT HERE\marginpar{add text}
+        A text reference has two parts, a target and a pointer. The pointer points to a target, and a target is pointed to with a pointer. Targets are identified using the \texttt{label} command. Pointers are created with the \texttt{ref} command for numerical designations, and the page on which the target appears with the \texttt{pageref} command. For example, the table of Greek letters on page \pageref{Greek letters} is table \ref{Greek letters}. Targets can include structural elements (chapters, sections, paragraphs, etc.), tables, and figures.
 
         \begin{verbatim}
 \documentclass{article}
@@ -28,11 +28,19 @@
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-    TEXT HERE
+    \section{Introduction}
+    \label{Introduction}
+    This is the introduction; for the conclusion, see 
+    section \ref{Conclusion} on page \pageref{Conclusion}.
+    \section{Conclusion}
+    \label{Conclusion}
+    This is the conclusion; for the introduction, see 
+    section \ref{Introduction} on page \pageref{Introduction}.
 \end{document}    
+
         \end{verbatim}
 
-        \paragraph{Exercise:} Read the \Lx{} documentation on footnotes.
+        \paragraph{Exercise:} Create and compile a document with at least two of each: labels, refs, and pagerefs.
 
     \subsection{Footnotes}
     \label{Footnotes}
@@ -50,7 +58,7 @@
             \end{itemize}
         \end{framed}
 
-    To insert a footnote, just use the command \text{footnote}.\footnote{\label{references:fn}Don't forget to put the \textbackslash{} before the \texttt{footnote} command.} If you label the footnote, you can refer to the footnote by number and page in the text of the doucumemt. Please be sure to read footnote \ref{references:fn} on page \pageref{references:fn}.
+    To insert a footnote, just use the command \texttt{footnote}.\footnote{\label{references:fn}Don't forget to put the \textbackslash{} before the \texttt{footnote} command.} If you label the footnote, you can refer to the footnote by number and page in the text of the doucumemt. Please be sure to read footnote \ref{references:fn} on page \pageref{references:fn}.
 
         \begin{verbatim}
 \documentclass{article}

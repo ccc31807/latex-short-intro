@@ -1,6 +1,32 @@
 \documentclass{article}
-%this is the preamble
-\begin{document}
-%this is the contents section
-It works! %plain text prints as it
-\end{document}
+    \title{Table Captions and Labels}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \listoftables{}
+Reference to table \ref{Plants} on page \pageref{Plants}.
+    \begin{table}
+        \caption{Names - Caption Above \label{Names}}
+        \begin{tabular}{r | l l}
+            \hline
+            A & Akin & Allie \\
+            B & Bobby & Bonita \\
+            C & Chad & Carly \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \newpage
+    \begin{table}
+        \begin{tabular}{r | l l}
+            \hline
+            D & Date & Dogwood  \\
+            E & Eggplant & Elm \\
+            F & Fig & Frasier Fir \\
+            \hline
+        \end{tabular}
+        \caption{Plants - Caption Below \label{Plants}}
+    \end{table}
+    Reference to table \ref{Names} on page \pageref{Names}.
+\end{document}    
+

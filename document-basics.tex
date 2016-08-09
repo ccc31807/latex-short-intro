@@ -3,7 +3,7 @@
 
     A \texttt{tex} document consists of plain text, and special characters, commands, and environments. I will generally refer to special characters, commands, and enviormments with the word \textit{commands}; you don't need to know the difference between them now, but you shortly will without being told. You \textit{must} precede commands with a backslash (\textbackslash{}) for the compiler to know that they are commands. This is easy to forget, so I will remind you the first couple of times.
 
-    \paragraph{What should I have?}You should have a working \Lx{} program. If you do not have one, see Appendix \ref{Installing} below on page \pageref{Installing}. You will also need a text editor, and you will probably want to get an integrated editor, compiler, and printer. See Appendix \ref{Development Environments} on page \pageref{Development Environments}. You can also use the old fashioned command line, I cover this in Appendix \ref{Command Line} on page \pageref{Command Line}.
+    \textbf{What should I have?} You should have a working \Lx{} program. If you do not have one, see Appendix \ref{Installing} below on page \pageref{Installing}. You will also need a text editor, and you will probably want to get an integrated editor, compiler, and printer. See Appendix \ref{Development Environments} on page \pageref{Development Environments}. You can also use the old fashioned command line, I cover this in Appendix \ref{Command Line} on page \pageref{Command Line}.
 
         \subsection{Basic document}
         \label{Basic-document}
@@ -87,7 +87,7 @@
 
         \Lx{} provides a number of useful section levels, including part and chapter. Two of the most useful are \texttt{section} and \texttt{subsection}. Create and compile the following document. 
 
-        The \texttt{label\{\}} is used to create cross-references in documents. It's also very helpful in organizing your thoughts. The argument to \texttt{label\{argument\}} does not appear in the document. I cover the \texttt{ref} and \texttt{pageref} commands below in subsection \ref{Footnotes} on page \pageref{Footnotes}. These are used to create references back to the label.
+        The \texttt{label\{\}} is used to create cross-references in documents. It's also very helpful in organizing your thoughts.\footnote{Sometimes, people say that \Lx{} is a language for logical marup. As you continue to author documents with \Lx{}, you will increasingly come to rely on the \texttt{label} command to organize your paper and structure your thoughts. In my opinion, one of the chief benefits of using \Lx{} is that it enforces this kind of structured process on your writing, and you will become a better writer because of it,} The argument to \texttt{label\{argument\}} does not appear in the document. I cover the \texttt{ref} and \texttt{pageref} commands below in subsection \ref{Text references} on page \pageref{Text references}. These are used to create references back to the label.
 
         \begin{verbatim}
 \documentclass{article}

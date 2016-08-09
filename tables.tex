@@ -17,7 +17,7 @@
             \end{itemize}
         \end{framed}
 
-        As with lists, ths simplest, most brain-dead way to make a table is by using the \texttt{verbatim} environment.
+        As with lists, ths simplest, most brain-dead way to make a table is by using the \texttt{verbatim} environment. The hardest part is making sure that your cells align properly using correct spacing. Hint: use a monospace font in your text editor rather than a variable spaced font.
 
         \begin{verbatim}
 Abigail     Derek       Gladiola
@@ -64,10 +64,10 @@ Claudia     Frank       Impatiens
 
         A simple \Lx{} table is created within a \texttt{tabular} environment. The column specifications are passed as a parameter to te environment --- r (right), c (center), l (left). Table rows are terminated by two backslashes (\textbackslash\textbackslash). Cells are separated by an ampersand (\&).
 
-        \begin{tabular}{lcr}
-Abigail &  Derek &   Gladiola \\
-Brenda &  Edgar &   Hibiscus \\
-Claudia &  Frank &   Impatiens \\
+        \begin{tabular}{l c r}
+Ann &  Derek &   Gladiola \\
+Brenda &  Ed &   Hibiscus \\
+Claudette &  Frederick &   Impatiens \\
         \end{tabular}
 
 
@@ -78,10 +78,10 @@ Claudia &  Frank &   Impatiens \\
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-        \begin{tabular}{lcr}
-Abigail & Derek & Gladiola \\
-Brenda & Edgar & Hibiscus \\
-Claudia & Frank & Impatiens \\
+        \begin{tabular}{l c r}
+Ann         & Derek         & Gladiola \\
+Brenda      & Ed            & Hibiscus \\
+Claudette   & Frederick     & Impatiens \\
         \end{tabular}
 \end{document}    
         \end{verbatim}
@@ -100,7 +100,7 @@ Claudia & Frank & Impatiens \\
             \end{itemize}
         \end{framed}
 
-        Table rules are specified by the vertical bar (\textbar) and by \texttt{hline}. Column rules are set in the parameter of the column specifications based to the tabular environment. Row rules are created by the \texttt{hline} command. Both of these can be doubled to produce double rules.
+        Table rules are specified by the vertical bar (\textbar) and by \texttt{hline}. Column rules are set in the parameter of the column specifications passed to the tabular environment. Row rules are created by the \texttt{hline} command. Both of these can be doubled to produce double rules.
         
 
     \begin{tabular}{| l | r || l | r |}
@@ -114,7 +114,7 @@ Claudia & Frank & Impatiens \\
         \hline
         Claudia &  Frank &   Impatiens & Lynx \\
         \hline
-        \end{tabular}
+    \end{tabular}
 
 
          \begin{verbatim}
@@ -124,17 +124,20 @@ Claudia & Frank & Impatiens \\
     \date{\today{}}
 \begin{document} 
     \maketitle{}
+    \begin{tabular}{| l | r || l | r |}
         \hline
-Girls & Boys & Flowers & Animals\\
+        Girls & Boys & Flowers & Animals\\
         \hline
         \hline
-Abigail &  Derek &   Gladiola & Jackel \\
+        Abigail &  Derek &   Gladiola & Jackel \\
         \hline
-Brenda &  Edgar &   Hibiscus & Koala \\
+        Brenda &  Edgar &   Hibiscus & Koala \\
         \hline
-Claudia &  Frank &   Impatiens & Lynx \\
+        Claudia &  Frank &   Impatiens & Lynx \\
         \hline
-        \end{verbatim}
+    \end{tabular}
+\end{document}    
+        \end{verbatim}        
 
         \paragraph{Exercise:} Create your own simple table with vertical ane horizontal rules.
 
@@ -223,20 +226,62 @@ Claudia &  Frank &   Impatiens & Lynx \\
             \end{itemize}
         \end{framed}
 
+        The \textit{table environment} is created with the \texttt{begin\{table\}} command, and ended with the \texttt{end\{table\}} command. Table environments contain tables (inside the \textit{tabular environment}), and optional labels and captions. A caption is created with the \texttt{caption} command. Notice that in the example below the label command is placed \textit{inside} the caption command. Table \ref{Names} is on \pagref{Names} and table \ref{Plants} is on page \pageref{Plants}.
+
+        The \texttt{listoftables} command, which should be placed just after the \texttt{tableofcontants} command, generates a list of the tables in the document. For an example, see the table of contents of this tutorial and the listing below.
+
+    \begin{table}
+        \caption{Names - Caption Above \label{Names}}
+        \begin{tabular}{r | l l}
+            \hline
+            A & Akin & Allie \\
+            B & Bobby & Bonita \\
+            C & Chad & Carly \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \begin{table}
+        \begin{tabular}{r | l l}
+            \hline
+            D & Date & Dogwood  \\
+            E & Eggplant & Elm \\
+            F & Fig & Frasier Fir \\
+            \hline
+        \end{tabular}
+        \caption{Plants - Caption Below \label{Plants}}
+    \end{table}
 
         \begin{verbatim}
 \documentclass{article}
-    \title{This is My Title}
+    \title{Table Captions and Labels}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-    \section{Introduction}
-    \label{Introduction}
-    \section{Body}
-    \label{Body}
-    \section{Conclusion}
-    \label{Conclusion}
+    \listoftables{}
+Reference to table \ref{Plants} on page \pageref{Plants}.
+    \begin{table}
+        \caption{Names - Caption Above \label{Names}}
+        \begin{tabular}{r | l l}
+            \hline
+            A & Akin & Allie \\
+            B & Bobby & Bonita \\
+            C & Chad & Carly \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \newpage
+    \begin{table}
+        \begin{tabular}{r | l l}
+            \hline
+            D & Date & Dogwood  \\
+            E & Eggplant & Elm \\
+            F & Fig & Frasier Fir \\
+            \hline
+        \end{tabular}
+        \caption{Plants - Caption Below \label{Plants}}
+    \end{table}
+    Reference to table \ref{Names} on page \pageref{Names}.
 \end{document}    
         \end{verbatim}
 
@@ -245,8 +290,9 @@ Claudia &  Frank &   Impatiens & Lynx \\
         \paragraph{Exercise:} How would you center a table horizontally on the page?
 
 
-        \subsection{Table placement}
-        \label{Table placement}
+
+        \subsection{Multicells}
+        \label{Multicells}
         
         \begin{framed}
             \begin{itemize}
@@ -274,7 +320,6 @@ Claudia &  Frank &   Impatiens & Lynx \\
         \paragraph{Exercise:}
 
         \paragraph{Exercise:}
-
 
         \subsection{Long tables}
         \label{Long tables}
@@ -305,36 +350,4 @@ Claudia &  Frank &   Impatiens & Lynx \\
         \paragraph{Exercise:}
 
         \paragraph{Exercise:}
-
-
-        \subsection{Nested tables}
-        \label{Nested tables}
-        
-        \begin{framed}
-            \begin{itemize}
-                \item{}
-            \end{itemize}
-        \end{framed}
-
-
-        \begin{verbatim}
-\documentclass{article}
-    \title{This is My Title}
-    \author{Charles Carter}
-    \date{\today{}}
-\begin{document} 
-    \maketitle{}
-    \section{Introduction}
-    \label{Introduction}
-    \section{Body}
-    \label{Body}
-    \section{Conclusion}
-    \label{Conclusion}
-\end{document}    
-        \end{verbatim}
-
-        \paragraph{Exercise:}
-
-        \paragraph{Exercise:}
-
 
