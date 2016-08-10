@@ -226,12 +226,13 @@ Claudette   & Frederick     & Impatiens \\
             \end{itemize}
         \end{framed}
 
-        The \textit{table environment} is created with the \texttt{begin\{table\}} command, and ended with the \texttt{end\{table\}} command. Table environments contain tables (inside the \textit{tabular environment}), and optional labels and captions. A caption is created with the \texttt{caption} command. Notice that in the example below the label command is placed \textit{inside} the caption command. Table \ref{Names} is on \pagref{Names} and table \ref{Plants} is on page \pageref{Plants}.
+        The \textit{table environment} is created with the \texttt{begin\{table\}} command, and ended with the \texttt{end\{table\}} command. Table environments contain tables (inside the \textit{tabular environment}), and optional labels and captions. A caption is created with the \texttt{caption} command. Notice that in the example below the label command is placed \textit{after} the caption command. Table \ref{Names} is on \pageref{Names} and table \ref{Plants} is on page \pageref{Plants}.
 
         The \texttt{listoftables} command, which should be placed just after the \texttt{tableofcontants} command, generates a list of the tables in the document. For an example, see the table of contents of this tutorial and the listing below.
 
     \begin{table}
-        \caption{Names - Caption Above \label{Names}}
+    \caption{Names - Caption Above}
+    \label{Names}
         \begin{tabular}{r | l l}
             \hline
             A & Akin & Allie \\
@@ -240,6 +241,7 @@ Claudette   & Frederick     & Impatiens \\
             \hline
         \end{tabular}
     \end{table}
+
     \begin{table}
         \begin{tabular}{r | l l}
             \hline
@@ -248,7 +250,8 @@ Claudette   & Frederick     & Impatiens \\
             F & Fig & Frasier Fir \\
             \hline
         \end{tabular}
-        \caption{Plants - Caption Below \label{Plants}}
+    \caption{Plants - Caption Below}
+    \label{Plants}
     \end{table}
 
         \begin{verbatim}
@@ -261,7 +264,8 @@ Claudette   & Frederick     & Impatiens \\
     \listoftables{}
 Reference to table \ref{Plants} on page \pageref{Plants}.
     \begin{table}
-        \caption{Names - Caption Above \label{Names}}
+        \caption{Names - Caption Above}
+        \label{Names}
         \begin{tabular}{r | l l}
             \hline
             A & Akin & Allie \\
@@ -279,7 +283,8 @@ Reference to table \ref{Plants} on page \pageref{Plants}.
             F & Fig & Frasier Fir \\
             \hline
         \end{tabular}
-        \caption{Plants - Caption Below \label{Plants}}
+        \caption{Plants - Caption Below }
+        \label{Plants}
     \end{table}
     Reference to table \ref{Names} on page \pageref{Names}.
 \end{document}    
@@ -296,10 +301,40 @@ Reference to table \ref{Plants} on page \pageref{Plants}.
         
         \begin{framed}
             \begin{itemize}
-                \item{}
+                \index{multicolumn}
+                \index{multirow package}
+                \index{multirow}
+                \item{multicolumn}
+                \item{multirow package}
+                \item{multirow}
             \end{itemize}
         \end{framed}
 
+        \Lx{} tables can be nested, but for multi-column and multi-row spans, there are separate commands that are much easier to use. Multicolumn cells are created by the \texttt{multicolumn\{num-of-cols\}\{col-alignment\}\{cell-content\}} as illustrated in table \ref{multicol} on page \pageref{multicol}.
+
+        \begin{table}
+            \begin{tabular}{| l | p{2.5in} |  c |}
+                \hline
+                \multicolumn{3}{| c |}{Measures of center} \\
+                \hline
+                mean & the sum of all values divided by the number of values & $\frac{\sum_{i=1}^{i=n} x_i}{n}$ \\
+                \hline
+                median & the middle value in a vector of sorted value & $\frac{length(V) + 1}{n} | sorted(V)$  \\
+                \hline
+                mode & the most frequent value or values if more than one  & (no formula) \\
+                \hline
+                \multicolumn{3}{| c |}{Measures of dispersion} \\
+                \hline
+                variance & the sum of the difference between each value of the vector and the mean of the vector divided by the number of values in the vector & $\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}$ \\
+                \hline
+                standard deviation & the square root of the sum of the difference between each value of the vector and the mean of the vector divided by the number of values in the vector  & $\sqrt{\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}}$ \\
+                \hline
+                median absolute deviation & the average distance between each data value and the mean & $\frac{\sum_{i=1}^{i=n}|V_i - \mu|}{n}$  \\ 
+                \hline
+            \end{tabular}
+        \caption{Multicolumn Example}
+        \label{multicol}
+        \end{table}
 
         \begin{verbatim}
 \documentclass{article}
@@ -307,13 +342,43 @@ Reference to table \ref{Plants} on page \pageref{Plants}.
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
-    \maketitle{}
-    \section{Introduction}
-    \label{Introduction}
-    \section{Body}
-    \label{Body}
-    \section{Conclusion}
-    \label{Conclusion}
+    \begin{table}
+        \begin{tabular}{| l | p{2.5in} |  c |}
+            \hline
+            \multicolumn{3}{| c |}{Measures of center} \\
+            \hline
+            mean & 
+                the sum of all values divided by the number of values & 
+                $\frac{\sum_{i=1}^{i=n} x_i}{n}$ \\
+            \hline
+            median & 
+                the middle value in a vector of sorted value & 
+                $\frac{length(V) + 1}{n} | sorted(V)$  \\
+            \hline
+            mode & 
+                the most frequent value or values if more than one  
+                & (no formula)  \\
+            \hline
+            \multicolumn{3}{| c |}{Measures of dispersion} \\
+            \hline
+            variance & 
+                the sum of the difference between each value of the vector 
+                and the mean of the vector divided by the number of values 
+                in the vector & 
+                $\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}$ \\
+            \hline
+            standard deviation & 
+            the square root of the sum of the difference between each value 
+            of the vector and the mean of the vector divided by the number 
+            of values in the vector  & 
+            $\sqrt{\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}}$ \\
+            \hline
+            median absolute deviation & the average distance between each data value and the mean & $\frac{\sum_{i=1}^{i=n}|V_i - \mu|}{n}$  \\ 
+            \hline
+        \end{tabular}
+    \caption{Multicolumn Example}
+    \label{multicol}
+    \end{table}
 \end{document}    
         \end{verbatim}
 

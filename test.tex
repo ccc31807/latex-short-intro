@@ -5,28 +5,29 @@
 \begin{document} 
     \maketitle{}
     \listoftables{}
-Reference to table \ref{Plants} on page \pageref{Plants}.
-    \begin{table}
-        \caption{Names - Caption Above \label{Names}}
-        \begin{tabular}{r | l l}
-            \hline
-            A & Akin & Allie \\
-            B & Bobby & Bonita \\
-            C & Chad & Carly \\
-            \hline
-        \end{tabular}
-    \end{table}
-    \newpage
-    \begin{table}
-        \begin{tabular}{r | l l}
-            \hline
-            D & Date & Dogwood  \\
-            E & Eggplant & Elm \\
-            F & Fig & Frasier Fir \\
-            \hline
-        \end{tabular}
-        \caption{Plants - Caption Below \label{Plants}}
-    \end{table}
-    Reference to table \ref{Names} on page \pageref{Names}.
+        \begin{table}
+            \begin{tabular}{| l | p{2.5in} |  c |}
+                \hline
+                \multicolumn{3}{ c |}{Measures of center} \\
+                \hline
+%                mean & the sum of all values divided by the number of values & $\frac{\times \sum_{i=1}^{i=n} x_i}{n}$ \\
+%                \hline
+%                median & the middle value in a vector of sorted value & $\frac{length(V) + 1}{n} | sorted(V)$  \\
+%                \hline
+%                mode & the most frequent value or values if more than one  &  \\
+%                \hline
+%                \multicolumn{3}{ c |}{Measures of dispersion} \\
+%                \hline
+%                variance & the sum of the difference between each value of the vector and the mean of the vector divided by the number of values in the vector & $\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}$ \\
+%                \hline
+%                standard deviation & the square root of the sum of the difference between each value of the vector and the mean of the vector divided by the number of values in the vector  & $\sqrt{\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}}$ \\
+%                \hline
+                median absolute deviation & the average distance between each data value and the mean & $\frac{\sum_{i=1}^{i=n}|V_i - \mu|}{n}$  \\ 
+                \hline
+            \end{tabular}
+        \caption{Multicolumn Example}
+        \label{multicol}
+        \end{table}
+
 \end{document}    
 
