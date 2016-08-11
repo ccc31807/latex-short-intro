@@ -1,33 +1,29 @@
 \documentclass{article}
-    \title{Table Captions and Labels}
+    \usepackage{longtable}
+    \title{Long Tables}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
     \listoftables{}
-        \begin{table}
-            \begin{tabular}{| l | p{2.5in} |  c |}
-                \hline
-                \multicolumn{3}{ c |}{Measures of center} \\
-                \hline
-%                mean & the sum of all values divided by the number of values & $\frac{\times \sum_{i=1}^{i=n} x_i}{n}$ \\
-%                \hline
-%                median & the middle value in a vector of sorted value & $\frac{length(V) + 1}{n} | sorted(V)$  \\
-%                \hline
-%                mode & the most frequent value or values if more than one  &  \\
-%                \hline
-%                \multicolumn{3}{ c |}{Measures of dispersion} \\
-%                \hline
-%                variance & the sum of the difference between each value of the vector and the mean of the vector divided by the number of values in the vector & $\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}$ \\
-%                \hline
-%                standard deviation & the square root of the sum of the difference between each value of the vector and the mean of the vector divided by the number of values in the vector  & $\sqrt{\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}}$ \\
-%                \hline
-                median absolute deviation & the average distance between each data value and the mean & $\frac{\sum_{i=1}^{i=n}|V_i - \mu|}{n}$  \\ 
-                \hline
-            \end{tabular}
-        \caption{Multicolumn Example}
-        \label{multicol}
-        \end{table}
+        \begin{longtable}{| l | c | r | }
+            \caption{Longtable example}
+            \label{longtable}
+            \hline
+            %\multicolumn{1}{| l |}{ State} & \multicolumn{1}{| c |}{ Capital} & \multicolumn{1}{| r |}{ Population} \\
+            State & Capital & Population \\
+            \hline
+            \hline
+            California & Sacramento & 37,000,000 \\
+            \hline
+            Texas & Austin  & 25,000,000 \\
+            \hline
+            New York & Albany & 19,000,000 \\
+            \hline
+            Florida & Tallahassee  & 18,000,000 \\
+            \hline
+        \end{longtable}
+
 
 \end{document}    
 

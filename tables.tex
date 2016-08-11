@@ -169,7 +169,7 @@ Claudette   & Frederick     & Impatiens \\
 
         \begin{verbatim}
 \documentclass{article}
-    \title{This is My Title}
+    \title{P Columns}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
@@ -338,7 +338,7 @@ Reference to table \ref{Plants} on page \pageref{Plants}.
 
         \begin{verbatim}
 \documentclass{article}
-    \title{This is My Title}
+    \title{Multicolumns}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
@@ -368,51 +368,137 @@ Reference to table \ref{Plants} on page \pageref{Plants}.
                 $\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}$ \\
             \hline
             standard deviation & 
-            the square root of the sum of the difference between each value 
-            of the vector and the mean of the vector divided by the number 
-            of values in the vector  & 
-            $\sqrt{\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}}$ \\
+                the square root of the sum of the difference between each value 
+                of the vector and the mean of the vector divided by the number 
+                of values in the vector  & 
+                $\sqrt{\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}}$ \\
             \hline
-            median absolute deviation & the average distance between each data value and the mean & $\frac{\sum_{i=1}^{i=n}|V_i - \mu|}{n}$  \\ 
+            median absolute deviation & 
+                the average distance between each data value and the mean & 
+                $\frac{\sum_{i=1}^{i=n}|V_i - \mu|}{n}$  \\ 
             \hline
         \end{tabular}
     \caption{Multicolumn Example}
     \label{multicol}
     \end{table}
+\end{document}
+        \end{verbatim}
+
+        Tables with multiple rows for a column need the package \textit{multirow}, import as usual with \texttt{usepackage\{multirow\}}. The syntax is \texttt{multirow\{num-of-rows\}\{row-width\}\{content\}}In the table, make sure that the appropriate rows for the multirow structure are undefined. Here is an example in table \ref{multirow} on page \pageref{multirow}.
+
+        \begin{table}
+            \begin{tabular}{| l | l |}
+                \hline
+                \multirow{5}{*}{Confederate songs} & Dixie \\
+                                                   & Yellow Rose of Texas \\
+                                                   & Bonnie Blue Flag \\
+                                                   & When Johnny Comes Marching Home \\
+                \hline
+                \multirow{5}{*}{Union songs} & Battle Hymn of the Republic \\
+                                             & Marching Through Georgia \\
+                                             & Tramp, Tramp, Tramp \\
+                                             & Battle Cry of Freedom \\
+                \hline
+                \multirow{5}{*}{Civilian songs} & Aura Lee \\
+                                                & Tenting Tonight \\
+                                                & Lorena \\
+                                                & Weeping Sad and Lonely \\
+                \hline
+            \end{tabular}
+        \caption{Multirow Example}
+        \label{multirow}
+        \end{table}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Multirows}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+        \begin{table}
+            \begin{tabular}{| l | l |}
+                \hline
+                \multirow{5}{*}{Confederate songs} & Dixie \\
+                                                   & Yellow Rose of Texas \\
+                                                   & Bonnie Blue Flag \\
+                                                   & When Johnny Comes Marching Home \\
+                \hline
+                \multirow{5}{*}{Union songs} & Battle Hymn of the Republic \\
+                                             & Marching Through Georgia \\
+                                             & Tramp, Tramp, Tramp \\
+                                             & Battle Cry of Freedom \\
+                \hline
+                \multirow{5}{*}{Civilian songs} & Aura Lee \\
+                                                & Tenting Tonight \\
+                                                & Lorena \\
+                                                & Weeping Sad and Lonely \\
+                \hline
+            \end{tabular}
+        \caption{Multirow Example}
+        \label{multirow}
+        \end{table}
 \end{document}    
         \end{verbatim}
 
-        \paragraph{Exercise:}
-
-        \paragraph{Exercise:}
+        \paragraph{Exercise:} Tables with multiple row spans and multiple column spans require much thought and debugging. Try your own very simple example
 
         \subsection{Long tables}
         \label{Long tables}
         
         \begin{framed}
             \begin{itemize}
-                \item{}
+                \index{longtable package}
+                \index{longtable}
+                \item{longtable package}
+                \item{longtable}
             \end{itemize}
         \end{framed}
 
+        What do you do if the length of your table exceed the page length? Use the \texttt{longtable} command after first importing the \textit{longtable package} the usual way with \texttt{usepackage\{longtable\}}. The longtable also accepts the caption and label commands. See table \ref{longtable} on page \pageref{longtable}.
+
+        \begin{longtable}{| l | c | r | }
+            \caption{Longtable example}
+            \label{longtable}
+            \hline
+            State & Capital & Population \\
+            \hline
+            \hline
+            California & Sacramento & 37,000,000 \\
+            \hline
+            Texas & Austin  & 25,000,000 \\
+            \hline
+            New York & Albany & 19,000,000 \\
+            \hline
+            Florida & Tallahassee  & 18,000,000 \\
+            \hline
+        \end{longtable}
 
         \begin{verbatim}
 \documentclass{article}
-    \title{This is My Title}
+    \usepackage{longtable}
+    \title{Long Tables}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-    \section{Introduction}
-    \label{Introduction}
-    \section{Body}
-    \label{Body}
-    \section{Conclusion}
-    \label{Conclusion}
+    \listoftables{}
+        \begin{longtable}{| l | c | r | }
+            \caption{Longtable example}
+            \label{longtable}
+            \hline
+            State & Capital & Population \\
+            \hline
+            \hline
+            California & Sacramento & 37,000,000 \\
+            \hline
+            Texas & Austin  & 25,000,000 \\
+            \hline
+            New York & Albany & 19,000,000 \\
+            \hline
+            Florida & Tallahassee  & 18,000,000 \\
+            \hline
+        \end{longtable}
 \end{document}    
+
+
         \end{verbatim}
-
-        \paragraph{Exercise:}
-
-        \paragraph{Exercise:}
-
