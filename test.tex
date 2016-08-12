@@ -1,26 +1,24 @@
-\documentclass{article}
-    \usepackage{longtable}
-    \title{long tables}
-    \author{charles carter}
-    \date{\today{}}
-\begin{document} 
-    \maketitle{}
-    \listoftables{}
-        \begin{longtable}{| l | c | r | }
-            \caption{longtable example}
-            \label{longtable}
-            \hline
-            state & capital & population \\
-            \hline
-            \hline
-            california & sacramento & 37,000,000 \\
-            \hline
-            texas & austin  & 25,000,000 \\
-            \hline
-            new york & albany & 19,000,000 \\
-            \hline
-            florida & tallahassee  & 18,000,000 \\
-            \hline
-        \end{longtable}
+\documentclass[letterpaper]{book}
+	\title{My First Book}
+	\author{Charles Carter}
+	\date{\today{}}
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents{}
+% Introductory chapters
+\chapter{Preface}
+This  is the preface
+\mainmatter
+    \chapter{A Story}
+    Let me tell you a story.
+    \chapter{Moral}
+    This is the moral of the story. 
+\appendix
+    \chapter{First Appendix}
+    Here is an appendix.
+\backmatter
+    \chapter{Last note}
+    The last word.
 \end{document}    
 
