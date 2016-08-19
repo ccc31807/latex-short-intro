@@ -243,6 +243,96 @@
 
 		\paragraph{Exercise:}Continue reading through the \textit{User's Guide for the }\texttt{amsmath} \textit{Package}.
 
+        \subsection{Theorems, etc.}
+        \label{Theorems}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{amsthm package}
+                \index{package amsthm}
+                \index{newtheorem}
+                \index{addcontentsline}
+                \item{amsthm package}
+                \item{newtheorem}
+                \item{addcontentsline}
+            \end{itemize}
+        \end{framed}
+
+        Stating theorems, lemmas, proofs, axioms, and similar constructions in \Lx{} is particularly easy. For simple applications, just define whatever environment you need in the preamble with \texttt{newtheorem}, like this: \texttt{newtheorem\{first argument\}\{second argument\}}. The \textit{first argument} is the name of the structure: theorem, lemma, definition, etc. The \textit{second argument} is the printed heading that the reader will see in the document.
+
+        For more flexibility (and I do mean a \textit{lot} more flexibility) use the \texttt{amsthm} package, imported as usual in the preamble with \texttt{usepackage\{amsthm\}}. This package allows many customizations, for example, numbering by section and subsection, and concurrent numbering of theorems and proofs. The documentation of this package is fairly short and not overly complex, so it's not hard to read, understand, and use.
+
+        Finally, you might want to add your theorem to the table of contents, Use \texttt{addcontentsline\{first argument\}\{second argument\}\{third argument\}}. The \textit{first argument} is the listing where you want the entry to appear: table of contents, list of tables, or list of figures. The \textit{second argument} is the kind of entry you want, such as section, subsection, etc. The \textit{third argument} is the printed text that will appear in the contents section.
+
+    \begin{theorem}
+        \label{thm:first}
+        \addcontentsline{toc}{subsubsection}{Fundamental Theorem of Calculus}
+        Definite integral of a function is related to its antiderivative, and can be reversed by differentiation.
+    \end{theorem}
+    \begin{proof}
+        \label{prf:first}
+        \addcontentsline{toc}{subsubsection}{Proof of Fundamental Theorem of Calculus}
+        If $f$ is continuous on $[a, b]$, 
+            then $\int_a^b f$ exists. \\
+        If $f$ is continous on $[a, b]$ and $c \in [a, b]$, 
+            then $\int_a^c F + \int_c^b F = \int_a^b F$. \\
+        If $m \leq f \leq M$ on $[a, b]$, 
+            then $(b - a)m \leq \int_a^b f \leq (b - a)M$.
+    \end{proof}
+    \begin{definition}
+        \label{def:first}
+        \addcontentsline{toc}{subsubsection}{Definition of Calculus}
+        Calculus is the branch of mathematics that deals with the finding and properties of derivatives and integrals of functions, by methods originally based on the summation of infinitesimal differences. The two main types are differential calculus and integral calculus.
+    \end{definition}
+    For the definition of calculus, see definition \ref{def:first}. For the fundamental theorem of calculus, see theorem \ref{thm:first}. For the proof, see proof \ref{prf:first}.
+		
+
+        \begin{verbatim}
+\documentclass{article}
+    \newtheorem{theorem}{Theorem}
+    \newtheorem{proof}{Proof}
+    \newtheorem{definition}{Definition}
+    \title{Theorems, Proofs, Definitions, etc.}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document}
+    Theorems, proofs, definitions, etc.  can easily be defined
+    \begin{theorem}
+        \label{thm:first}
+        \addcontentsline{toc}{subsubsection}{Fundamental Theorem of Calculus}
+        Definite integral of a function is related to its antiderivative, 
+        and can be reversed by differentiation.
+    \end{theorem}
+    \begin{proof}
+        \label{prf:first}
+        \addcontentsline{toc}{subsubsection}{Proof of Fundamental Theorem of Calculus}
+        If $f$ is continuous on $[a, b]$, 
+            then $\int_a^b f$ exists. \\
+        If $f$ is continous on $[a, b]$ and $c \in [a, b]$, 
+            then $\int_a^c F + \int_c^b F = \int_a^b F$. \\
+        If $m \leq f \leq M$ on $[a, b]$, 
+            then $(b - a)m \leq \int_a^b f \leq (b - a)M$.
+    \end{proof}
+    \begin{definition}
+        \label{def:first}
+        \addcontentsline{toc}{subsubsection}{Definition of Calculus}
+        Calculus is the branch of mathematics that deals with the 
+        finding and properties of derivatives and integrals of 
+        functions, by methods originally based on the summation 
+        of infinitesimal differences. The two main types are 
+        differential calculus and integral calculus.
+    \end{definition}
+    For the definition of calculus, see definition \ref{def:first}. 
+    For the fundamental theorem of calculus, see theorem \ref{thm:first}. 
+    For the proof, see proof \ref{prf:first}.
+    \end{document}
+        \end{verbatim}
+
+        \paragraph{Exercise:} Create your own new theorem class, called Problem, perhaps, and write a problem.
+
+        \paragraph{Exercise:} Access the documentation to the amsthm package and look through it.
+
+
         \subsection{Matrices}
         \label{Matrices}
         
@@ -318,11 +408,9 @@
         \subsection{Greek letters}
         \label{Greek letters}
         
-
-        Here are the Greek letters commonly used in mathematical and scientific applications, table \ref{Greek letters} on page \pageref{Greek letters}. The \Lx{} commands for the Greek letters are in inline math mode, so you \textit{must} surround the command by a pair of dollar signs (\$\ldots\$). You must also use the \texttt{amsmath} package.
+        Here are the Greek letters commonly used in mathematical and scientific applications, table \ref{table:Greek letters} on page \pageref{table:Greek letters}. The \Lx{} commands for the Greek letters are in inline math mode, so you \textit{must} surround the command by a pair of dollar signs (\$\ldots\$). You must also use the \texttt{amsmath} package.
 
         \begin{table}[!ht]
-            \label{Greek letters}
         \begin{tabular}{|| l || l | l || l | l ||}
             \hline
             Name & UC command & UC Letter      & LC command & LC letter \\
@@ -378,6 +466,7 @@
             \hline
         \end{tabular}
             \caption{Greek letters}
+            \label{table:Greek letters}
         \end{table}
 
         \begin{verbatim}
