@@ -32,9 +32,12 @@
         \begin{framed}
             \begin{itemize}
                 \index{\$}
-                \index{plus or +}
+                \index{+}
+                \index{plus}
 				\index{- (dash or subtraction)}
-                \index{times or ast}
+                \index{times}
+                \index{ast}
+                \index{cdot}
                 \index{frac or div}
                 \index{sqrt}
 				\index{\^{} (caret or circumflex)}
@@ -42,7 +45,7 @@
                 \item{\$}
                 \item{plus or +}
 				\item{- (dash or subtraction)}
-                \item{times or ast}
+                \item{times or ast or cdot}
                 \item{frac or div}
                 \item{sqrt}
 				\item{\^{} (caret or circumflex)}
@@ -50,7 +53,7 @@
             \end{itemize}
         \end{framed}
 
-	This is an example of inline math. Use the dollar symbol (\$) to set the math. Here is how it works.  Addition: $4 + 5 = 9$.  Subtraction: $4 - 5 = -1$.  Multiplication: $4 \times 5 = 20$.  Multiplication: $4 \ast 5 = 20$.  Division: $\frac{4}{5} = 0.8$.  Division: $4 \div 5 = 0.8$.  Square root: $\sqrt{2} = 1.41421$.  Exponents: $2^8 = 256$.  Subscripts: $x_0, x_1, x_2$.
+	This is an example of inline math. Use the dollar symbol (\$) to set the math. Here is how it works.  Addition: $4 + 5 = 9$.  Subtraction: $4 - 5 = -1$.  Multiplication: $4 \times 5 = 20$. Multiplication: $4 \cdot 5 = 20$.  Multiplication: $4 \ast 5 = 20$.  Division: $\frac{4}{5} = 0.8$.  Division: $4 \div 5 = 0.8$.  Square root: $\sqrt{2} = 1.41421$.  Exponents: $2^8 = 256$.  Subscripts: $x_0, x_1, x_2$.
 
         \begin{verbatim}
 \documentclass{article}
@@ -64,6 +67,7 @@
     Addition: $4 + 5 = 9$. 
     Subtraction: $4 - 5 = -1$. 
     Multiplication: $4 \times 5 = 20$. 
+    Multiplication: $4 \cdot 5 = 20$. 
     Multiplication: $4 \ast 5 = 20$.
     Division: $\frac{4}{5} = 0.8$. 
     Division: $4 \div 5 = 0.8$. 
@@ -411,6 +415,7 @@
         Here are the Greek letters commonly used in mathematical and scientific applications, table \ref{table:Greek letters} on page \pageref{table:Greek letters}. The \Lx{} commands for the Greek letters are in inline math mode, so you \textit{must} surround the command by a pair of dollar signs (\$\ldots\$). You must also use the \texttt{amsmath} package.
 
         \begin{table}[!ht]
+            \label{table:Greek letters}
         \begin{tabular}{|| l || l | l || l | l ||}
             \hline
             Name & UC command & UC Letter      & LC command & LC letter \\
@@ -466,7 +471,6 @@
             \hline
         \end{tabular}
             \caption{Greek letters}
-            \label{table:Greek letters}
         \end{table}
 
         \begin{verbatim}
