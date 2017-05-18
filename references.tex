@@ -8,7 +8,7 @@
     \subsection{Text references}
     \label{Text references}
 
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \item{label}
                 \item{ref}
@@ -17,7 +17,7 @@
                 \index{ref}
                 \index{pageref}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
         A text reference has two parts, a target and a pointer. The pointer points to a target, and a target is pointed to with a pointer. Targets are identified using the \texttt{label} command. Pointers are created with the \texttt{ref} command for numerical designations, and the page on which the target appears with the \texttt{pageref} command. For example, the table of Greek letters on page \pageref{Greek letters} is table \ref{Greek letters}. Targets can include structural elements (chapters, sections, paragraphs, etc.), tables, and figures.
 
@@ -45,7 +45,7 @@
     \subsection{Footnotes}
     \label{Footnotes}
 
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \item{footnote}
                 \item{label}
@@ -56,7 +56,7 @@
                 \index{ref}
                 \index{pageref}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
     To insert a footnote, just use the command \texttt{footnote}.\footnote{\label{references:fn}Don't forget to put the \textbackslash{} before the \texttt{footnote} command.} If you label the footnote, you can refer to the footnote by number and page in the text of the doucumemt. Please be sure to read footnote \ref{references:fn} on page \pageref{references:fn}.
 
@@ -82,7 +82,7 @@
     \subsection{Endnotes}
     \label{Endnotes}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{package endnotes}
                 \index{endnote}
@@ -93,7 +93,7 @@
                 \item{theendnotes}
                 \item{addcontentsline}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
     Endnotes are a little more complicated than footnotes, but not much.\endnote{The difference between footnotes and endnotes is that footnotes go at the foot of the page where they appear, whilc endnotes appear at the end of the document.} Here is an endnote.\endnote{This is an endnote.} In order to actually print the endnotes, use the \texttt{theendnotes} command. In order to create an entry for the endnotes in the table of contents, you must use the \texttt{addcontentsline}.\endnote{\label{references:en}The addcontentsline takes three parameters, where the line should be written, usually \textit{toc}, the formatting to be used, usually \textit{section}, and the name to be given to the entry, perhaps \textit{Endnotes}.} Please see endnote \ref{references:en} on page \pageref{references:en} for the details.
 
@@ -130,7 +130,7 @@
     \subsection{Margin notes}
     \label{Margin notes}
 
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{marginpar}
                 \index{reversemarginpar}
@@ -141,7 +141,7 @@
                 \item{normalmarginpar}
                 \item{raggedright}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
         \marginpar{Important point!}
 
@@ -179,12 +179,12 @@
     \subsection{Bibliography}
     \label{Bibliography}
 
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \item{creating an external \bib{} database}
                 \index{creating an external \bib{} database}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
     Needless to say, every research paper requires a bibliography. \Lx{} has multiple ways to include bibliographies. I have chosen to use a method called \bib{}. There are three reasons for this choice. First. it's simple enough to include in a simple tutorial. Second, it gives good results using its default settings. Third, it's complex enough to be configured for almost any application (given an author's time and patience).
 
@@ -267,7 +267,7 @@
     \subsection{Citations}
     \label{Citations}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \item{cite}
                 \item{nocite}
@@ -282,7 +282,7 @@
                 \index{addcontentsline}
                 \index{bibtex}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
         Preparing the bibliographic database is fairly straightforward and easy. Unfortunately, the details of including the citations in your document is not as straightforward.\footnote{Again, you must pay attention to the reference types and required fields. This is probably the most onerous part of including a bibliograpy.} To cite to a reference, use the \texttt{cite} command, passing the citation reference as an argument. By default, the printed bibliography includes only cited references --- to include a particular uncited reference, use the \texttt{nocite} command, passing the citation reference as an argument. To include all uncited references, use the command \texttt{nocite\{*\}}. (The asterisk is a typeglob that means ``everything'').
 
@@ -321,7 +321,7 @@
     \subsection{Indices}
     \label{Indices}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \item{package imakeidx}
                 \item{makeindex}
@@ -334,7 +334,7 @@
                 \index{printindex}
                 \index{addcontentsline}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
     Any paper of a reasonable size should have an index. Fortunately, indices in \Lx{} are easy if a bit tedious. The tedious part comes from marking all the words to be indexed. The rest is pretty easy.
 
@@ -372,3 +372,34 @@
         \paragraph{Exercise:} Find the documentation to the \texttt{imakeidx} package and read through it.
 
         \paragraph{Exercise:} How can you generate multiple indices, perhaps one for people and one for commands?
+
+        \subsection{Includes}
+        \label{Includes}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \item{}
+            \end{itemize}
+        \end{cmd}
+
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{This is My Title}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:}
+
+        \paragraph{Exercise:}
+        

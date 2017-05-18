@@ -8,7 +8,7 @@
         \subsection{Basic document}
         \label{Basic-document}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{documentclass}
                 \index{begin/end document}
@@ -19,7 +19,7 @@
 				\item{plain text}
 				\item{comments}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
         A basic document begins with a document class, and has a preamble and contents. Type (or copy) the following, save it as a \texttt{.tex} document and compile it. The percent signs (\%) are comments and do not have any effect on  the document.
 
@@ -39,7 +39,7 @@
         \subsection{Basic title}
         \label{Basic-title}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{title}
                 \index{author}
@@ -50,7 +50,7 @@
                 \item{date}
                 \item{maketitle}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
         A basic document usually title and author information in the preamble. You specify the title with the \texttt{title} command. You specify the author(s) with the \texttt{author} command. You may optionally specify a date with the \texttt{date} command. In the body of the document, you create the title with the \texttt{maketitle} command. Create and compile a second document like this:        
 
@@ -72,7 +72,7 @@
         \subsection{Basic sections}
         \label{Basic-sections}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{section}
                 \index{subsection}
@@ -83,7 +83,7 @@
                 \item{subsubsection}
                 \item{label}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
         \Lx{} provides a number of useful section levels, including part and chapter. Two of the most useful are \texttt{section} and \texttt{subsection}. Create and compile the following document. 
 
@@ -112,14 +112,14 @@
         \subsection{Basic paragraphs}
         \label{Basic-paragraphs}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{paragraph}
                 \index{subparagraph}
                 \item{paragraph}
                 \item{subparagraph}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
 
         We have reached the point where you need some real content. I will use the text of Abraham Lincoln's Gettysburg Address to illustrate paragraphs. Notice that ordinary paragraphs do not need a special commend -- the ``paragraph command'' is simply two blank lines to create an empty new line between the paragraphs, as if they were double spaced. Create and compile the following document.
@@ -173,14 +173,14 @@ by the people, for the people, shall not perish from the earth.
         \subsection{Basic packages}
         \label{Basic packages}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{usepackage}
                 \index{lipsum}
                 \item{usepackage}
                 \item{lipsum}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
 Much of \Lx{} functionality is contained in external packages. To use this functionality, you include the command \texttt{usepackage\{\}} in the preamble. Of course, you first have to install the package on your computer, but the MiKTeX distribution does that automatically. The \texttt{lipsum} package generates generic text (in Latin, of course). The \texttt{lipsum\{\}} command generates text. Notice that you can control the number of paragraphs to include. Below, I have included paragraph $1$ in the introduction, paragraphs $2$ through $4$ in the body, and paragraph $5$ in the conclusion.
 
@@ -213,12 +213,12 @@ Notice the paragraph indentation. First paragraphs are \textit{not} indented. Fo
         \subsection{Basic contents}
         \label{Basic contents}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{tableofcontents}
                 \item{tableofcontents}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
         Creating a table of contents is easy. Just include the \texttt{tableofcontents\{\}} command. You may have to compile the document twice to ensure that the table of contents is generated properly.
         \begin{verbatim}
@@ -249,7 +249,7 @@ Notice the paragraph indentation. First paragraphs are \textit{not} indented. Fo
         \subsection{Basic decorations}
         \label{Basic decorations}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{textit}
                 \index{textsf}
@@ -264,16 +264,18 @@ Notice the paragraph indentation. First paragraphs are \textit{not} indented. Fo
                 \item{textsc}
                 \item{underline}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
 In this section, you will fiddle with the appearance of text. To \textit{create text in italics}, use \texttt{textit}. To \textsf{create text in sans serif}, use \texttt{textsf}. To \texttt{create text in monospace font}, use \texttt{texttt}. To \textbf{create text in boldface}, use \texttt{textbf}. To \textsc{create text using Small Caps}, use \texttt{textsc}. \underline{You should almost never underline text}! If you choose to do so, use \texttt{underline}.
 
+\begin{sample}
         \paragraph{}To \textit{create text in italics}, use \texttt{textit}. 
         \paragraph{}To \textsf{create text in sans serif}, use \texttt{textsf}. 
         \paragraph{}To \texttt{create text in monospace font}, use \texttt{texttt}. 
         \paragraph{}To \textbf{create text in boldface}, use \texttt{textbf}. 
         \paragraph{}To \textsc{create text using Small Caps}, use \texttt{textsc}. 
         \paragraph{}\underline{You should almost never underline text}! If you choose to do so, use \texttt{underline}.
+\end{sample}
 
         \begin{verbatim}
 \documentclass{article}
@@ -299,14 +301,14 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
 \end{document}    
         \end{verbatim}
 
-        \paragraph{Exercise:}As with much else in \Lx,there are multiple ways to italisize or bold-face text. Can you find other ways?
+        \paragraph{Exercise:}As with much else in \Lx,there are multiple ways to italicize or bold-face text. Can you find other ways?
 
 
 
         \subsection{Basic fontsizes}
         \label{Basic fontsizes}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{tiny}
                 \index{scriptsize}
@@ -329,10 +331,11 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
                 \item{huge}
                 \item{Huge}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
 \Lx{} has several different ways to alter the size of the font. Perhaps the simplest way is to create a \textit{size environment}. You do this by using one of the commands listed above, and this controls the size of all text until it is changed by another command. You would typically use this for sections of text that need to be made smaller, such as tables, block quotes, technical sections not germane to the main discussion, and similar.
 
+\begin{sample}
     \normalsize{}\paragraph{}This paragraph has a normalsize font size.
     \tiny{}\paragraph{}This paragraph has a tiny font size.
     \scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
@@ -345,6 +348,7 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
     \huge{}\paragraph{}This paragraph has a huge font size.
     \Huge{}\paragraph{}This paragraph has a Huge font size.
     \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+\end{sample}
 
         \begin{verbatim}
 \documentclass{article}
@@ -374,5 +378,5 @@ In this section, you will fiddle with the appearance of text. To \textit{create 
 \end{document}    
         \end{verbatim}
 
-        \paragraph{Exercise:} The issues of font, font size, and font decoration, are difficult, complicated, and subject to internecene wars. You may want to postpone your exploration of these issues until you have created and compiled several hundred \texttt{.tex} documents. If you want, and have discretionary time available and nothing else to do, you may want to delve into the complex and divisive world of fonts, font sizes, and font decorations.
+        \paragraph{Exercise:} The issues of font, font size, and font decoration, are difficult, complicated, and subject to internecine wars. You may want to postpone your exploration of these issues until you have created and compiled several hundred \texttt{.tex} documents. If you want, and have discretionary time available and nothing else to do, you may want to delve into the complex and divisive world of fonts, font sizes, and font decorations.
 

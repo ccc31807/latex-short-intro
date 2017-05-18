@@ -1,36 +1,27 @@
 \documentclass{article}
-    \newtheorem{theorem}{Theorem}
-    \newtheorem{proof}{Proof}
-    \newtheorem{definition}{Definition}
-    \title{Theorems, Proofs, Definitions, etc.}
-    \author{Charles Carter}
-    \date{\today{}}
+\title{Font Sizes}
+\author{Charles Carter}
+\date{\today{}}
 \begin{document}
-    Theorems, proofs, definitions, etc.  can easily be defined
-    \begin{theorem}
-        \label{thm:first}
-        Definite integral of a function is related to its antiderivative, 
-        and can be reversed by differentiation.
-    \end{theorem}
-    \begin{proof}
-        \label{prf:first}
-        If $f$ is continuous on $[a, b]$, 
-            then $\int_a^b f$ exists. \\
-        If $f$ is continous on $[a, b]$ and $c \in [a, b]$, 
-            then $\int_a^c F + \int_c^b F = \int_a^b F$. \\
-        If $m \leq f \leq M$ on $[a, b]$, 
-            then $(b - a)m \leq \int_a^b f \leq (b - a)M$.
-    \end{proof}
-    \begin{definition}
-        \label{def:first}
-        Calcuus is the branch of mathematics that deals with the 
-        finding and properties of derivatives and integrals of 
-        functions, by methods originally based on the summation 
-        of infinitesimal differences. The two main types are 
-        differential calculus and integral calculus.
-    \end{definition}
-    For the definition of calculus, see definition \ref{def:first}. 
-    For the fundamental theorem of calculus, see theorem \ref{thm:first}. 
-    For the proof, see proof \ref{prf:first}.
-    \end{document}
+\maketitle{}
+\section{Introduction}
+\label{Introduction}
+\section{Body}
 
+\label{Body}
+\normalsize{}\paragraph{}This paragraph has a normalsize font size.
+\tiny{}\paragraph{}This paragraph has a tiny font size.
+\scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
+\footnotesize{}\paragraph{}This paragraph has a footnotesize font size.
+\small{}\paragraph{}This paragraph has a small font size.
+\normalsize{}\paragraph{}This paragraph has a normalsize font size.
+\large{}\paragraph{}This paragraph has a large font size.
+\Large{}\paragraph{}This paragraph has a Large font size.
+\LARGE{}\paragraph{}This paragraph has a LARGE font size.
+\huge{}\paragraph{}This paragraph has a huge font size.
+\Huge{}\paragraph{}This paragraph has a Huge font size.
+\normalsize{}\paragraph{}This paragraph has a normalsize font size.
+\section{Conclusion}
+\label{Conclusion}
+\end{document}
+Exercise:

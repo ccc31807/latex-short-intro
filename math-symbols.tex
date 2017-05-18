@@ -8,19 +8,30 @@
         
 		Most characters are not special. An \textit{a} is just an a, a \textit{Z} is just a Z, and a \textit{7} is just a 7. Sometimes, this isn't the case --- an \&  is not just an ampersand. \Lx{} has ten special characters. They are listed below.
 
-        \begin{framed}
-			\textbackslash, \%, \{, \}, \$, \^{} , \_, \~{} , \#, \&
-            \index{\textbackslash}
-            \index{\%}
-            \index{\{\}}
-            \index{\$}
-            \index{\^{}}
-            \index{\_}
-            \index{\#}
-            \index{\&}
-        \end{framed}
+        \begin{cmd}
+            \begin{itemize}
+                \item backslash - \textbackslash
+                \item  percent - \%
+                \item  left curly bracket - \{
+                \item  right curly bracket - \}
+                \item  dollar sign - \$
+                \item  caret - \^{} 
+                \item  underscore - \_
+                \item  tilde - \~{} 
+                \item  hash - \#
+                \item  ampersand - \&
+                \index{\textbackslash}
+                \index{\%}
+                \index{\{\}}
+                \index{\$}
+                \index{\^{}}
+                \index{\_}
+                \index{\#}
+                \index{\&}
+            \end{itemize}
+        \end{cmd}
 
-        You already lnow four of them. ``\textbackslash'' indicates the beginning of a command, ``\%'' indicates a comment, and the ``\{ \ldots{} \}'' pair (usually) indicates the argument to a command. You will learn about three more in this section, ``\$'', ``\_'', and ``\^{}''. It's worthwhile to stare at these ten characters long enough to become familiar with them. When your document misbehaves, often these characters are the culprit.
+        You already lnow four of them. ``\textbackslash'' indicates the beginning of a command, ``\%'' indicates a comment, and the ``\{ \ldots{} \}'' pair (usually) indicates the argument to a command. You will learn about three more in this section, the dollar sign ``\$'', the underscore ``\_'', and the caret ``\^{}''. It's worthwhile to stare at these ten characters long enough to become familiar with them. When your document misbehaves, often these characters are the culprit.
 
 		Sometimes you will find characters that wish they were special, but are not. These include the cedilla (\c{c}), the degree (\textdegree), and diphthongs (\ae). All these are represented by \Lx{} commands, you will use the command for the character.
 
@@ -29,7 +40,7 @@
         \subsection{Inline math}
         \label{Inline-math}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{\$}
                 \index{+}
@@ -51,9 +62,25 @@
 				\item{\^{} (caret or circumflex)}
 				\item{\_ (underscore)} 
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
-	This is an example of inline math. Use the dollar symbol (\$) to set the math. Here is how it works.  Addition: $4 + 5 = 9$.  Subtraction: $4 - 5 = -1$.  Multiplication: $4 \times 5 = 20$. Multiplication: $4 \cdot 5 = 20$.  Multiplication: $4 \ast 5 = 20$.  Division: $\frac{4}{5} = 0.8$.  Division: $4 \div 5 = 0.8$.  Square root: $\sqrt{2} = 1.41421$.  Exponents: $2^8 = 256$.  Subscripts: $x_0, x_1, x_2$.
+        These commands represent the basic arithmetic operations of addition, subtraction, multiplication, and division. These also include the square root and exponents.
+        \begin{sample}
+	This is an example of inline math.\\
+Use the dollar symbol (\$) to set the math.\\
+Here is how it works.\\
+ Addition: $4 + 5 = 9$.\\
+ Subtraction: $4 - 5 = -1$.\\
+ Multiplication: $4 \times 5 = 20$.\\
+Multiplication: $4 \cdot 5 = 20$.\\
+ Multiplication: $4 \ast 5 = 20$.\\
+ Division: $\frac{4}{5} = 0.8$.\\
+ Division: $4 \div 5 = 0.8$.\\
+ Square root: $\sqrt{2} = 1.41421$.\\
+ Higher roots: $\sqrt[4]{81} = 3$.\\
+ Exponents: $2^8 = 256$.\\
+ Subscripts: $x_0, x_1, x_2$.
+        \end{sample}
 
         \begin{verbatim}
 \documentclass{article}
@@ -62,19 +89,20 @@
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-	This is an example of inline math. Use the dollar symbol (\$) to set the math. 
-	Here is how it works. 
-    Addition: $4 + 5 = 9$. 
-    Subtraction: $4 - 5 = -1$. 
-    Multiplication: $4 \times 5 = 20$. 
-    Multiplication: $4 \cdot 5 = 20$. 
-    Multiplication: $4 \ast 5 = 20$.
-    Division: $\frac{4}{5} = 0.8$. 
-    Division: $4 \div 5 = 0.8$. 
-    Square root: $\sqrt{2} = 1.41421$. 
-    Exponents: $2^8 = 256$.
+	This is an example of inline math. Use the dollar symbol (\$) to set the math. \\
+	Here is how it works. \\
+    Addition: $4 + 5 = 9$. \\
+    Subtraction: $4 - 5 = -1$. \\
+    Multiplication: $4 \times 5 = 20$. \\
+    Multiplication: $4 \cdot 5 = 20$. \\
+    Multiplication: $4 \ast 5 = 20$.\\
+    Division: $\frac{4}{5} = 0.8$. \\
+    Division: $4 \div 5 = 0.8$. \\
+    Square root: $\sqrt{2} = 1.41421$. \\
+    Higher roots: $\sqrt[4]{81} = 3$.\\
+    Exponents: $2^8 = 256$.\\
 	Subscripts: $x_0, x_1, x_2$
-	\end{document}    
+\end{document}    
 		\end{verbatim}
 
 		\paragraph{Exercise:} You can find the \textit{User's Guide for the }\texttt{amsmath} \textit{Package} in PDF format online. Search for it and start reading through it.
@@ -82,7 +110,7 @@
         \subsection{Equations}
         \label{Equations}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{amsmath}
                 \index{equation}
@@ -91,10 +119,11 @@
                 \item{equation}
                 \item{equation*}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 	
 		\Lx{} provides the \textit{equation} environment for writing block equations with the \textit{amsmath} package. First, import the package with \texttt{usepackage\{amsmath\}}.  Equations are numbered and can be referenced by means of their labels. The starred version omits the equation from the numbered equations. Here are some examples. Equation \ref{line} is the formula for a straight line. Equation \ref{slope} is the formula for the slope of a straight line.  The third, unnumbered equation is the formula for a straight line with multiple parameters.
 
+        \begin{sample}
 		\begin{equation}
 			\label{line}
 			y = \beta_0 + \beta_1 x_1
@@ -106,6 +135,7 @@
 		\begin{equation*}
 			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
 		\end{equation*}
+        \end{sample}
 
         \begin{verbatim}
 \documentclass{article}
@@ -135,7 +165,7 @@
         \subsection{Multiline equations}
         \label{Multiline equations}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{align}
                 \index{gather}
@@ -144,10 +174,11 @@
                 \item{gather}
                 \item{multline}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
 		How do I place several equations together in one equation environment, alighed on a particular character, such as an equal sign (=)? Use the \textit{align} environment, with the ampersand (\&) as the tab character, and end each line with two backslashs (\textbackslash{}\textbackslash{}).
 
+        \begin{sample}
 		\begin{align}
 			y& = \beta_0 + \beta_1 x_1\\
 			slope& = \frac{y_1 - y_0}{x_1 - x_0}\\
@@ -169,6 +200,7 @@
 			\beta_4 x_4 + \beta_5 x_5 + \beta_6 x_6 +\\
 			\beta_7 x_7 + \beta_8 x_8 + \beta_9 x_9
 		\end{multline}
+        \end{sample}
 		
 		\begin{verbatim}
 \documentclass{article}
@@ -202,7 +234,7 @@
         \subsection{Higher math}
         \label{Higher math}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{sums}
                 \index{products}
@@ -215,10 +247,11 @@
                 \item{derivatives}
                 \item{integrals}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
 		Equation \ref{higher:sum} states the shorthand for the sum of a series of integers 1 through $n$. Equation \ref{higher:prod} states the shorthand for the product of a series of integeers 1 through $n$. Equation \ref{higher:lim} demonstrates the notation for limits. Equation \ref{higher:deriv} demonstrates the notation for derivatives. Equation \ref{higher:int} demonstrates the notation for integrals.
 
+        \begin{sample}
 		\begin{gather}
 			\sum_{i=1}^{i=n} i = 1 + 2 + 3 + \dotsm{} + n \label{higher:sum} \\
 			\prod_{i=1}^{i=n} i = 1 \times 2 \times 3 \times \dotsm{} \times n \label{higher:prod} \\
@@ -226,10 +259,12 @@
 			\frac{d}{dx} \left[ e^\frac{x}{2} sin(ax)\right] \label{higher:deriv} \\
 			\int_{a}^{b} x^2 dx \label{higher:int}
 		\end{gather}
+        \end{sample}
 		
 
         \begin{verbatim}
 \documentclass{article}
+    \usepackage{amsmath}
     \title{Higher Math}
     \author{Charles Carter}
     \date{\today{}}
@@ -250,7 +285,7 @@
         \subsection{Theorems, etc.}
         \label{Theorems}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{amsthm package}
                 \index{package amsthm}
@@ -260,7 +295,7 @@
                 \item{newtheorem}
                 \item{addcontentsline}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
         Stating theorems, lemmas, proofs, axioms, and similar constructions in \Lx{} is particularly easy. For simple applications, just define whatever environment you need in the preamble with \texttt{newtheorem}, like this: \texttt{newtheorem\{first argument\}\{second argument\}}. The \textit{first argument} is the name of the structure: theorem, lemma, definition, etc. The \textit{second argument} is the printed heading that the reader will see in the document.
 
@@ -268,6 +303,7 @@
 
         Finally, you might want to add your theorem to the table of contents, Use \texttt{addcontentsline\{first argument\}\{second argument\}\{third argument\}}. The \textit{first argument} is the listing where you want the entry to appear: table of contents, list of tables, or list of figures. The \textit{second argument} is the kind of entry you want, such as section, subsection, etc. The \textit{third argument} is the printed text that will appear in the contents section.
 
+        \begin{sample}
     \begin{theorem}
         \label{thm:first}
         \addcontentsline{toc}{subsubsection}{Fundamental Theorem of Calculus}
@@ -289,10 +325,12 @@
         Calculus is the branch of mathematics that deals with the finding and properties of derivatives and integrals of functions, by methods originally based on the summation of infinitesimal differences. The two main types are differential calculus and integral calculus.
     \end{definition}
     For the definition of calculus, see definition \ref{def:first}. For the fundamental theorem of calculus, see theorem \ref{thm:first}. For the proof, see proof \ref{prf:first}.
+        \end{sample}
 		
 
         \begin{verbatim}
 \documentclass{article}
+    \usepackage{amsmath}
     \newtheorem{theorem}{Theorem}
     \newtheorem{proof}{Proof}
     \newtheorem{definition}{Definition}
@@ -300,6 +338,7 @@
     \author{Charles Carter}
     \date{\today{}}
 \begin{document}
+    \maketitle{}
     Theorems, proofs, definitions, etc.  can easily be defined
     \begin{theorem}
         \label{thm:first}
@@ -340,7 +379,7 @@
         \subsection{Matrices}
         \label{Matrices}
         
-        \begin{framed}
+        \begin{cmd}
             \begin{itemize}
                 \index{vmatrix}
                 \index{pmatrix}
@@ -353,7 +392,7 @@
                 \item{Bmatrix}
                 \item{Vmatrix}
             \end{itemize}
-        \end{framed}
+        \end{cmd}
 
         Matrices are contained within a math environment, either an equation block or inline math pairs (\$\ldots\$). They are entered by row. Each row ends with two backslash symbols (\textbackslash\textbackslash). Each element on a row is separaated by an ampersand (\&). The different variations create different surrounding brackets.
         \texttt{vmatrix} uses vertical bars ($|\ldots|$).
@@ -361,7 +400,8 @@
         \texttt{bmatrix} uses square brackets ([\ldots]).
         \texttt{Bmatrix} uses curly braces (\{\ldots\}).
         \texttt{Vmatrix} uses double vertical bars ($||\ldots||$).
-
+        
+        \begin{sample}
         $ \begin{vmatrix}
             1 & 3 & 3 \\
             1 & 4 & 3 \\
@@ -379,9 +419,11 @@
              0 & 1 & 0 \\
              0 & 0 & 1
          \end{vmatrix} $
+        \end{sample}
 
         \begin{verbatim}
 \documentclass{article}
+    \usepackage{amsmath}
     \title{Matrices}
     \author{Charles Carter}
     \date{\today{}}

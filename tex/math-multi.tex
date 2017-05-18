@@ -1,0 +1,27 @@
+\documentclass{article}
+	\usepackage{amsmath}
+    \title{Multiline Equations}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+	This is an example of align.
+		\begin{align}
+			y& = \beta_0 + \beta_1 x_1\\
+			slope& = \frac{y_1 - y_0}{x_1 - x_0}\\
+			predictedvalue& = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{align}
+	This is an example of gather.
+		\begin{gather}
+			y = \beta_0 + \beta_1 x_1\\
+			slope = \frac{y_1 - y_0}{x_1 - x_0}\\
+			predictedvalue = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{gather}
+	This is an example of multline.
+		\begin{multline}
+			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 +\\
+			\beta_4 x_4 + \beta_5 x_5 + \beta_6 x_6 +\\
+			\beta_7 x_7 + \beta_8 x_8 + \beta_9 x_9
+		\end{multline}
+\end{document}    
+
