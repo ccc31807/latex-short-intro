@@ -378,28 +378,56 @@
         
         \begin{cmd}
             \begin{itemize}
-                \item{}
+                \item{include}
+                \item{input}
             \end{itemize}
         \end{cmd}
 
+It is convenient to break a paper of more than a few sections into several parts. When you write the paper, you can work on each part separately, and then combine them into the finished paper, part by part, as convenient. Using the command \texttt{include} and \texttt{input} requires each part to be placed into a separate document. Your ``main'' document will then have a series of include or input commands. When you compile the main document, each part will be included at the appropriate place. Note that the included documents may not contain any preamble commands --- all your preamble commands must be placed in the preamble, which will be in your main document.
 
         \begin{verbatim}
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Name includemain.tex        
+%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{article}
     \title{This is My Title}
     \author{Charles Carter}
     \date{\today{}}
 \begin{document} 
     \maketitle{}
-    \section{Introduction}
-    \label{Introduction}
-    \section{Body}
-    \label{Body}
-    \section{Conclusion}
-    \label{Conclusion}
+    \input{includeintro}
+    \input{includebody}
+    \input{includeconc}
 \end{document}    
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Name includeintro.tex        
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introduction}
+This is the introduction.
+The file is named includeintro.tex.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Name includebody.tex        
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Body}
+This is the body.
+The file is named includebody.tex.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Name includeconc.tex        
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Conclusion}
+This is the conclusion.
+The file is named includeconc.tex.
         \end{verbatim}
 
-        \paragraph{Exercise:}
+        \begin{sample}
+    \input{includeintro}
+    \input{includebody}
+    \input{includeconc}
+        \end{sample}
 
-        \paragraph{Exercise:}
-        
+
+        \paragraph{Exercise:} Using any longish document you have, create a main document with a series of include statements, and place the content of yur document into a series of separate documents, each with their own name.
+
