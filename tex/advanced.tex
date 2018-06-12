@@ -1,0 +1,406 @@
+%advanced.tex
+	
+	\section{Advanced Topics}
+	\label{Advanced Topics}
+
+    This part of the tutorial covers features that, while not really advanced, illustrate useful applications of \Lx{}. Section \ref{New commands} shows how to create new \Lx{} commands that can be useful in automating certain tasks. Section \ref{Templates} addresses templates that allow authors to conform to certainstyle conventions, such as MLA, APA, and IEEE. Section \ref{Source listing} concerns the reproduction of this document using the source listing. Sections \ref{Presentations} and \ref{Books} extend the \Lx{} document classes to books and presentations. Section \ref{Geometry} explorese a very useful package for adjusting page margins. Finally, section \ref{Auxiliary files} discusses certain files \Lx{} produces during the compilation process.
+
+        \subsection{New commands}
+        \label{New commands}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{}
+            \end{itemize}
+        \end{framed}
+
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{This is My Title}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:}
+
+        \paragraph{Exercise:}
+
+
+        \subsection{Templates}
+        \label{Templates}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{}
+            \end{itemize}
+        \end{framed}
+
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{This is My Title}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:}
+
+        \paragraph{Exercise:}
+
+
+        \subsection{Geometry}
+        \label{Geometry}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{}
+            \end{itemize}
+        \end{framed}
+
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{This is My Title}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:}
+
+        \paragraph{Exercise:}
+
+
+%        \subsection{Includes}
+%        \label{Includes}
+%        
+%        \begin{framed}
+%            \begin{itemize}
+%                \item{}
+%            \end{itemize}
+%        \end{framed}
+%
+%
+%        \begin{verbatim}
+%\documentclass{article}
+%    \title{This is My Title}
+%    \author{Charles Carter}
+%    \date{\today{}}
+%\begin{document} 
+%    \maketitle{}
+%    \section{Introduction}
+%    \label{Introduction}
+%    \section{Body}
+%    \label{Body}
+%    \section{Conclusion}
+%    \label{Conclusion}
+%\end{document}    
+%        \end{verbatim}
+%
+%        \paragraph{Exercise:}
+%
+%        \paragraph{Exercise:}
+
+
+        \subsection{Source listing}
+        \label{Source listing}
+        
+        \begin{framed}
+            \begin{itemize}
+                \item{}
+            \end{itemize}
+        \end{framed}
+
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{This is My Title}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:}
+
+        \paragraph{Exercise:}
+
+
+        \subsection{Presentations}
+        \label{Presentations}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{beamer documentclass}
+                \index{documentclass beamer}
+                \index{frame}
+                \index{frametitle}
+                \item{beamer documentclass}
+                \item{frame}
+                \item{frametitle}
+            \end{itemize}
+        \end{framed}
+
+        \Lx{} creates excellent slide presentations. The following example illustrates the use of the \textit{beamer} package. Beamer has a great deal of flexibility, and it has the advantage that you can recycle your \Lx{} code that you used for your document to create your presentation. This short tutorial cannot covert beamer at all but it can suggest how beamer can be used to produce a presentation. 
+
+        \begin{realverbatim}
+\documentclass{beamer}
+    \title{Beamer Example}
+    \author{Charles Carter}
+    \date{\today}
+\begin{document}
+    \begin{frame}
+        \maketitle
+    \end{frame}
+    \begin{frame}
+        \frametitle{Table of Contents}
+        \tableofcontents{}
+    \end{frame}
+    \section{Lists}
+    \begin{frame}
+        \frametitle{Lists}
+        This section covers lists, unnumbered, numbered, and dictionary lists.
+    \end{frame}
+    \subsection{Unnumbered lists}
+    \begin{frame}
+        \frametitle{Unnumbered lists}
+        \begin{itemize}
+            \item{apples}
+            \item{bananas}
+            \item{cranberries}
+            \item{dates}
+        \end{itemize}
+    \end{frame}
+    \subsection{Paused unnumbered lists}
+    \begin{frame}
+        \frametitle{Unnumbered lists with pause}
+        \begin{itemize}
+            \item{endive}
+            \pause
+            \item{figs}
+            \pause
+            \item{garlic} 
+            \pause
+            \item{honeydew melon}
+        \end{itemize}
+    \end{frame}
+    \subsection{Numbered lists}
+    \begin{frame}
+        \frametitle{Numbered lists}
+        \begin{enumerate}
+            \item{iceberg lettuce}
+            \item{Jerusalem artichoke}
+            \item{kiwi}
+            \item{lime}
+        \end{enumerate}
+    \end{frame}
+    \subsection{Paused numbered lists}
+    \begin{frame}
+        \frametitle{Numbered lists with pause}
+        \begin{enumerate}
+            \item{mango}
+            \pause
+            \item{nectarine}
+            \pause
+            \item{olive} 
+            \pause
+            \item{paw paw}
+        \end{enumerate}
+    \end{frame}
+    \subsection{Dictionary lists}
+    \begin{frame}
+        \frametitle{Dictionary lists}
+        \begin{description}
+            \item[quince]{cooked in pies}
+            \item[radish]{raw in salads}
+            \item[strawberry]{fresh as a dessert}
+            \item[turnip]{raw in salad or cooked with greens}
+        \end{description}
+    \end{frame}
+    \subsection{Paused dictionary lists}
+    \begin{frame}
+        \frametitle{Numbered lists with pause}
+        \begin{description}
+            \item[ugli fruit]{fresh at breakfast}
+            \pause
+            \item[watermelon]{at picnics}
+            \pause
+            \item[yam]{baked with turkey or ham}
+            \pause
+            \item[zucchini]{boiled or stir fried}
+        \end{description}
+    \end{frame}
+    \section{Tables, blocks, and verbatim}
+    \begin{frame}
+        \frametitle{Tables, blocks, and verbatim}
+        This section covers tables, blocks, and listings using the \texttt{verbatim} environment.
+    \end{frame}
+    \subsection{Tables}
+    \begin{frame}
+        \frametitle{Tables}
+        \begin{tabular}{| l | l | l |} 
+            \hline
+            Beef & steak & pot roast \\
+            \hline
+            Pork & bacon & spare ribs \\
+            \hline
+            Fowl & fried chicken & chicken livers \\
+            \hline
+        \end{tabular}
+    \end{frame}
+    \subsection{Blocks}
+    \begin{frame}
+        \frametitle{Blocks}
+        \begin{block}{Beef stroganoff} 
+            contains both milk and meat and is not kosher.
+        \end{block}
+        \begin{block}{Pork products} 
+            such as wieners and BBQ, are not kosher
+        \end{block}
+        \begin{block}{Shellfish} 
+            such as oysters, shrimp, and clams, is not kosher.
+        \end{block}
+    \end{frame}
+    \subsection{Verbatim}
+    \begin{frame}[containsverbatim]
+        \frametitle{Verbatim}
+        Here is the listing from the previous slide.
+        \begin{verbatim}
+    \begin{block}{Beef stroganoff} 
+        contains both milk and meat and is not kosher.
+    \end{block}
+    \begin{block}{Pork products} 
+        such as wieners and BBQ, are not kosher
+    \end{block}
+    \begin{block}{Shellfish} 
+        such as oysters, shrimp, and clams, is not kosher.
+    \end{block}
+        \end{verbatim}
+    \end{frame}
+    \section{Afterword}
+    \begin{frame}
+        \frametitle{Afterword}
+        This just scratches the surface. Beamer has much, much more functionality than illustrated here. If you are interested in Beamer, read the documentation for the details.
+    \end{frame}
+\end{document}
+        \end{realverbatim}
+
+        \paragraph{Exercise:} Write your own, very simple, presentation, compile it, and present it.
+
+
+        \subsection{Posters}
+        \label{Posters}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{book documentclass}
+                \index{documentclass book}
+                \item{book documentclass}
+            \end{itemize}
+        \end{framed}
+
+        Poster text
+
+        \begin{verbatim}
+poster code        
+        \end{verbatim}
+
+        \paragraph{Exercise:} Write your own book. Just kidding! However, you can make the skeleton of a very simple, short book and you may even find this useful for a very long paper.
+
+        \subsection{Books}
+        \label{Books}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{book documentclass}
+                \index{documentclass book}
+                \item{book documentclass}
+            \end{itemize}
+        \end{framed}
+
+        You can and should use \Lx{} for writing book-sized documents. Use the documentclass \texttt{book}. Here is a very brief example. If you compile this and open it, you will have the skeleton of a ``real book.'' As always, the book documentclass contains a number of particular commands and environments, and if you go to the effort of authoring a book, you should also go to the effort of familiarizing yourself with this document class. There are also other document classes, such as memoir, which are current more popular, and you may benefit from exploring these as well.
+
+        \begin{verbatim}
+\documentclass[letterpaper]{book}
+	\title{My First Book}
+	\author{Charles Carter}
+	\date{\today{}}
+\begin{document}
+\frontmatter
+\maketitle
+\tableofcontents{}
+\chapter{Preface}
+This  is the preface
+\mainmatter
+    \chapter{A Story}
+    Let me tell you a story.
+    \chapter{Moral}
+    This is the moral of the story. 
+\appendix
+    \chapter{First Appendix}
+    Here is an appendix.
+\backmatter
+    \chapter{Last note}
+    The last word.
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Write your own book. Just kidding! However, you can make the skeleton of a very simple, short book and you may even find this useful for a very long paper.
+
+        \subsection{Auxiliary files}
+        \label{Auxiliary files}
+        
+        When you compile a \Lx{} document, the compilation process produces a number of auxiliary files. I have listed those produced by this tutorial below. You can open and read these in any text processor. You \textit{should} open and read the \texttt{log} file. Often, when you have a warning or error in the compilation process, you can find valuable information here. Also, if you know what you are doing, you can edit an appropriate auxiliary file to fine tune your document. In any case, you should not regard these auxiliary files as a mystery, but should become comfortable with the process that produces them.
+
+        \begin{verbatim}
+08/12/2016  01:10 PM             1,718 latex-tutorial.aux
+08/04/2016  11:06 AM             2,388 latex-tutorial.bbl
+08/04/2016  11:06 AM               662 latex-tutorial.blg
+08/12/2016  01:10 PM               611 latex-tutorial.ent
+08/12/2016  01:10 PM             3,732 latex-tutorial.idx
+08/12/2016  01:10 PM               362 latex-tutorial.ilg
+08/12/2016  01:10 PM             3,071 latex-tutorial.ind
+08/12/2016  01:10 PM                 0 latex-tutorial.lof
+08/12/2016  01:10 PM            50,555 latex-tutorial.log
+08/12/2016  01:10 PM               586 latex-tutorial.lot
+08/12/2016  01:10 PM             3,988 latex-tutorial.out
+08/12/2016  01:10 PM           626,626 latex-tutorial.pdf
+08/10/2016  07:35 PM             6,768 latex-tutorial.tex
+08/12/2016  01:10 PM             9,723 latex-tutorial.toc
+        \end{verbatim}
+
+        \paragraph{Exercise:} Read the log file, all of it. Understand as much of it as you can.

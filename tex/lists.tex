@@ -1,0 +1,563 @@
+%lists.tex
+	
+	\section{Lists}
+	\label{Lists}
+
+        \subsection{Verbatim}
+        \label{Verbatim}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{verbatim environment}
+                \index{verbatim}
+                \item{verbatim environment}
+                \item{verbatim}
+            \end{itemize}
+        \end{framed}
+
+    Perhaps the simplest and easiest way to make a list is by using the \texttt{verbatim} environment. Everything in the environment is printed as is, that is, \Lx{} commands are not evaluated.
+
+        \begin{realverbatim}
+\documentclass{article}
+    \title{Verbtim Environment}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Verbatim Environment}
+    \begin{verbatim}
+        \texttt{one}
+        \textit{two}
+        \textsf{three}
+        \huge{aye}
+        \tiny{bee}
+        \section{see}
+    \end{verbatim}
+\end{document}    
+        \end{realverbatim}
+
+        \paragraph{Exercise:} The only command not permitted in the \texttt{verbatim} environment is the \texttt{\textbackslash{}end\{verbatim\}} command. The reason is that this command ends the verbatim environment. If you examine the source of this tutorial, you will see that I resorted to a trick to include this command. As an exercise, can you figure out the trick?
+
+        \subsection{Unnnmbered Lists}
+        \label{Unnnumbered Lists}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{itemize}
+                \index{item}
+                \item{itemize}
+                \item{item}
+            \end{itemize}
+        \end{framed}
+
+        \Lx{} unnumbered lists are very easy. Simply enclose the list in the \texttt{itemize} environment, and place each list item as an argument to the \texttt{item} command.
+
+    \begin{itemize}
+    \label{lists:itemize}
+        \item{Green}
+        \item{Eggs}
+        \item{and}
+        \item{Ham}
+    \end{itemize}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Unnumbered List}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \begin{itemize}
+        \item{Green}
+        \item{Eggs}
+        \item{and}
+        \item{Ham}
+    \end{itemize}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Make your own unnumbered list.
+
+        \subsection{Numbered Lists}
+        \label{Numbered Lists}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{enumerate}
+                \index{item}
+                \item{enumerate}
+                \item{item}
+            \end{itemize}
+        \end{framed}
+
+        \Lx{} numbered lists are very easy. Simply enclose the list in th \texttt{enumerate} environment, and place each list item as an argument to the \texttt{item} command.
+
+    \begin{enumerate}
+    \label{lists:enumerate}
+        \item{Washington}
+        \item{Adams}
+        \item{Jefferson}
+        \item{Madison}
+    \end{enumerate}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Unnumbered List}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \begin{enumerate}
+        \item{Washington}
+        \item{Adams}
+        \item{Jefferson}
+        \item{Madison}
+    \end{enumerate}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Make your own numbered list.
+
+        \subsection{Dictionary Lists}
+        \label{Dictionary Lists}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{description}
+                \index{item}
+                \item{description}
+                \item{item}
+            \end{itemize}
+        \end{framed}
+
+        \Lx{} dictionary lists are very easy. Simply enclose the list in th \texttt{description} environment, place the term in square brackets ([]), and place each list item as an argument to the \texttt{item} command.
+
+    \begin{description}
+    \label{lists:dictionary}
+        \item[C]{a procedural language}
+        \item[Java]{an object oriented language}
+        \item[Lisp]{a functional language}
+        \item[JavaScript]{an event driven language}
+        \item[Erlang]{a concurrent language}
+    \end{description}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Unnumbered List}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \begin{description}
+        \item[C]{a procedural language}
+        \item[Java]{an object oriented language}
+        \item[Lisp]{a functional language}
+        \item[JavaScript]{an event driven language}
+        \item[Erlang]{a concurrent language}
+    \end{description}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Make your own dictionary list.
+
+        \subsection{Nested Lists}
+        \label{Nested Lists}
+
+        And of course, \Lx{} lists can be nested. Notice how ``smart'' the numbered lists are --- the number style depends on the heading level.
+
+    \begin{enumerate}
+    \label{lists:nested}
+        \item{17th century}
+        \begin{enumerate}
+            \item{Thirty Years War}
+            \begin{description}
+                \item[Gustavus Adolphus]{Sweden}
+                \item[Wallenstein]{Hapsburg Austria}
+                \item[Turenne]{France}
+            \end{description}
+        \item{War of the Grand Alliance}
+            \begin{description}
+                \item[William III]{Dutch Republic}
+                \item[Eugene]{Hapsburg Austria}
+                \item[Vauban]{France}
+            \end{description}
+        \end{enumerate}
+        \item{18th century}
+        \begin{enumerate}
+            \item{War of the Spanish Succession}
+            \begin{description}
+                \item[Eugene]{Hapsburg Austria}
+                \item[Malbourough]{England}
+                \item[Villeroi]{France}
+                \item[Maximilian II]{Bavaria}
+            \end{description}
+            \item{Seven Years War}
+            \begin{description}
+                \item[Frederick II]{Prussia}
+                \item[Daun]{Hapsburg Austria}
+                \item[Maximilian III]{Bavaria}
+                \item[Clive]{Great Britain}
+            \end{description}
+        \end{enumerate}
+        \item{19th century}
+        \begin{enumerate}
+            \item{War of the Sixth Coalition}
+            \begin{description}
+                \item[Napoleon I]{France}
+                \item[Blucher]{Prussia}
+                \item[Bennigsen]{Russia}
+                \item[Schwarenberg]{Austria}
+            \end{description}
+            \item{Franco-Prussian War}
+            \begin{description}
+                \item[Napoleon III]{}France
+                \item[Moltke]{Prussia}
+            \end{description}
+        \end{enumerate}
+        \item{20th century}
+        \begin{enumerate}
+            \item{World War 1}
+            \begin{description}
+                \item[Haig]{United Kingdom}
+                \item[Foch]{France}
+            \item[Hindenburg]{Germany}
+                \item[Pershing]{United States}
+            \end{description}
+            \item{World War 2}
+            \begin{description}
+                \item[McArthur]{United States}
+                \item[Montgomery]{United Kingdom}
+                \item[Manstein]{Germany}
+                \item[Rossokovsky]{Soviet Union}
+            \end{description}
+        \end{enumerate}
+    \end{enumerate}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Unnumbered List}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \begin{enumerate}
+        \item{17th century}
+        \begin{enumerate}
+            \item{Thirty Years War}
+            \begin{description}
+                \item[Gustavus Adolphus]{Sweden}
+                \item[Wallenstein]{Hapsburg Austria}
+                \item[Turenne]{France}
+            \end{description}
+        \item{War of the Grand Alliance}
+            \begin{description}
+                \item[William III]{Dutch Republic}
+                \item[Eugene]{Hapsburg Austria}
+                \item[Vauban]{France}
+            \end{description}
+        \end{enumerate}
+        \item{18th century}
+        \begin{enumerate}
+            \item{War of the Spanish Succession}
+            \begin{description}
+                \item[Eugene]{Hapsburg Austria}
+                \item[Malbourough]{England}
+                \item[Villeroi]{France}
+                \item[Maximilian II]{Bavaria}
+            \end{description}
+            \item{Seven Years War}
+            \begin{description}
+                \item[Frederick II]{Prussia}
+                \item[Daun]{Hapsburg Austria}
+                \item[Maximilian III]{Bavaria}
+                \item[Clive]{Great Britain}
+            \end{description}
+        \end{enumerate}
+        \item{19th century}
+        \begin{enumerate}
+            \item{War of the Sixth Coalition}
+            \begin{description}
+                \item[Napoleon I]{}
+                \item[Blucher]{Prussia}
+                \item[Bennigsen]{Russia}
+                \item[Schwarenberg]{Austria}
+            \end{description}
+            \item{Franco-Prussian War}
+            \begin{description}
+                \item[Napoleon III]{}France
+                \item[Moltke]{Prussia}
+            \end{description}
+        \end{enumerate}
+        \item{20th century}
+        \begin{enumerate}
+            \item{World War 1}
+            \begin{description}
+                \item[Haig]{United Kingdom}
+                \item[Foch]{France}
+            \item[Hindenburg]{Germany}
+                \item[Pershing]{United States}
+            \end{description}
+            \item{World War 2}
+            \begin{description}
+                \item[McArthur]{United States}
+                \item[Montgomery]{United Kingdom}
+                \item[Manstein]{Germany}
+                \item[Rossokovsky]{Soviet Union}
+            \end{description}
+        \end{enumerate}
+    \end{enumerate}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Make your own nested list to at least two levels.
+
+        \subsection{Listings Package}
+        \label{Listings Package}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{listings package}
+                \index{lstset}
+                \index{lstlisting}
+                \item{listings package}
+                \item{lstset}
+                \item{lstlisting}
+            \end{itemize}
+        \end{framed}
+
+        If you really want to customize your listing, use the \texttt{listings} package. Import the package as usual in the preamble with \texttt{usepackage\{listings\}}. Use \texttt{lstset} to specify your list settings. This can be either in the preamble or (if you have various lists with different settings) in the body of the document just prior to the list. Use \texttt{lstlisting} to set the list. See section \ref{Listings Version 1} on page \pageref{Listings Version 1} and section \ref{Listings Version 2} on page \pageref{Listings Version 2} for examples.
+
+        Here are some of the parameters allowed for \texttt{lstset}.
+
+        \scriptsize{}
+        \begin{verbatim}
+        \lstset{ %
+backgroundcolor=\color{white},   % choose the background color; 
+    you must add \usepackage{color} or \usepackage{xcolor}
+basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+breaklines=true,                 % sets automatic line breaking
+captionpos=b,                    % sets the caption-position to bottom
+frame=single,	                 % adds a frame around the code
+keepspaces=true,                 % keeps spaces in text, useful for keeping indentation 
+    of code (possibly needs columns=flexible)
+keywordstyle=\color{blue},       % keyword style
+language=Octave,                 % the language of the code
+numbers=left,                    % where to put the line-numbers; 
+    possible values are (none, left, right)
+numbersep=5pt,                   % how far the line-numbers are from the code
+numberstyle=\tiny\color{gray},   % the style that is used for the line-numbers
+rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks 
+    within not-black text (e.g. comments (green here))
+showspaces=false,                % show spaces everywhere adding particular underscores; 
+    it overrides 'showstringspaces'
+showstringspaces=false,          % underline spaces within strings only
+showtabs=false,                  % show tabs within strings adding particular underscores
+tabsize=2,	                     % sets default tabsize to 2 spaces
+}
+        \end{verbatim}
+
+    \normalsize{}
+
+        \paragraph{Exercise:} Find the documentation for the listings package and look through it.
+
+        \subsection{Listings Version 1}
+        \label{Listings Version 1}
+
+    The programming language Lisp was created in the late 1950s as a LISt Processing language --- it might not be inappropriate to use Lisp to illustrate lists. Here is the listing.
+        
+\lstset{language=Lisp,numbers=left,keepspaces=true,basicstyle=\small,numberstyle=\tiny,showstringspaces=false,breaklines=true}
+\begin{lstlisting}
+;;;add-test.lisp
+(print "This is add-lisp. Evaluate (start-test) to start the test.")
+
+(defun start-test ()
+  (defparameter number-of-questions 10)
+  (defparameter number-correct 0)
+  (defparameter question-counter 1)
+  (format t "Starting the addition test, you have ~a questions.~%" number-of-questions)
+  (run-test))
+
+(defun addition-problem ()
+  (let* ((a (random 11))
+         (b (random 11))
+         (c (+ a b))
+         (d (read (format t "What is ~a + ~a? " a b))))
+    (cond ((= c d)
+           (format t "Correct~%")
+            1)
+          (t (format t "The answer is ~a~%" c)
+              0))))
+
+(defun run-test ()
+    (cond 
+      ((zerop number-of-questions)
+       (format t "You got ~a correct and made a ~a.~%" number-correct (* 100 (/ number-correct 10.0))))
+      (t (format t "Question ~a. " question-counter)
+         (decf number-of-questions)
+         (incf number-correct (addition-problem))
+		 (incf question-counter)
+         (run-test))))
+\end{lstlisting}
+
+    Here is the code.
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Lists, Version 1}
+    \author{Charles Carter}
+    \date{\today{}}
+    \usepackage{listings}
+    \usepackage{xcolor}
+\begin{document} 
+    \maketitle{}
+\lstset{language=Lisp,numbers=left,keepspaces=true,
+    basicstyle=\small,numberstyle=\tiny,
+    showstringspaces=false,breaklines=true}
+\begin{lstlisting}
+;;;add-test.lisp
+(print "This is add-lisp. Evaluate (start-test) to start the test.")
+
+(defun start-test ()
+  (defparameter number-of-questions 10)
+  (defparameter number-correct 0)
+  (defparameter question-counter 1)
+  (format t "Starting the addition test, you have ~a questions.~%" 
+    number-of-questions)
+  (run-test))
+
+(defun addition-problem ()
+  (let* ((a (random 11))
+         (b (random 11))
+         (c (+ a b))
+         (d (read (format t "What is ~a + ~a? " a b))))
+    (cond ((= c d)
+           (format t "Correct~%")
+            1)
+          (t (format t "The answer is ~a~%" c)
+              0))))
+
+(defun run-test ()
+    (cond 
+      ((zerop number-of-questions)
+       (format t "You got ~a correct and made a ~a.~%" 
+       number-correct (* 100 (/ number-correct 10.0))))
+      (t (format t "Question ~a. " question-counter)
+         (decf number-of-questions)
+         (incf number-correct (addition-problem))
+		 (incf question-counter)
+         (run-test))))
+\end{lstlisting}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} What programming languages does the listings package know about?
+
+        \subsection{Listings Version 2}
+        \label{Listings Version 2}
+        
+        Here is a listing you have see before. To create this, use this code. The language is set to ``TeX'', the dialect is ``LaTeX''. The line numbers are on the right. Keywards are blue bolded. Comments are colored teal. Note the use of packate \textit{xcolor}, which I will cover in section \ref{Colors} on page \pageref{Colors}.
+
+        \begin{verbatim}
+        \lstset{
+            language=[LaTeX]TeX
+            numbers=right
+            keywordstyle=\color{blue}\textbf
+            keepspaces=true
+            basicstyle=\footnotesize
+            numberstyle=\scriptsize
+            showstringspaces=false
+            breaklines=true
+            commentstyle=\color{teal}}
+        \begin{lstlisting}
+            %code goes here
+        \end{lstlisting}
+        \end{verbatim}
+
+        Here is what the listing looks like with these settings.
+
+    \lstset{language=[LaTeX]TeX,numbers=right,keywordstyle=\color{blue}\textbf,keepspaces=true,basicstyle=\footnotesize,numberstyle=\scriptsize,showstringspaces=false,breaklines=true,commentstyle=\color{teal}}
+\begin{lstlisting}
+\documentclass{article}
+    %this is the preamble
+    %author and title information
+    \usepackage{xcolor}
+    \usepackage{listings}
+    \title{Font Sizes}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    %create the title
+    \maketitle{}
+    %create the table of contents
+    \tableofcontents{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+    %start with a normal sized font
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    %font sizes in forder from smallest to largest
+    \tiny{}\paragraph{}This paragraph has a tiny font size.
+    \scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
+    \footnotesize{}\paragraph{}This paragraph has a footnotesize font size.
+    \small{}\paragraph{}This paragraph has a small font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \large{}\paragraph{}This paragraph has a large font size.
+    \Large{}\paragraph{}This paragraph has a Large font size.
+    \LARGE{}\paragraph{}This paragraph has a LARGE font size.
+    \huge{}\paragraph{}This paragraph has a huge font size.
+    \Huge{}\paragraph{}This paragraph has a Huge font size.
+    %end with a normal sized font
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+\end{lstlisting}
+        
+Here is the code for the listing.
+
+\begin{verbatim}
+\documentclass{article}
+    %this is the preamble
+    %author and title information
+    \usepackage{xcolor}
+    \usepackage{listings}
+    \lstset{language=[LaTeX]TeX,numbers=right,keywordstyle=\color{blue}\textbf,
+        keepspaces=true,basicstyle=\footnotesize,numberstyle=\scriptsize,
+        kshowstringspaces=false,breaklines=true,commentstyle=\color{teal}}
+    \title{Font Sizes}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    %create the title
+    \maketitle{}
+    %create the table of contents
+    \tableofcontents{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+    \begin{lstlisting}
+    %start with a normal sized font
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    %font sizes in forder from smallest to largest
+    \tiny{}\paragraph{}This paragraph has a tiny font size.
+    \scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
+    \footnotesize{}\paragraph{}This paragraph has a footnotesize font size.
+    \small{}\paragraph{}This paragraph has a small font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \large{}\paragraph{}This paragraph has a large font size.
+    \Large{}\paragraph{}This paragraph has a Large font size.
+    \LARGE{}\paragraph{}This paragraph has a LARGE font size.
+    \huge{}\paragraph{}This paragraph has a huge font size.
+    \Huge{}\paragraph{}This paragraph has a Huge font size.
+    %end with a normal sized font
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \end{lstlisting}
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+\end{verbatim}
+
+        \paragraph{Exercise:} Try listing your own favorite programming language.

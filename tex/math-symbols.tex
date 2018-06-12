@@ -1,0 +1,588 @@
+    \section{Math and Symbols}
+    \label{Math}
+
+	Both \TeX{} and \Lx{} shine when it comes to math. In fact, Donald Knuth originally wrote \TeX{} just so he could typeset math. In this section, we will dip our toes into math and symbols. This will not be difficult. If you have need for more advanced mathematics, you will know how to find what you need to render your equations.
+
+        \subsection{Special characters}
+        \label{Special-characters}
+        
+		Most characters are not special. An \textit{a} is just an a, a \textit{Z} is just a Z, and a \textit{7} is just a 7. Sometimes, this isn't the case --- an \&  is not just an ampersand. \Lx{} has ten special characters. They are listed below.
+
+        \begin{cmd}
+            \begin{itemize}
+                \item backslash - \textbackslash
+                \item  percent - \%
+                \item  left curly bracket - \{
+                \item  right curly bracket - \}
+                \item  dollar sign - \$
+                \item  caret - \^{} 
+                \item  underscore - \_
+                \item  tilde - \~{} 
+                \item  hash - \#
+                \item  ampersand - \&
+                \index{\textbackslash}
+                \index{\%}
+                \index{\{\}}
+                \index{\$}
+                \index{\^{}}
+                \index{\_}
+                \index{\#}
+                \index{\&}
+            \end{itemize}
+        \end{cmd}
+
+        You already lnow four of them. ``\textbackslash'' indicates the beginning of a command, ``\%'' indicates a comment, and the ``\{ \ldots{} \}'' pair (usually) indicates the argument to a command. You will learn about three more in this section, the dollar sign ``\$'', the underscore ``\_'', and the caret ``\^{}''. It's worthwhile to stare at these ten characters long enough to become familiar with them. When your document misbehaves, often these characters are the culprit.
+
+		Sometimes you will find characters that wish they were special, but are not. These include the cedilla (\c{c}), the degree (\textdegree), and diphthongs (\ae). All these are represented by \Lx{} commands, you will use the command for the character.
+
+		\paragraph{Exercise:}Scott Pakin has published the booklet \textit{The Comprehensiv \LaTeX{} Symbol List}. You can find this online in PDF format. Search for it and just look at it. It contains over 300 pages of symbols. You'll be amazed! 
+
+        \subsection{Inline math}
+        \label{Inline-math}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{\$}
+                \index{+}
+                \index{plus}
+				\index{- (dash or subtraction)}
+                \index{times}
+                \index{ast}
+                \index{cdot}
+                \index{frac or div}
+                \index{sqrt}
+				\index{\^{} (caret or circumflex)}
+				\index{\_ (underscore)} 
+                \item{\$}
+                \item{plus or +}
+				\item{- (dash or subtraction)}
+                \item{times or ast or cdot}
+                \item{frac or div}
+                \item{sqrt}
+				\item{\^{} (caret or circumflex)}
+				\item{\_ (underscore)} 
+            \end{itemize}
+        \end{cmd}
+
+        These commands represent the basic arithmetic operations of addition, subtraction, multiplication, and division. These also include the square root and exponents.
+        \begin{sample}
+	This is an example of inline math.\\
+Use the dollar symbol (\$) to set the math.\\
+Here is how it works.\\
+ Addition: $4 + 5 = 9$.\\
+ Subtraction: $4 - 5 = -1$.\\
+ Multiplication: $4 \times 5 = 20$.\\
+Multiplication: $4 \cdot 5 = 20$.\\
+ Multiplication: $4 \ast 5 = 20$.\\
+ Division: $\frac{4}{5} = 0.8$.\\
+ Division: $4 \div 5 = 0.8$.\\
+ Square root: $\sqrt{2} = 1.41421$.\\
+ Higher roots: $\sqrt[4]{81} = 3$.\\
+ Exponents: $2^8 = 256$.\\
+ Subscripts: $x_0, x_1, x_2$.
+        \end{sample}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Inline Math}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+	This is an example of inline math. Use the dollar symbol (\$) to set the math. \\
+	Here is how it works. \\
+    Addition: $4 + 5 = 9$. \\
+    Subtraction: $4 - 5 = -1$. \\
+    Multiplication: $4 \times 5 = 20$. \\
+    Multiplication: $4 \cdot 5 = 20$. \\
+    Multiplication: $4 \ast 5 = 20$.\\
+    Division: $\frac{4}{5} = 0.8$. \\
+    Division: $4 \div 5 = 0.8$. \\
+    Square root: $\sqrt{2} = 1.41421$. \\
+    Higher roots: $\sqrt[4]{81} = 3$.\\
+    Exponents: $2^8 = 256$.\\
+	Subscripts: $x_0, x_1, x_2$
+\end{document}    
+		\end{verbatim}
+
+		\paragraph{Exercise:} You can find the \textit{User's Guide for the }\texttt{amsmath} \textit{Package} in PDF format online. Search for it and start reading through it.
+
+        \subsection{Equations}
+        \label{Equations}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{amsmath}
+                \index{equation}
+                \index{equation*}
+                \item{amsmath}
+                \item{equation}
+                \item{equation*}
+            \end{itemize}
+        \end{cmd}
+	
+		\Lx{} provides the \textit{equation} environment for writing block equations with the \textit{amsmath} package. First, import the package with \texttt{usepackage\{amsmath\}}.  Equations are numbered and can be referenced by means of their labels. The starred version omits the equation from the numbered equations. Here are some examples. Equation \ref{line} is the formula for a straight line. Equation \ref{slope} is the formula for the slope of a straight line.  The third, unnumbered equation is the formula for a straight line with multiple parameters.
+
+        \begin{sample}
+		\begin{equation}
+			\label{line}
+			y = \beta_0 + \beta_1 x_1
+		\end{equation}
+		\begin{equation}
+			\label{slope}
+			m = \frac{y_1 - y_0}{x_1 - x_0}
+		\end{equation}
+		\begin{equation*}
+			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{equation*}
+        \end{sample}
+
+        \begin{verbatim}
+\documentclass{article}
+	\usepackage{amsmath}
+    \title{Equations}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+	This is an example of equations.
+		\begin{equation}
+			\label{line}
+			y = \beta_0 + \beta_1 x_1
+		\end{equation}
+		\begin{equation}
+			\label{slope}
+			m = \frac{y_1 - y_0}{x_1 - x_0}
+		\end{equation}
+		\begin{equation*}
+			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{equation*}
+	\end{document}    
+        \end{verbatim}
+
+		\paragraph{Exercise:}Continue reading through the \textit{User's Guide for the }\texttt{amsmath} \textit{Package}.
+
+        \subsection{Multiline equations}
+        \label{Multiline equations}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{align}
+                \index{gather}
+                \index{multline}
+                \item{align}
+                \item{gather}
+                \item{multline}
+            \end{itemize}
+        \end{cmd}
+
+		How do I place several equations together in one equation environment, aligned on a particular character, such as an equal sign (=)? Use the \textit{align} environment, with the ampersand (\&) as the tab character, and end each line with two backslashs (\textbackslash{}\textbackslash{}).
+
+        \begin{sample}
+		\begin{align}
+			y& = \beta_0 + \beta_1 x_1\\
+			slope& = \frac{y_1 - y_0}{x_1 - x_0}\\
+			predictedvalue& = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{align}
+        \end{sample}
+
+		How to I center the equations? Use the \textit{gather} environment, with no tab character but ending each line with two backslashes (\textbackslash{}\textbackslash{}).
+
+        \begin{sample}
+		\begin{gather}
+			y = \beta_0 + \beta_1 x_1\\
+			slope = \frac{y_1 - y_0}{x_1 - x_0}\\
+			predictedvalue = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{gather}
+        \end{sample}
+
+		What if I have a very long equation that won't fit on one line? Use the \textit{multiine} environment, breaking with two backslashes (\textbackslash{}\textbackslash{})
+
+        \begin{sample}
+		\begin{multline}
+			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 +\\
+			\beta_4 x_4 + \beta_5 x_5 + \beta_6 x_6 +\\
+			\beta_7 x_7 + \beta_8 x_8 + \beta_9 x_9
+		\end{multline}
+        \end{sample}
+		
+		\begin{verbatim}
+\documentclass{article}
+	\usepackage{amsmath}
+    \title{Multiline Equations}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+	This is an example of align.
+		\begin{align}
+			y& = \beta_0 + \beta_1 x_1\\
+			slope& = \frac{y_1 - y_0}{x_1 - x_0}\\
+			predictedvalue& = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{align}
+	This is an example of gather.
+		\begin{gather}
+			y = \beta_0 + \beta_1 x_1\\
+			slope = \frac{y_1 - y_0}{x_1 - x_0}\\
+			predictedvalue = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3
+		\end{gather}
+	This is an example of multline.
+		\begin{multline}
+			y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 +\\
+			\beta_4 x_4 + \beta_5 x_5 + \beta_6 x_6 +\\
+			\beta_7 x_7 + \beta_8 x_8 + \beta_9 x_9
+		\end{multline}
+	\end{document}    
+        \end{verbatim}
+
+        \subsection{Higher math}
+        \label{Higher math}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{sums}
+                \index{products}
+                \index{limits}
+                \index{derivatives}
+                \index{integrals}
+                \item{sums}
+                \item{products}
+                \item{limits}
+                \item{derivatives}
+                \item{integrals}
+            \end{itemize}
+        \end{cmd}
+
+		Equation \ref{higher:sum} states the shorthand for the sum of a series of integers 1 through $n$. Equation \ref{higher:prod} states the shorthand for the product of a series of integeers 1 through $n$. Equation \ref{higher:lim} demonstrates the notation for limits. Equation \ref{higher:deriv} demonstrates the notation for derivatives. Equation \ref{higher:int} demonstrates the notation for integrals.
+
+        \begin{sample}
+		\begin{gather}
+			\sum_{i=1}^{i=n} i = 1 + 2 + 3 + \dotsm{} + n \label{higher:sum} \\
+			\prod_{i=1}^{i=n} i = 1 \times 2 \times 3 \times \dotsm{} \times n \label{higher:prod} \\
+			\lim_{x \to \infty} f(x) \label{higher:lim} \\
+			\frac{d}{dx} \left[ e^\frac{x}{2} sin(ax)\right] \label{higher:deriv} \\
+			\int_{a}^{b} x^2 dx \label{higher:int}
+		\end{gather}
+        \end{sample}
+		
+
+        \begin{verbatim}
+\documentclass{article}
+    \usepackage{amsmath}
+    \title{Higher Math}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+		\begin{gather}
+			\sum_{i=1}^{i=n} i = 1 + 2 + 3 + \dotsm{} + n \\
+			\prod_{i=1}^{i=n} i = 1 \times 2 \times 3 \times \dotsm{} \times n \\
+			\lim_{x \to \infty} f(x) \label{higher:lim} \\
+			\frac{d}{dx} \left[ e^\frac{x}{2} sin(ax)\right] \\
+			\int_{a}^{b} x^2 dx
+		\end{gather}
+\end{document}    
+        \end{verbatim}
+
+		\paragraph{Exercise:}Continue reading through the \textit{User's Guide for the }\texttt{amsmath} \textit{Package}.
+
+        \subsection{Theorems, etc.}
+        \label{Theorems}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{amsthm package}
+                \index{package amsthm}
+                \index{newtheorem}
+                \index{addcontentsline}
+                \item{amsthm package}
+                \item{newtheorem}
+                \item{addcontentsline}
+            \end{itemize}
+        \end{cmd}
+
+        Stating theorems, lemmas, proofs, axioms, and similar constructions in \Lx{} is particularly easy. For simple applications, just define whatever environment you need in the preamble with \texttt{newtheorem}, like this: \texttt{newtheorem\{first argument\}\{second argument\}}. The \textit{first argument} is the name of the structure: theorem, lemma, definition, etc. The \textit{second argument} is the printed heading that the reader will see in the document.
+
+        For more flexibility (and I do mean a \textit{lot} more flexibility) use the \texttt{amsthm} package, imported as usual in the preamble with \texttt{usepackage\{amsthm\}}. This package allows many customizations, for example, numbering by section and subsection, and concurrent numbering of theorems and proofs. The documentation of this package is fairly short and not overly complex, so it's not hard to read, understand, and use.
+
+        Finally, you might want to add your theorem to the table of contents, Use \texttt{addcontentsline\{first argument\}\{second argument\}\{third argument\}}. The \textit{first argument} is the listing where you want the entry to appear: table of contents, list of tables, or list of figures. The \textit{second argument} is the kind of entry you want, such as section, subsection, etc. The \textit{third argument} is the printed text that will appear in the contents section.
+
+        \begin{sample}
+    \begin{theorem}
+        \label{thm:first}
+        \addcontentsline{toc}{subsubsection}{Fundamental Theorem of Calculus}
+        Definite integral of a function is related to its antiderivative, and can be reversed by differentiation.
+    \end{theorem}
+    \begin{proof}
+        \label{prf:first}
+        \addcontentsline{toc}{subsubsection}{Proof of Fundamental Theorem of Calculus}
+        If $f$ is continuous on $[a, b]$, 
+            then $\int_a^b f$ exists. \\
+        If $f$ is continous on $[a, b]$ and $c \in [a, b]$, 
+            then $\int_a^c F + \int_c^b F = \int_a^b F$. \\
+        If $m \leq f \leq M$ on $[a, b]$, 
+            then $(b - a)m \leq \int_a^b f \leq (b - a)M$.
+    \end{proof}
+    \begin{definition}
+        \label{def:first}
+        \addcontentsline{toc}{subsubsection}{Definition of Calculus}
+        Calculus is the branch of mathematics that deals with the finding and properties of derivatives and integrals of functions, by methods originally based on the summation of infinitesimal differences. The two main types are differential calculus and integral calculus.
+    \end{definition}
+    For the definition of calculus, see definition \ref{def:first}. For the fundamental theorem of calculus, see theorem \ref{thm:first}. For the proof, see proof \ref{prf:first}.
+        \end{sample}
+		
+
+        \begin{verbatim}
+\documentclass{article}
+    \usepackage{amsmath}
+    \newtheorem{theorem}{Theorem}
+    \newtheorem{proof}{Proof}
+    \newtheorem{definition}{Definition}
+    \title{Theorems, Proofs, Definitions, etc.}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document}
+    \maketitle{}
+    Theorems, proofs, definitions, etc.  can easily be defined
+    \begin{theorem}
+        \label{thm:first}
+        \addcontentsline{toc}{subsubsection}{Fundamental Theorem of Calculus}
+        Definite integral of a function is related to its antiderivative, 
+        and can be reversed by differentiation.
+    \end{theorem}
+    \begin{proof}
+        \label{prf:first}
+        \addcontentsline{toc}{subsubsection}{Proof of Fundamental Theorem of Calculus}
+        If $f$ is continuous on $[a, b]$, 
+            then $\int_a^b f$ exists. \\
+        If $f$ is continous on $[a, b]$ and $c \in [a, b]$, 
+            then $\int_a^c F + \int_c^b F = \int_a^b F$. \\
+        If $m \leq f \leq M$ on $[a, b]$, 
+            then $(b - a)m \leq \int_a^b f \leq (b - a)M$.
+    \end{proof}
+    \begin{definition}
+        \label{def:first}
+        \addcontentsline{toc}{subsubsection}{Definition of Calculus}
+        Calculus is the branch of mathematics that deals with the 
+        finding and properties of derivatives and integrals of 
+        functions, by methods originally based on the summation 
+        of infinitesimal differences. The two main types are 
+        differential calculus and integral calculus.
+    \end{definition}
+    For the definition of calculus, see definition \ref{def:first}. 
+    For the fundamental theorem of calculus, see theorem \ref{thm:first}. 
+    For the proof, see proof \ref{prf:first}.
+    \end{document}
+        \end{verbatim}
+
+        \paragraph{Exercise:} Create your own new theorem class, called Problem, perhaps, and write a problem.
+
+        \paragraph{Exercise:} Access the documentation to the amsthm package and look through it.
+
+
+        \subsection{Matrices}
+        \label{Matrices}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{vmatrix}
+                \index{pmatrix}
+                \index{bmatrix}
+                \index{Bmatrix}
+                \index{Vmatrix}
+                \item{vmatrix}
+                \item{pmatrix}
+                \item{bmatrix}
+                \item{Bmatrix}
+                \item{Vmatrix}
+            \end{itemize}
+        \end{cmd}
+
+        Matrices are contained within a math environment, either an equation block or inline math pairs (\$\ldots\$). They are entered by row. Each row ends with two backslash symbols (\textbackslash\textbackslash). Each element on a row is separaated by an ampersand (\&). The different variations create different surrounding brackets.
+        \texttt{vmatrix} uses vertical bars ($|\ldots|$), for example, to indicate the determinant of the matrix.
+        \texttt{pmatrix} uses parentheses [(\ldots)].
+        \texttt{bmatrix} uses square brackets ([\ldots]).
+        \texttt{Bmatrix} uses curly braces (\{\ldots\}).
+        \texttt{Vmatrix} uses double vertical bars ($||\ldots||$).
+        
+        \begin{sample}
+        $ \begin{bmatrix}
+            1 & 3 & 3 \\
+            1 & 4 & 3 \\
+            1 & 3 & 4 
+        \end{bmatrix}
+         \times 
+         \begin{bmatrix}
+             7 & -3 & -3 \\
+             -1 & 1 & 0 \\
+             -1 & 0 & 1
+         \end{bmatrix}
+         =
+         \begin{bmatrix}
+             1 & 0 & 0 \\
+             0 & 1 & 0 \\
+             0 & 0 & 1
+         \end{bmatrix} $
+        \end{sample}
+
+        \begin{verbatim}
+\documentclass{article}
+    \usepackage{amsmath}
+    \title{Matrices}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+        $ \begin{bmatrix}
+            1 & 3 & 3 \\
+            1 & 4 & 3 \\
+            1 & 3 & 4 
+        \end{bmatrix}
+         \times 
+         \begin{bmatrix}
+             7 & -3 & -3 \\
+             -1 & 1 & 0 \\
+             -1 & 0 & 1
+         \end{bmatrix}
+         =
+         \begin{bmatrix}
+             1 & 0 & 0 \\
+             0 & 1 & 0 \\
+             0 & 0 & 1
+         \end{vmatrix} $
+\end{document}    
+        \end{verbatim}
+
+		\paragraph{Exercise:}Continue reading through the \textit{User's Guide for the }\texttt{amsmath} \textit{Package}.
+
+        \subsection{Greek letters}
+        \label{Greek letters}
+        
+        Here are the Greek letters commonly used in mathematical and scientific applications, table \ref{table:Greek letters} on page \pageref{table:Greek letters}. The \Lx{} commands for the Greek letters are in inline math mode, so you \textit{must} surround the command by a pair of dollar signs (\$\ldots\$). You must also use the \texttt{amsmath} package.
+
+        \begin{table}[!ht]
+            \label{table:Greek letters}
+        \begin{tabular}{|| l || l | l || l | l ||}
+            \hline
+            Name & UC command & UC Letter      & LC command & LC letter \\
+            \hline
+            \hline
+            Alpha & Alpha & $A$      & alpha & $\alpha$ \\
+            \hline
+            Beta & B & $B$     & beta & $\beta$ \\
+            \hline
+            Gamma & Gamma & $\Gamma$     & gamma & $\gamma$ \\
+            \hline
+            Delta & Delta & $\Delta$     & delta & $\delta$ \\
+            \hline
+            Epsilon & E & $E$     & epsilon & $\epsilon$ \\
+            \hline
+            Zeta & Z & $Z$     & zeta & $\zeta$ \\
+            \hline
+            Eta & H  & $H$     & eta & $\eta$ \\
+            \hline
+            Theta & Theta & $\Theta$    & theta & $\theta$ \\
+            \hline
+            Iota & I & $I$     & iota & $\iota$ \\
+            \hline
+            Kappa & K & $K$     &  kappa & $\kappa$ \\
+            \hline
+            Lamba & Lambda & $\Lambda$    & lambda & $\lambda$ \\
+            \hline
+            Mu  & M & $M$     & mu & $\mu$ \\
+            \hline
+            Nu & N & $N$     & nu & $\nu$ \\
+            \hline
+            Xi & Xi & $\Xi$     & xi & $\xi$ \\
+            \hline
+            Omicron & O & $O$    & o & $o$ \\
+            \hline
+            Pi & Pi & $\Pi$     & pi & $\pi$ \\
+            \hline
+            Rho & R & $R$    & rho & $\rho$ \\
+            \hline
+            Sigma & S & $S$    & sigma & $\sigma$ \\
+            \hline
+            Tau & T & $T$    & tau & $\tau$ \\
+            \hline
+            Upsilon & Y & $Y$    & upsilon & $\upsilon$ \\
+            \hline
+            Phi & Phi & $\Phi$     & phi & $\phi$ \\
+            \hline
+            Chi & X & $X$     & chi & $\chi$ \\
+            \hline
+            Psi & Psi & $\Psi$     & psi & $\psi$ \\
+            \hline
+            Omega & Omega & $\Omega$    & omega & $\omega$ \\
+            \hline
+        \end{tabular}
+            \caption{Greek letters}
+        \end{table}
+
+        \begin{verbatim}
+\documentclass{article}
+    \usepackage{amsmath}
+    \title{Greek Letters}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle
+        \begin{tabular}{|| l || l | l || l | l ||}
+            \hline
+            Name & UC command & UC Letter      & LC command & LC letter \\
+            \hline
+            \hline
+            Alpha & Alpha & $A$      & alpha & $\alpha$ \\
+            \hline
+            Beta & B & $B$     & beta & $\beta$ \\
+            \hline
+            Gamma & Gamma & $\Gamma$     & gamma & $\gamma$ \\
+            \hline
+            Delta & Delta & $\Delta$     & delta & $\delta$ \\
+            \hline
+            Epsilon & E & $E$     & epsilon & $\epsilon$ \\
+            \hline
+            Zeta & Z & $Z$     & zeta & $\zeta$ \\
+            \hline
+            Eta & H  & $H$     & eta & $\eta$ \\
+            \hline
+            Theta & Theta & $\Theta$    & theta & $\theta$ \\
+            \hline
+            Iota & I & $I$     & iota & $k\iota$ \\
+            \hline
+            Kappa & K & $K$     &  kappa & $\kappa$ \\
+            \hline
+            Lamba & Lambda & $\Lambda$    & lambda & $\lambda$ \\
+            \hline
+            Mu  & M & $M$     & mu & $\mu$ \\
+            \hline
+            Nu & N & $N$     & nu & $\nu$ \\
+            \hline
+            Xi & Xi & $\Xi$     & xi & $\xi$ \\
+            \hline
+            Omicron & O & $O$    & o & $o$ \\
+            \hline
+            Pi & Pi & $\Pi$     & pi & $\pi$ \\
+            \hline
+            Rho & R & $R$    & rho & $\rho$ \\
+            \hline
+            Sigma & S & $S$    & sigma & $\sigma$ \\
+            \hline
+            Tau & T & $T$    & tau & $\tau$ \\
+            \hline
+            Upsilon & Y & $Y$    & upsilon & $\upsilon$ \\
+            \hline
+            Phi & Phi & $\Phi$     & phi & $\phi$ \\
+            \hline
+            Chi & X & $X$     & chi & $\chi$ \\
+            \hline
+            Psi & Psi & $\Psi$     & psi & $\psi$ \\
+            \hline
+            Omega & Omega & $\Omega$    & omega & $\omega$ \\
+            \hline
+        \end{tabular}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Mathematics uses a large number of non-Latin characters. For example, search for the Hebrew character Aleph ($\aleph$) and the symbol for infinity ($\infty$).
+
