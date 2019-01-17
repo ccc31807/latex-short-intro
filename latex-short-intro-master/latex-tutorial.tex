@@ -1,0 +1,142 @@
+\documentclass[letterpaper]{article}
+
+    \usepackage{longtable}
+    \usepackage{graphicx}
+    \usepackage{multirow}
+    \usepackage{framed}
+    \usepackage{mdframed}
+        \newmdenv[linecolor=blue,frametitle=Illustration, backgroundcolor=blue!03]{sample}
+        \newmdenv[linecolor=black,frametitle=Commands, backgroundcolor=yellow!08]{cmd}
+    \usepackage{xcolor}
+    \usepackage{listings}
+    \usepackage{amsmath}
+    \usepackage{amsfonts}
+    \usepackage{mathtools}
+    \usepackage{textcomp}
+    \usepackage{lipsum}
+    \usepackage[top=1in, bottom=1.5in, left=1.75in, right=1.75in]{geometry}
+    \usepackage{hyperref}
+    \usepackage{endnotes}
+
+    \usepackage{imakeidx}
+    \makeindex{}
+
+    \newtheorem{theorem}{Theorem}
+    \newtheorem{proof}{Proof}
+    \newtheorem{definition}{Definition}
+
+    %this is a trick to print "\end{verbatim}" in a verbatim environment
+    \usepackage{verbatim}
+    \newenvironment{realverbatim}{\verbatim}{\endverbatim}
+
+    %new commands
+    \newcommand{\bib}{Bib\TeX}
+    \newcommand{\Lx}{\LaTeXe}
+
+    \title{Another Short Tutorial for \LaTeXe}
+    \author{Charles Carter}
+    \date{\today{}}
+
+\begin{document}
+
+    \maketitle{}
+    
+    \tableofcontents{}
+    \listoffigures{}
+    \listoftables{}
+
+    \newpage{}
+
+    \section{Introduction}
+    \label{Introduction}
+
+    Let's begin thinking about \Lx{}  by considering the concept of \textit{easy}. We don't often think of easiness as having a context, but it certainly does. For example, which is easier to use, a shovel and wheelbarrow, or an excavator and dump truck? If we were digging a hole to plant a bush we would choose the former, but if we were digging a swimming pool we would choose the latter. Again, which is easier to use, a pickup truck or an eighteen wheeler? If we were hauling a few garden supplies we would choose the former, but if we were hauling electric generators to California, we would choose the latter. Which is easier to use, a word processing program (e.g., Microsoft Word), or a professional typesetting program (e.g., \Lx{})? If we were writing a letter or a grocery list, we would choose the former, but if we were writing a mathematical, scientific, or engineering document, we would choose the latter. I can't say whether one choice is ``easier'' than the other, but I can say that it's easier to use the right tool for the job than to attempt a task using the wrong tool. It's in this spirit that I offer this tutorial. 
+
+    This is a short, easy, nontechnical introduction to \LaTeXe{}. It's a tutorial designed for students who do not have a lot of time, who do not need to become overnight experts in \LaTeXe{}, and prefer a shallow learning curve to a boot camp approach.  After you have worked through it, you will be able to create professional documents, and have the ability to teach yourself how to extend your \LaTeXe{} skills --- to become a \LaTeXe{} guru if you want to or need to.
+
+        \textbf{What about \Lx{}?} First, it's \textit{free} in the senses both that you do not have to pay for it and that you have the ability to change it without the permission of anyone. Second, it's \textit{easy}, given that you know how to use it. As always, there are trade-offs, and ``easy'' to an expert tends to be hard for a beginner, and \textit{vice versa}. Third, it's \textit{stable}, the first version released in 1985, and documents written four decades ago still compile today. Fourth, it's \textit{well documented}, not surprising since its purpose is document preparation. Fifth, it's \textit{professioal}, as you will soon come to see. Finally, \Lx{} is \textit{universal}. I will touch on these points from time to time in this tutorial.
+
+    \textbf{How does this introduction work?} Each ``lesson'' consists of the introduction of a few commands, some text to copy, paste, and compile, and a couple of questions. Ech lesson should not take more than fifteen minutes to complete. It uses the ``baby talk'' principle --- you imitate what you see and explore it by making slight changes. If you complete one lesson a day, within several weeks you will have a good foundation with \LaTeXe{}, and begin to create professional quality documents. You will also see how the things I wrote in the preceding paragraph are true.
+
+    Please note that this tutorial \textit{is not} a \LaTeXe{} reference; you will need to find a good reference that details the options and arguments for each command. It's also not a user guide. Nor is it a full introduction to \LaTeXe{}, although it will introduce it to students not previously familiar with it. It gives an ideosyncratic view of \LaTeXe{} (my own). It promises only to be short, easy, and useful, not long-winded or difficult, even if it does omit some very important details. 
+
+    \include{document-basics}
+
+    \section*{\LaTeXe{} is \textit{Universal}}
+
+    \include{math-symbols}
+
+    \section*{\LaTeXe{} is \textit{Professional}}
+
+    \LaTeXe{} is flexible to an extreme. You can customize every part of your document. However, its authors have spent much time and effort to ensure that it gives a professional appearance ``out of the box.'' This short tutorial does not cover customization. After you have created and compiled several dozen \texttt{.tex} files, you will begin to see the need for customization.\footnote{The first thing you may want to do is to change the page margins. An easy way to change page margins is to use the \texttt{geometry package}, covered in section \ref{Geometry} on page \pageref{Geometry}}. Unless you have special requirements, such as page margins, paragraph spacing, and page page numbers, and you are happy with the appearance of your document, you do not need to think about customization.
+
+
+    \include{references}
+
+    \section*{\LaTeXe{} is \textit{Well Documented}}
+
+    \include{lists}
+
+    \section*{\LaTeXe{} is \textit{Stable}}
+
+    \include{tables}
+
+    \section*{\LaTeXe{} is \textit{Easy}}
+
+    \include{images}
+
+    \section*{\LaTeXe{} is \textit{Free}}
+
+    \include{advanced}
+
+    \section{Conclusion}
+    \label{Conclusion}
+
+    \appendix{}
+    \include{appendix}
+
+
+    \theendnotes{}
+    \addcontentsline{toc}{section}{Endnotes}
+
+    \bibliographystyle{IEEEtranS}    
+    \bibliography{tut}
+    \addcontentsline{toc}{section}{References}
+    \nocite{*}
+
+    \addcontentsline{toc}{section}{Index}
+    \printindex{}
+
+\end{document}
+
+%        \subsection{}
+%        \label{}
+%        
+%        \begin{framed}
+%            \begin{itemize}
+%                \item{}
+%            \end{itemize}
+%        \end{framed}
+%
+%
+%        \begin{verbatim}
+%\documentclass{article}
+%    \title{This is My Title}
+%    \author{Charles Carter}
+%    \date{\today{}}
+%\begin{document} 
+%    \maketitle{}
+%    \section{Introduction}
+%    \label{Introduction}
+%    \section{Body}
+%    \label{Body}
+%    \section{Conclusion}
+%    \label{Conclusion}
+%\end{document}    
+%        \end{verbatim}
+%
+%        \paragraph{Exercise:}
+%
+%        \paragraph{Exercise:}
+
+

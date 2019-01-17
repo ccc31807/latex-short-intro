@@ -1,0 +1,504 @@
+%tables.tex
+	
+	\section{Tables}
+	\label{Tables}
+
+        Unfortunately, tables in \Lx{} tend to be a bit cumbersome. Tables are specified row by row, and require meticulous attention to detail. If sufficient care is taken, composing tables is not very difficult. Fortunately, simple tables are not too hard. 
+        
+        \subsection{Verbatim table}
+        \label{Verbatim table}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{verbatim}
+                \index{verbatim environment}
+                \item{verbatim}
+                \item{verbatim environment}
+            \end{itemize}
+        \end{framed}
+
+        As with lists, ths simplest, most brain-dead way to make a table is by using the \texttt{verbatim} environment. The hardest part is making sure that your cells align properly using correct spacing. Hint: use a monospace font in your text editor rather than a variable spaced font.
+
+        \begin{verbatim}
+Abigail     Derek       Gladiola
+Brenda      Edgar       Hibiscus
+Claudia     Frank       Impatiens
+        \end{verbatim}
+
+        \begin{realverbatim}
+\documentclass{article}
+    \title{Verbatim Tables}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+        \begin{verbatim}
+Abigail     Derek       Gladiola
+Brenda      Edgar       Hibiscus
+Claudia     Frank       Impatiens
+        \end{verbatim}
+\end{document}    
+        \end{realverbatim}
+
+        \paragraph{Exercise:} Create your own verbatim table.
+
+        \subsection{Simple table}
+        \label{Simple table}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{tabular environment}
+                \index{l (column specifier)}
+                \index{c (column specifier)}
+                \index{r (column specifier)}
+                \index{\textbackslash\textbackslash (row terminator)}
+                \index{\& (cell separator)}
+                \item{tabular environment}
+                \item{l (column specifier)}
+                \item{c (column specifier)}
+                \item{r (column specifier)}
+                \item{\textbackslash\textbackslash{} (row terminator)}
+                \item{\& (cell separator)}
+            \end{itemize}
+        \end{framed}
+
+        A simple \Lx{} table is created within a \texttt{tabular} environment. The column specifications are passed as a parameter to te environment --- r (right), c (center), l (left). Table rows are terminated by two backslashes (\textbackslash\textbackslash). Cells are separated by an ampersand (\&).
+
+        \begin{tabular}{l c r}
+Ann &  Derek &   Gladiola \\
+Brenda &  Ed &   Hibiscus \\
+Claudette &  Frederick &   Impatiens \\
+        \end{tabular}
+
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Smple Tables}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+        \begin{tabular}{l c r}
+Ann         & Derek         & Gladiola \\
+Brenda      & Ed            & Hibiscus \\
+Claudette   & Frederick     & Impatiens \\
+        \end{tabular}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Make your own simple table.
+
+        \subsection{Row and column lines}
+        \label{Row and column lines}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{\textbar}
+                \index{hline}
+                \item{\textbar}
+                \item{hline}
+            \end{itemize}
+        \end{framed}
+
+        Table rules are specified by the vertical bar (\textbar) and by \texttt{hline}. Column rules are set in the parameter of the column specifications passed to the tabular environment. Row rules are created by the \texttt{hline} command. Both of these can be doubled to produce double rules.
+        
+
+    \begin{tabular}{| l | r || l | r |}
+        \hline
+        Girls & Boys & Flowers & Animals\\
+        \hline
+        \hline
+        Abigail &  Derek &   Gladiola & Jackel \\
+        \hline
+        Brenda &  Edgar &   Hibiscus & Koala \\
+        \hline
+        Claudia &  Frank &   Impatiens & Lynx \\
+        \hline
+    \end{tabular}
+
+
+         \begin{verbatim}
+\documentclass{article}
+    \title{Table Rules}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \begin{tabular}{| l | r || l | r |}
+        \hline
+        Girls & Boys & Flowers & Animals\\
+        \hline
+        \hline
+        Abigail &  Derek &   Gladiola & Jackel \\
+        \hline
+        Brenda &  Edgar &   Hibiscus & Koala \\
+        \hline
+        Claudia &  Frank &   Impatiens & Lynx \\
+        \hline
+    \end{tabular}
+\end{document}    
+        \end{verbatim}        
+
+        \paragraph{Exercise:} Create your own simple table with vertical ane horizontal rules.
+
+        \subsection{Column spacing}
+        \label{Column spacing}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{p (column specifier)}
+                \item{p (column specifier)}
+            \end{itemize}
+        \end{framed}
+
+        The column specifiers \texttt{l} (left), \texttt{c} (center), and \texttt{}r (right) mostly do what you want, but their capacity is limited and frequently you need to use the column specifier \texttt{p} (paragraph) to make the content of the cells behave. \texttt{p} takes as a parameter a length recognized by \Lx{}, frequently a common English measure expressed in inches, for example, \texttt{p\{2in\}}.
+
+        \begin{table}[!ht]
+            \label{P columns}
+        \begin{tabular}{ p{1in} p{4in}}
+            \hline{}
+            C & C is a general-purpose, imperative computer programming language, supporting structured programming, lexical variable scope and recursion, while a static type system prevents many unintended operations. \\
+            Java & Java is a general-purpose computer programming language that is concurrent, class-based, object-oriented, and specifically designed to have as few implementation dependencies as possible. It is intended to let application developers ``write once, run anywhere'' meaning that compiled Java code can run on all platforms that support Java without the need for recompilation. \\
+            Common Lisp & Common Lisp (historically, LISP) is a family of computer programming languages with a long history and a distinctive, fully parenthesized prefix notation. Originally specified in 1958, Lisp is the second-oldest high-level programming language in widespread use today. Only Fortran is older, by one year. \\
+            JavaScript & JavaScript is a high-level, dynamic, untyped, and interpreted programming language. It has been standardized in the ECMAScript language specification. \\
+            Erlang & Erlang is a programming language designed for developing robust systems of programs that can be distributed among different computers in a network. Named for the Danish mathematician Agner Krarup Erlang, the language was developed by the Ericsson Computer Sciences Lab to build software for its own telecommunication products.  \\
+            \hline{}
+        \end{tabular}
+            \caption{P columns}
+        \end{table}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{P Columns}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+        \begin{tabular}{ p{1in} p{4in}}
+            \hline{}
+            C & C is a general-purpose, imperative computer programming 
+            language, supporting structured programming, lexical variable 
+            scope and recursion, while a static type system prevents many 
+            unintended operations. \\
+            Java & Java is a general-purpose computer programming language 
+            that is concurrent, class-based, object-oriented, and 
+            specifically designed to have as few implementation 
+            dependencies as possible. It is intended to let application 
+            developers "write once, run anywhere" meaning that compiled 
+            Java code can run on all platforms that support Java without 
+            the need for recompilation. \\
+            Common Lisp & Common Lisp (historically, LISP) is a family 
+            of computer programming languages with a long history and a 
+            distinctive, fully parenthesized prefix notation. Originally 
+            specified in 1958, Lisp is the second-oldest high-level 
+            programming language in widespread use today. Only Fortran 
+            is older, by one year. \\
+            JavaScript & JavaScript is a high-level, dynamic, untyped, 
+            and interpreted programming language. It has been 
+            standardized in the ECMAScript language specification. \\
+            Erlang & Erlang is a programming language designed for 
+            developing robust systems of programs that can be 
+            distributed among different computers in a network. 
+            Named for the Danish mathematician Agner Krarup Erlang, 
+            the language was developed by the Ericsson Computer 
+            Sciences Lab to build software for its own tele
+            communication products.  \\
+            \hline{}
+        \end{tabular}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Create your own table with paragraph spacing.
+
+        \subsection{Captions and labels}
+        \label{Captions and labels}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{table environment}
+                \index{caption}
+                \index{label}
+                \index{listoftables}
+                \item{table environment}
+                \item{caption}
+                \item{label}
+                \item{listoftables}
+            \end{itemize}
+        \end{framed}
+
+        The \textit{table environment} is created with the \texttt{begin\{table\}} command, and ended with the \texttt{end\{table\}} command. Table environments contain tables (inside the \textit{tabular environment}), and optional labels and captions. A caption is created with the \texttt{caption} command. Notice that in the example below the label command is placed \textit{after} the caption command. Table \ref{Names} is on \pageref{Names} and table \ref{Plants} is on page \pageref{Plants}.
+
+        The \texttt{listoftables} command, which should be placed just after the \texttt{tableofcontants} command, generates a list of the tables in the document. For an example, see the table of contents of this tutorial and the listing below.
+
+    \begin{table}
+    \caption{Names - Caption Above}
+    \label{Names}
+        \begin{tabular}{r | l l}
+            \hline
+            A & Akin & Allie \\
+            B & Bobby & Bonita \\
+            C & Chad & Carly \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{table}
+        \begin{tabular}{r | l l}
+            \hline
+            D & Date & Dogwood  \\
+            E & Eggplant & Elm \\
+            F & Fig & Frasier Fir \\
+            \hline
+        \end{tabular}
+    \caption{Plants - Caption Below}
+    \label{Plants}
+    \end{table}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Table Captions and Labels}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \listoftables{}
+Reference to table \ref{Plants} on page \pageref{Plants}.
+    \begin{table}
+        \caption{Names - Caption Above}
+        \label{Names}
+        \begin{tabular}{r | l l}
+            \hline
+            A & Akin & Allie \\
+            B & Bobby & Bonita \\
+            C & Chad & Carly \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \newpage
+    \begin{table}
+        \begin{tabular}{r | l l}
+            \hline
+            D & Date & Dogwood  \\
+            E & Eggplant & Elm \\
+            F & Fig & Frasier Fir \\
+            \hline
+        \end{tabular}
+        \caption{Plants - Caption Below }
+        \label{Plants}
+    \end{table}
+    Reference to table \ref{Names} on page \pageref{Names}.
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} You can refer to a table, and the page number of the table, by using the \texttt{ref} and \texttt{pageref} commands. See section \ref{Text references} on page \pageref{Text references}.
+
+        \paragraph{Exercise:} How would you center a table horizontally on the page?
+
+
+
+        \subsection{Multicells}
+        \label{Multicells}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{multicolumn}
+                \index{multirow package}
+                \index{multirow}
+                \item{multicolumn}
+                \item{multirow package}
+                \item{multirow}
+            \end{itemize}
+        \end{framed}
+
+        \Lx{} tables can be nested, but for multi-column and multi-row spans, there are separate commands that are much easier to use. Multicolumn cells are created by the \texttt{multicolumn\{num-of-cols\}\{col-alignment\}\{cell-content\}} as illustrated in table \ref{multicol} on page \pageref{multicol}.
+
+        \begin{table}
+            \begin{tabular}{| l | p{2.5in} |  c |}
+                \hline
+                \multicolumn{3}{| c |}{Measures of center} \\
+                \hline
+                mean & the sum of all values divided by the number of values & $\frac{\sum_{i=1}^{i=n} x_i}{n}$ \\
+                \hline
+                median & the middle value in a vector of sorted value & $\frac{length(V) + 1}{n} | sorted(V)$  \\
+                \hline
+                mode & the most frequent value or values if more than one  & (no formula) \\
+                \hline
+                \multicolumn{3}{| c |}{Measures of dispersion} \\
+                \hline
+                variance & the sum of the difference between each value of the vector and the mean of the vector divided by the number of values in the vector & $\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}$ \\
+                \hline
+                standard deviation & the square root of the sum of the difference between each value of the vector and the mean of the vector divided by the number of values in the vector  & $\sqrt{\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}}$ \\
+                \hline
+                median absolute deviation & the average distance between each data value and the mean & $\frac{\sum_{i=1}^{i=n}|V_i - \mu|}{n}$  \\ 
+                \hline
+            \end{tabular}
+        \caption{Multicolumn Example}
+        \label{multicol}
+        \end{table}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Multicolumns}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \begin{table}
+        \begin{tabular}{| l | p{2.5in} |  c |}
+            \hline
+            \multicolumn{3}{| c |}{Measures of center} \\
+            \hline
+            mean & 
+                the sum of all values divided by the number of values & 
+                $\frac{\sum_{i=1}^{i=n} x_i}{n}$ \\
+            \hline
+            median & 
+                the middle value in a vector of sorted value & 
+                $\frac{length(V) + 1}{n} | sorted(V)$  \\
+            \hline
+            mode & 
+                the most frequent value or values if more than one  
+                & (no formula)  \\
+            \hline
+            \multicolumn{3}{| c |}{Measures of dispersion} \\
+            \hline
+            variance & 
+                the sum of the difference between each value of the vector 
+                and the mean of the vector divided by the number of values 
+                in the vector & 
+                $\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}$ \\
+            \hline
+            standard deviation & 
+                the square root of the sum of the difference between each value 
+                of the vector and the mean of the vector divided by the number 
+                of values in the vector  & 
+                $\sqrt{\sum_{i=1}^{i=n} \frac{V_i - \mu}{n}}$ \\
+            \hline
+            median absolute deviation & 
+                the average distance between each data value and the mean & 
+                $\frac{\sum_{i=1}^{i=n}|V_i - \mu|}{n}$  \\ 
+            \hline
+        \end{tabular}
+    \caption{Multicolumn Example}
+    \label{multicol}
+    \end{table}
+\end{document}
+        \end{verbatim}
+
+        Tables with multiple rows for a column need the package \textit{multirow}, import as usual with \texttt{usepackage\{multirow\}}. The syntax is \texttt{multirow\{num-of-rows\}\{row-width\}\{content\}}In the table, make sure that the appropriate rows for the multirow structure are undefined. Here is an example in table \ref{multirow} on page \pageref{multirow}.
+
+        \begin{table}
+            \begin{tabular}{| l | l |}
+                \hline
+                \multirow{5}{*}{Confederate songs} & Dixie \\
+                                                   & Yellow Rose of Texas \\
+                                                   & Bonnie Blue Flag \\
+                                                   & When Johnny Comes Marching Home \\
+                \hline
+                \multirow{5}{*}{Union songs} & Battle Hymn of the Republic \\
+                                             & Marching Through Georgia \\
+                                             & Tramp, Tramp, Tramp \\
+                                             & Battle Cry of Freedom \\
+                \hline
+                \multirow{5}{*}{Civilian songs} & Aura Lee \\
+                                                & Tenting Tonight \\
+                                                & Lorena \\
+                                                & Weeping Sad and Lonely \\
+                \hline
+            \end{tabular}
+        \caption{Multirow Example}
+        \label{multirow}
+        \end{table}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Multirows}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+        \begin{table}
+            \begin{tabular}{| l | l |}
+                \hline
+                \multirow{5}{*}{Confederate songs} & Dixie \\
+                                                   & Yellow Rose of Texas \\
+                                                   & Bonnie Blue Flag \\
+                                                   & When Johnny Comes Marching Home \\
+                \hline
+                \multirow{5}{*}{Union songs} & Battle Hymn of the Republic \\
+                                             & Marching Through Georgia \\
+                                             & Tramp, Tramp, Tramp \\
+                                             & Battle Cry of Freedom \\
+                \hline
+                \multirow{5}{*}{Civilian songs} & Aura Lee \\
+                                                & Tenting Tonight \\
+                                                & Lorena \\
+                                                & Weeping Sad and Lonely \\
+                \hline
+            \end{tabular}
+        \caption{Multirow Example}
+        \label{multirow}
+        \end{table}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Tables with multiple row spans and multiple column spans require much thought and debugging. Try your own very simple example
+
+        \subsection{Long tables}
+        \label{Long tables}
+        
+        \begin{framed}
+            \begin{itemize}
+                \index{longtable package}
+                \index{longtable}
+                \item{longtable package}
+                \item{longtable}
+            \end{itemize}
+        \end{framed}
+
+        What do you do if the length of your table exceed the page length? Use the \texttt{longtable} command after first importing the \textit{longtable package} the usual way with \texttt{usepackage\{longtable\}}. The longtable also accepts the caption and label commands. See table \ref{longtable} on page \pageref{longtable}.
+
+        \begin{longtable}{| l | c | r | }
+            \caption{Longtable example}
+            \label{longtable}
+            \hline
+            State & Capital & Population \\
+            \hline
+            \hline
+            California & Sacramento & 37,000,000 \\
+            \hline
+            Texas & Austin  & 25,000,000 \\
+            \hline
+            New York & Albany & 19,000,000 \\
+            \hline
+            Florida & Tallahassee  & 18,000,000 \\
+            \hline
+        \end{longtable}
+
+        \begin{verbatim}
+\documentclass{article}
+    \usepackage{longtable}
+    \title{Long Tables}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \listoftables{}
+        \begin{longtable}{| l | c | r | }
+            \caption{Longtable example}
+            \label{longtable}
+            \hline
+            State & Capital & Population \\
+            \hline
+            \hline
+            California & Sacramento & 37,000,000 \\
+            \hline
+            Texas & Austin  & 25,000,000 \\
+            \hline
+            New York & Albany & 19,000,000 \\
+            \hline
+            Florida & Tallahassee  & 18,000,000 \\
+            \hline
+        \end{longtable}
+\end{document}    
+
+
+        \end{verbatim}

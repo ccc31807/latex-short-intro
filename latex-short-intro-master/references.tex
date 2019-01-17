@@ -1,0 +1,433 @@
+%references.tex
+    
+    \section{References}
+    \label{References}
+
+    In scientific and research writing, one of the most critical aspects is references. Think about it: can you imagine a research paper without a single reference? These include footnotes, endnotes, marginal notes, and especially citations to sources. References have two components, a target and a source, or a label and a reference to that label. We have used labels before, but now we will explicitly consider them.
+
+    \subsection{Text references}
+    \label{Text references}
+
+        \begin{cmd}
+            \begin{itemize}
+                \item{label}
+                \item{ref}
+                \item{pageref}
+                \index{label}
+                \index{ref}
+                \index{pageref}
+            \end{itemize}
+        \end{cmd}
+
+        A text reference has two parts, a target and a pointer. The pointer points to a target, and a target is pointed to with a pointer. Targets are identified using the \texttt{label} command. Pointers are created with the \texttt{ref} command for numerical designations, and the page on which the target appears with the \texttt{pageref} command. For example, the table of Greek letters on page \pageref{Greek letters} is table \ref{Greek letters}. Targets can include structural elements (chapters, sections, paragraphs, etc.), tables, and figures.
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Footnotes and References}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Introduction}
+    \label{Introduction}
+    This is the introduction; for the conclusion, see 
+    section \ref{Conclusion} on page \pageref{Conclusion}.
+    \section{Conclusion}
+    \label{Conclusion}
+    This is the conclusion; for the introduction, see 
+    section \ref{Introduction} on page \pageref{Introduction}.
+\end{document}    
+
+        \end{verbatim}
+
+        \paragraph{Exercise:} Create and compile a document with at least two of each: labels, refs, and pagerefs.
+
+    \subsection{Footnotes}
+    \label{Footnotes}
+
+        \begin{cmd}
+            \begin{itemize}
+                \item{footnote}
+                \item{label}
+                \item{ref}
+                \item{pageref}
+                \index{footnote}
+                \index{label}
+                \index{ref}
+                \index{pageref}
+            \end{itemize}
+        \end{cmd}
+
+    To insert a footnote, just use the command \texttt{footnote}.\footnote{\label{references:fn}Don't forget to put the \textbackslash{} before the \texttt{footnote} command.} If you label the footnote, you can refer to the footnote by number and page in the text of the doucumemt. Please be sure to read footnote \ref{references:fn} on page \pageref{references:fn}.
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Footnotes and References}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    To insert a footnote, just use the command \text{footnote}.
+    \footnote{\label{references:fn} Don't forget to put the 
+    \textbackslash{} before the \texttt{footnote} command.} 
+    If you label the footnote, you can refer to the footnote 
+    by number and page in the text of the doucumemt. Please 
+    be sure to read footnote \ref{references:fn} on page 
+    \pageref{references:fn}.
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Read the \Lx{} documentation on footnotes.
+
+    \subsection{Endnotes}
+    \label{Endnotes}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{package endnotes}
+                \index{endnote}
+                \index{theendnotes}
+                \index{addcontentsline}
+                \item{package endnotes}
+                \item{endnote}
+                \item{theendnotes}
+                \item{addcontentsline}
+            \end{itemize}
+        \end{cmd}
+
+    Endnotes are a little more complicated than footnotes, but not much.\endnote{The difference between footnotes and endnotes is that footnotes go at the foot of the page where they appear, whilc endnotes appear at the end of the document.} Here is an endnote.\endnote{This is an endnote.} In order to actually print the endnotes, use the \texttt{theendnotes} command. In order to create an entry for the endnotes in the table of contents, you must use the \texttt{addcontentsline}.\endnote{\label{references:en}The addcontentsline takes three parameters, where the line should be written, usually \textit{toc}, the formatting to be used, usually \textit{section}, and the name to be given to the entry, perhaps \textit{Endnotes}.} Please see endnote \ref{references:en} on page \pageref{references:en} for the details.
+
+        \begin{verbatim}
+\documentclass{article}
+    \usepackage{endnotes}
+    \title{Endnotes}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \tableofcontents{}
+    \section{Text}
+    Endnotes are a little more complicated than footnotes, but not much.
+    \endnote{The difference between footnotes and endnotes is that 
+    footnotes go at the foot of the page where they appear, whilc 
+    endnotes appear at the end of the document.} Here is an 
+    endnote.\endnote{This is an endnote.} In order to actually print 
+    the endnotes, use the \texttt{theendnotes} command. In order to 
+    create an entry for the endnotes in the table of contents, you 
+    must use the \texttt{addcontentsline}.  \endnote{\label{references:en}
+    The addcontentsline takes three parameters, where the line should be 
+    written, usually \textit{toc}, the formatting to be used, usually 
+    \textit{section}, and the name to be given to the entry, perhaps 
+    \textit{Endnotes}.} Please see endnote \ref{references:en} on 
+    page \pageref{references:en} for the details.
+    \theendnotes{}
+    \addcontentsline{toc}{section}{Endnotes}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Find and read through the documentation of the Endnotes package.
+
+    \subsection{Margin notes}
+    \label{Margin notes}
+
+        \begin{cmd}
+            \begin{itemize}
+                \index{marginpar}
+                \index{reversemarginpar}
+                \index{normalmarginpar}
+                \index{raggedright}
+                \item{marginpar}
+                \item{reversemarginpar}
+                \item{normalmarginpar}
+                \item{raggedright}
+            \end{itemize}
+        \end{cmd}
+
+        \marginpar{Important point!}
+
+        Marginal notes are really useful to call attention to very important points.  They can also be useful in drafting documents to note future edits, insertions, or deletions. Use \texttt{marginpar} to create a marginal note. To delete marginal notes during the drafting process, just comment them out. The text remains as a reminder of the modifications in the document.
+
+        {\raggedright\reversemarginpar{\marginpar{This is reversed text}}}
+
+        To permanantly reverse the page sides. use \texttt{reversemarginpar}. To reverse the reverse page margins, use \texttt{normalmarginpar}. To change the paragraph alignment from the default justified text, use the command \texttt{raggedright} in a block.
+
+        {\raggedright\normalmarginpar\marginpar{This is in the correct margim}}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Margin Notes}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+        \marginpar{Important point!}
+        Marginal notes are really useful to call attention to very important 
+        points.  They can also be useful in drafting documents to note 
+        future edits, insertions, or deletions. Use \texttt{marginpar} 
+        to create a marginal note. To delete marginal notes during the 
+        drafting process, just comment them out. The text remains as a 
+        reminder of the modifications in the document.
+        {\raggedright\reversemarginpar{\marginpar{This is reversed text}}}
+        To permanantly reverse the page sides. use \texttt{reversemarginpar}.
+        To reverse the reverse page margins, use \texttt{normalmarginpar}.
+        {\raggedright\normalmarginpar\marginpar{This is in the correct margim}}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} If you really need to create sophisticated marginal notes, you will need both the \texttt{geometry} and \texttt{marginnote} packages. The former is very useful, and you may need to use it in every paper. The latter is useful for marginal notes when you need something more than the default \Lx{} commands.
+
+    \subsection{Bibliography}
+    \label{Bibliography}
+
+        \begin{cmd}
+            \begin{itemize}
+                \item{creating an external \bib{} database}
+                \index{creating an external \bib{} database}
+            \end{itemize}
+        \end{cmd}
+
+    Needless to say, every research paper requires a bibliography. \Lx{} has multiple ways to include bibliographies. I have chosen to use a method called \bib{}. There are three reasons for this choice. First. it's simple enough to include in a simple tutorial. Second, it gives good results using its default settings. Third, it's complex enough to be configured for almost any application (given an author's time and patience).
+
+    \bib{} uses an external file as a bibliographical database. This means that management of the sources is separate from writing and editing the original document. The data from the external database is merged into the original document with a series of commands. We will cover the basics of the external database in this lesson. In the following lesson, we will see how to merge the two files.
+
+    The external \bib{} database is merely a plain text file with entries in a prescribed format. It \textit{must} have the \texttt{.bib} extension for the filename. The following file includes four books and three online sources. The \bib{} format file contains specifications for a large number of types of sources, and you should become familiar with the various types of documents and the format for each.    
+
+    Create a document with the following content. Name it \texttt{tut.bib} and place it in the same directory with your original source document, where you compile your PDF output. Each entry has a type identifier preceded by the at symbol (@) and followed by a curly brace pair (\{\ldots{}\}), within which are contained various fields separated by commas. The first field is the identifier you will use to access the entry. The subsequent fields are ``key''=``value'' pairs, giving the title, author, date etc.
+    
+        \begin{verbatim}
+\\tut.bib
+@book{
+    goossens04,
+    author    =  "Frank Mittelbach and Michel Goossens and 
+        Johannes Braams and David Carlisle and 
+        Chris Rowley",
+    title     = "The \LaTeX{} Companion (Tools and 
+    `Techniques for Computer Typesetting)",
+    year      = "2004",
+    edition   = "2nd",
+    publisher = "Addison-Wesley",
+    address   = "Reading, MA",
+    ISBN      = "978-0201362992"
+}
+@book{
+    kottwitz11,
+    author    = "Stefan Kottwitz ",
+    title     = "\LaTeX{} Beginner's Guide",
+    year      = "2011",
+    publisher = "Packt Publishing",
+    address   = "Birmingham, UK",
+    ISBN      = "978-1847199867"
+}
+@book{
+    kottwitz15,
+    author    = "Stefan Kottwitz ",
+    title     = "\LaTeX{} Cookbook",
+    year      = "2015",
+    publisher = "Packt Publishing",
+    address   = "Birmingham, UK",
+    ISBN      = " 978-1784395148"
+}
+@book{
+    gratzer14,
+    author    = "George Gratzer",
+    title     = "Practical \LaTeX{}",
+    year      = "2014",
+    publisher = "Springer",
+    address   = "New York, NY",
+    ISBN      = "978-1847199867"
+}
+@electronic{
+  oetiker15,
+  author = "Tobias Oetiker and Hubert Partl and Irene Hyna and Elisabeth Schlegl",
+  title = "The Not So Short Introduction to {LaTeX2e}",
+  url   = "http://tug.ctan.org/info/lshort/english/lshort.pdf",
+  year = "2015", 
+  note = "accessed August 2, 2016"
+}
+@electronic{
+  pakin15,
+  author = "Scott Pakin",
+  title = "The Comprehensive {LATEX} Symbol List",
+  url =   "http://tug.ctan.org/info/symbols/comprehensive/symbols-letter.pdf",
+  year = "2015", 
+  note = "accessed August 2, 2016"
+}
+@electronic{
+  carter16,
+  author = "Charles Carter",
+  title = "Another Short Tutorial to {LaTeX2e}",
+  url = "https://github.com/ccc31807/latex-short-intro",
+  year = "2016", 
+  note = "accessed August 2, 2016"
+}
+        \end{verbatim}
+
+        \paragraph{Exercise:} Search for the \bib{} format specification. Name four different kinds of source documents and identifies the required elements for each.
+
+    \subsection{Citations}
+    \label{Citations}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \item{cite}
+                \item{nocite}
+                \item{bibliographystyle}
+                \item{bibliography}
+                \item{addcontentsline}
+                \item{bibtex}
+                \index{cite}
+                \index{nocite}
+                \index{bibliographystyle}
+                \index{bibliography}
+                \index{addcontentsline}
+                \index{bibtex}
+            \end{itemize}
+        \end{cmd}
+
+        Preparing the bibliographic database is fairly straightforward and easy. Unfortunately, the details of including the citations in your document is not as straightforward.\footnote{Again, you must pay attention to the reference types and required fields. This is probably the most onerous part of including a bibliograpy.} To cite to a reference, use the \texttt{cite} command, passing the citation reference as an argument. By default, the printed bibliography includes only cited references --- to include a particular uncited reference, use the \texttt{nocite} command, passing the citation reference as an argument. To include all uncited references, use the command \texttt{nocite\{*\}}. (The asterisk is a typeglob that means ``everything'').
+
+        To specify a citation style, use the command \texttt{bibliographystyle}. As you will see when you study the different styles, there are many of them. Adding to the amount of effort of work potentially involved, you can write your own style specification if you don't want to use any that are available. In the example below, I have used the \textit{IEEEtranS} style. This will probably not meet your needs. You will have to find an appropriate style for your requirements.
+
+        To include the bibliography itself, use the command \texttt{bibliography}. To add your references to the table of contents, use the command \texttt{addcontentsline}. To compile your bibliography using the command line interface, see appendix \ref{Command Line} on page \pageref{Command Line}.\footnote{If you compile your document using the command line, you must use the \texttt{bibtex <document name>} command in order to produce the bibliobaphy itself.}
+        
+        \begin{verbatim}
+\documentclass{article}
+    \title{Bibliography}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \tableofcontents{}
+    \section{Introduction}
+    \label{inTroduction}
+    This section cites \cite{goossens04} and \cite{oetiker15}.
+    \section{Body}
+    \label{Body}
+    This section cites \cite{kottwitz15} and \cite{pakin15}.
+    \section{Conclusion}
+    This section contains no citations.
+    \label{Conclusion}
+    \bibliographystyle{IEEEtranS}    
+    \bibliography{tut}
+    \addcontentsline{toc}{section}{References}
+    \nocite{*}
+\end{document}
+        \end{verbatim}
+
+        \paragraph{Exercise:} \bib provides many different kinds of styles. Research three of them.
+
+        \paragraph{Exercise:} Every style has required fields and optional fields. For the three styles you researched, list the required fields and the optional fields.
+
+    \subsection{Indices}
+    \label{Indices}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \item{package imakeidx}
+                \item{makeindex}
+                \item{index}
+                \item{printindex}
+                \item{addcontentsline}
+                \index{package imakeidx}
+                \index{makeindex}
+                \index{index}
+                \index{printindex}
+                \index{addcontentsline}
+            \end{itemize}
+        \end{cmd}
+
+    Any paper of a reasonable size should have an index. Fortunately, indices in \Lx{} are easy if a bit tedious. The tedious part comes from marking all the words to be indexed. The rest is pretty easy.
+
+    First, in the preamble, you ust use an indexing package, the current version of which is \texttt{imakeidx} (perhaps for \textit{improved} makeidx) followed by the \texttt{makeindex} command. At the end of your paper, include the \texttt{printindex} command, optionally followed by the \texttt{addcontentsline} if you wish to have an entry in our table of contents for the index. 
+
+    Then, for every term you wish to index, you must make a reference using the \texttt{index} command. \Lx produces the index automatically.\footnote{If you compile your document using the command line, you must use the \texttt{makeindex <document name>} command in order to produce the index itself.}
+
+        \begin{verbatim}
+\documentclass{article}
+    \usepackage{imakeidx}
+    \makeindex{}
+    \title{Indices}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \tableofcontents{}
+    \section{Introduction}
+    \label{inTroduction}
+    This section contains the indexed word introduction.\index{introduction}
+    \section{Body}
+    \label{Body}
+    \paragraph{}This paper concerns the structure\index{structure} of a paper.
+    \paragraph{}Papers generally consist of an introduction\index{introduction}, 
+        body\index{body|}, and conclusion\index{conclusion}.
+    \paragraph{}This is the body\index{body} of a paper.
+    \section{Conclusion}
+    This section contains the conclusion\index{conclusion}.
+    \label{Conclusion}
+    \printindex{}
+    \addcontentsline{toc}{section}{Index}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} Find the documentation to the \texttt{imakeidx} package and read through it.
+
+        \paragraph{Exercise:} How can you generate multiple indices, perhaps one for people and one for commands?
+
+        \subsection{Includes}
+        \label{Includes}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \item{include}
+                \item{input}
+            \end{itemize}
+        \end{cmd}
+
+It is convenient to break a paper of more than a few sections into several parts. When you write the paper, you can work on each part separately, and then combine them into the finished paper, part by part, as convenient. Using the command \texttt{include} and \texttt{input} requires each part to be placed into a separate document. Your ``main'' document will then have a series of include or input commands. When you compile the main document, each part will be included at the appropriate place. Note that the included documents may not contain any preamble commands --- all your preamble commands must be placed in the preamble, which will be in your main document.
+
+        \begin{verbatim}
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Name includemain.tex        
+%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+    \title{This is My Title}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \input{includeintro}
+    \input{includebody}
+    \input{includeconc}
+\end{document}    
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Name includeintro.tex        
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introduction}
+This is the introduction.
+The file is named includeintro.tex.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Name includebody.tex        
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Body}
+This is the body.
+The file is named includebody.tex.
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Name includeconc.tex        
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Conclusion}
+This is the conclusion.
+The file is named includeconc.tex.
+        \end{verbatim}
+
+        \begin{sample}
+    \input{includeintro}
+    \input{includebody}
+    \input{includeconc}
+        \end{sample}
+
+
+        \paragraph{Exercise:} Using any longish document you have, create a main document with a series of include statements, and place the content of yur document into a series of separate documents, each with their own name.
+

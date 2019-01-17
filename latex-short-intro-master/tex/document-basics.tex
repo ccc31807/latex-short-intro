@@ -1,0 +1,382 @@
+    \section{Document Basics}
+    \label{Document-Basics}
+
+    A \texttt{tex} document consists of plain text, and special characters, commands, and environments. I will generally refer to special characters, commands, and enviormments with the word \textit{commands}; you don't need to know the difference between them now, but you shortly will without being told. You \textit{must} precede commands with a backslash (\textbackslash{}) for the compiler to know that they are commands. This is easy to forget, so I will remind you the first couple of times.
+
+    \textbf{What should I have?} You should have a working \Lx{} program. If you do not have one, see Appendix \ref{Installing} below on page \pageref{Installing}. You will also need a text editor, and you will probably want to get an integrated editor, compiler, and printer. See Appendix \ref{Development Environments} on page \pageref{Development Environments}. You can also use the old fashioned command line, I cover this in Appendix \ref{Command Line} on page \pageref{Command Line}.
+
+        \subsection{Basic document}
+        \label{Basic-document}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{documentclass}
+                \index{begin/end document}
+				\index{plain text}
+				\index{comments}
+                \item{documentclass}
+                \item{begin/end document}
+				\item{plain text}
+				\item{comments}
+            \end{itemize}
+        \end{cmd}
+
+        A basic document begins with a document class, and has a preamble and contents. Type (or copy) the following, save it as a \texttt{.tex} document and compile it. The percent signs (\%) are comments and do not have any effect on  the document.
+
+        \begin{verbatim}
+\documentclass{article}
+    %this is the preamble
+\begin{document}
+    %this is the contents section
+    It works! %plain text prints as is
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:}\Lx{} has a number of different document classes. Name four of them. Hint: use a search engine for ``latex document classes''.
+
+        \paragraph{Exercise:}A \texttt{documentclass} command can take optional arguments, like this: \texttt{documentclass[optional arguments]\{document class\}}.\footnote{Don't forget to type a backslash before the command, like this: \texttt{\textbackslash{}documentclass}} Name two optional arguments.
+
+        \subsection{Basic title}
+        \label{Basic-title}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{title}
+                \index{author}
+                \index{date}
+                \index{maketitle}
+                \item{title}
+                \item{author}
+                \item{date}
+                \item{maketitle}
+            \end{itemize}
+        \end{cmd}
+
+        A basic document usually title and author information in the preamble. You specify the title with the \texttt{title} command. You specify the author(s) with the \texttt{author} command. You may optionally specify a date with the \texttt{date} command. In the body of the document, you create the title with the \texttt{maketitle} command. Create and compile a second document like this:        
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Title, Author, and Date}
+    \author{Charles Carter}
+    \date{July 4, 1776}
+\begin{document} 
+    \maketitle{}
+    This document has a title, author, and date.
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:}What happens if you use the command \texttt{today\{\}}\footnote{Remember, \texttt{\textbackslash{}date\{\}}} as the date parameter (replacing July 4, 1776)?
+
+        \paragraph{Exercise:}What happens if you use the command \texttt{thanks\{email address\}}\footnote{\texttt{\textbackslash{}thanks\{\}}} after your name in the \texttt{author\{\}} command?
+
+        \subsection{Basic sections}
+        \label{Basic-sections}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{section}
+                \index{subsection}
+                \index{subsubsection}
+                \index{label}
+                \item{section}
+                \item{subsection}
+                \item{subsubsection}
+                \item{label}
+            \end{itemize}
+        \end{cmd}
+
+        \Lx{} provides a number of useful section levels, including part and chapter. Two of the most useful are \texttt{section} and \texttt{subsection}. Create and compile the following document. 
+
+        The \texttt{label\{\}} is used to create cross-references in documents. It's also very helpful in organizing your thoughts.\footnote{Sometimes, people say that \Lx{} is a language for logical marup. As you continue to author documents with \Lx{}, you will increasingly come to rely on the \texttt{label} command to organize your paper and structure your thoughts. In my opinion, one of the chief benefits of using \Lx{} is that it enforces this kind of structured process on your writing, and you will become a better writer because of it,} The argument to \texttt{label\{argument\}} does not appear in the document. I cover the \texttt{ref} and \texttt{pageref} commands below in subsection \ref{Text references} on page \pageref{Text references}. These are used to create references back to the label.
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Basic Sections}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:}What do the commands \texttt{subsection\{\}} and \texttt{subsubsection\{\}} do?
+
+        \paragraph{Exercise:}What does \texttt{section*\{\}} do? Note the asterisk (*) after \texttt{section}. You can also use this starred version for \texttt{subsections} and \texttt{subsubsections}.
+
+        \subsection{Basic paragraphs}
+        \label{Basic-paragraphs}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{paragraph}
+                \index{subparagraph}
+                \item{paragraph}
+                \item{subparagraph}
+            \end{itemize}
+        \end{cmd}
+
+
+        We have reached the point where you need some real content. I will use the text of Abraham Lincoln's Gettysburg Address to illustrate paragraphs. Notice that ordinary paragraphs do not need a special command -- the ``paragraph command'' is simply two blank lines to create an empty new line between the paragraphs, as if they were double spaced. Create and compile the following document.
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Basic Paragraphs}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+
+Four score and seven years ago our fathers brought forth on this 
+continent a new nation, conceived in liberty, and dedicated to 
+the proposition that all men are created equal.
+
+Now we are engaged in a great civil war, testing whether that nation, 
+or any nation so conceived and so dedicated, can long endure. We 
+are met on a great battlefield of that war. We have come to dedicate 
+a portion of that field, as a final resting place for those who here 
+gave their lives that that nation might live. It is altogether fitting 
+and proper that we should do this.
+
+But, in a larger sense, we can not dedicate, we can not consecrate, 
+we can not hallow this ground. The brave men, living and dead, who 
+struggled here, have consecrated it, far above our poor power to add 
+or detract. The world will little note, nor long remember what we say 
+here, but it can never forget what they did here. It is for us the 
+living, rather, to be dedicated here to the unfinished work which they 
+who fought here have thus far so nobly advanced. It is rather for us 
+to be here dedicated to the great task remaining before us, that from 
+these honored dead we take increased devotion to that cause for which 
+they gave the last full measure of devotion, that we here highly resolve 
+that these dead shall not have died in vain, that this nation, under 
+God, shall have a new birth of freedom, and that government of the people, 
+by the people, for the people, shall not perish from the earth.
+
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+        \end{verbatim}
+        
+        \paragraph{Exercise:}What happens if you include the \texttt{paragraph\{\}} or \texttt{subparagraph\{\}} commands before each paragraph? 
+        
+        \paragraph{Exercise:}What happens if you include arguments with the \texttt{paragraph\{argument\}} or \texttt{subparagraph\{argument\}} commands? 
+
+        \subsection{Basic packages}
+        \label{Basic packages}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{usepackage}
+                \index{lipsum}
+                \item{usepackage}
+                \item{lipsum}
+            \end{itemize}
+        \end{cmd}
+
+Much of \Lx{} functionality is contained in external packages. To use this functionality, you include the command \texttt{usepackage\{\}} in the preamble. Of course, you first have to install the package on your computer, but the MiKTeX distribution does that automatically. The \texttt{lipsum} package generates generic text (in Latin, of course). The \texttt{lipsum\{\}} command generates text. Notice that you can control the number of paragraphs to include. Below, I have included paragraph $1$ in the introduction, paragraphs $2$ through $4$ in the body, and paragraph $5$ in the conclusion.
+
+Notice the paragraph indentation. First paragraphs are \textit{not} indented. Following paragraphs \textit{are} indented. This is normal typographic practice.
+
+        \begin{verbatim}
+\documentclass{article}
+    \usepackage{lipsum}
+    \title{Using Packages}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Introduction}
+    \label{Introduction}
+        \lipsum[1]{}
+    \section{Body}
+    \label{Body}
+        \lipsum[2-4]{}
+    \section{Conclusion}
+    \label{Conclusion}
+        \lipsum[5]{}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:}What is CTAN, the Comprehensive \TeX{} Archive Network? How many packages are currently on CTAN?
+
+        \paragraph{Exercise:}What are the most popular \Lx{} packages?
+
+        \subsection{Basic contents}
+        \label{Basic contents}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{tableofcontents}
+                \item{tableofcontents}
+            \end{itemize}
+        \end{cmd}
+
+        Creating a table of contents is easy. Just include the \texttt{tableofcontents\{\}} command. You may have to compile the document twice to ensure that the table of contents is generated properly.
+        \begin{verbatim}
+\documentclass{article}
+    \usepackage{lipsum}
+    \title{Table of Contents}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \tableofcontents{}
+    \section{Introduction}
+    \label{Introduction}
+        \lipsum[1]{}
+    \section{Body}
+    \label{Body}
+        \lipsum[2-4]{}
+    \section{Conclusion}
+    \label{Conclusion}
+        \lipsum[5]{}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:}The \texttt{section[Optional Argument]\{Section Title\}} command takes an optional argument. How does this argument affect the table of contents?
+
+        \paragraph{Exercise:}What other kinds of content tables can \Lx{} generate? To start with, look at figures and tables.
+
+        \subsection{Basic decorations}
+        \label{Basic decorations}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{textit}
+                \index{textsf}
+                \index{texttt}
+                \index{textbf}
+                \index{textsc}
+                \index{underline}
+                \item{textit}
+                \item{textsf}
+                \item{texttt}
+                \item{textbf}
+                \item{textsc}
+                \item{underline}
+            \end{itemize}
+        \end{cmd}
+
+In this section, you will fiddle with the appearance of text. To \textit{create text in italics}, use \texttt{textit}. To \textsf{create text in sans serif}, use \texttt{textsf}. To \texttt{create text in monospace font}, use \texttt{texttt}. To \textbf{create text in boldface}, use \texttt{textbf}. To \textsc{create text using Small Caps}, use \texttt{textsc}. \underline{You should almost never underline text}! If you choose to do so, use \texttt{underline}.
+
+\begin{sample}
+        \paragraph{}To \textit{create text in italics}, use \texttt{textit}. 
+        \paragraph{}To \textsf{create text in sans serif}, use \texttt{textsf}. 
+        \paragraph{}To \texttt{create text in monospace font}, use \texttt{texttt}. 
+        \paragraph{}To \textbf{create text in boldface}, use \texttt{textbf}. 
+        \paragraph{}To \textsc{create text using Small Caps}, use \texttt{textsc}. 
+        \paragraph{}\underline{You should almost never underline text}! If you choose to do so, use \texttt{underline}.
+\end{sample}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Font Appearance}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+        \paragraph{}In this section, you will fiddle with the appearance of text. 
+        \paragraph{}To \textit{create text in italics}, use \texttt{textit}. 
+        \paragraph{}To \textsf{create text in sans serif}, use \texttt{textsf}. 
+        \paragraph{}To \texttt{create text in monospace font}, use \texttt{texttt}. 
+        \paragraph{}To \textbf{create text in boldface}, use \texttt{textbf}. 
+        \paragraph{}To \textsc{create text using Small Caps}, use \texttt{textsc}. 
+        \paragraph{}\underline{You should almost never underline text}! 
+        If you choose to do so, use \texttt{underline}.
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:}As with much else in \Lx,there are multiple ways to italicize or bold-face text. Can you find other ways?
+
+
+
+        \subsection{Basic fontsizes}
+        \label{Basic fontsizes}
+        
+        \begin{cmd}
+            \begin{itemize}
+                \index{tiny}
+                \index{scriptsize}
+                \index{footnotesize}
+                \index{small}
+                \index{normalsize}
+                \index{large}
+                \index{Large}
+                \index{LARGE}
+                \index{huge}
+                \index{Huge}
+                \item{tiny}
+                \item{scriptsize}
+                \item{footnotesize}
+                \item{small}
+                \item{normalsize}
+                \item{large}
+                \item{Large}
+                \item{LARGE}
+                \item{huge}
+                \item{Huge}
+            \end{itemize}
+        \end{cmd}
+
+\Lx{} has several different ways to alter the size of the font. Perhaps the simplest way is to create a \textit{size environment}. You do this by using one of the commands listed above, and this controls the size of all text until it is changed by another command. You would typically use this for sections of text that need to be made smaller, such as tables, block quotes, technical sections not germane to the main discussion, and similar.
+
+\begin{sample}
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \tiny{}\paragraph{}This paragraph has a tiny font size.
+    \scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
+    \footnotesize{}\paragraph{}This paragraph has a footnotesize font size.
+    \small{}\paragraph{}This paragraph has a small font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \large{}\paragraph{}This paragraph has a large font size.
+    \Large{}\paragraph{}This paragraph has a Large font size.
+    \LARGE{}\paragraph{}This paragraph has a LARGE font size.
+    \huge{}\paragraph{}This paragraph has a huge font size.
+    \Huge{}\paragraph{}This paragraph has a Huge font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+\end{sample}
+
+        \begin{verbatim}
+\documentclass{article}
+    \title{Font Sizes}
+    \author{Charles Carter}
+    \date{\today{}}
+\begin{document} 
+    \maketitle{}
+    \section{Introduction}
+    \label{Introduction}
+    \section{Body}
+    \label{Body}
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \tiny{}\paragraph{}This paragraph has a tiny font size.
+    \scriptsize{}\paragraph{}This paragraph has a scriptsize font size.
+    \footnotesize{}\paragraph{}This paragraph has a footnotesize font size.
+    \small{}\paragraph{}This paragraph has a small font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \large{}\paragraph{}This paragraph has a large font size.
+    \Large{}\paragraph{}This paragraph has a Large font size.
+    \LARGE{}\paragraph{}This paragraph has a LARGE font size.
+    \huge{}\paragraph{}This paragraph has a huge font size.
+    \Huge{}\paragraph{}This paragraph has a Huge font size.
+    \normalsize{}\paragraph{}This paragraph has a normalsize font size.
+    \section{Conclusion}
+    \label{Conclusion}
+\end{document}    
+        \end{verbatim}
+
+        \paragraph{Exercise:} The issues of font, font size, and font decoration, are difficult, complicated, and subject to internecine wars. You may want to postpone your exploration of these issues until you have created and compiled several hundred \texttt{.tex} documents. If you want, and have discretionary time available and nothing else to do, you may want to delve into the complex and divisive world of fonts, font sizes, and font decorations.
+
